@@ -1,0 +1,55 @@
+<!doctype html>
+{% comment %}
+  The shell every page sits inside. A page picks this layout with
+  "layout: default" in its front matter, and its own HTML is dropped in
+  where the content variable appears inside <main>. The nav and footer
+  only live here. (Liquid comment tags are used instead of HTML comments
+  because Liquid still runs inside HTML comments.)
+{% endcomment %}
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ page.summary | default: site.description }}">
+  <meta property="og:title" content="{{ page.title | default: site.title }}">
+  <meta property="og:description" content="{{ page.summary | default: site.description }}">
+  {% if page.thumbnail %}<meta property="og:image" content="{{ page.thumbnail | absolute_url }}">{% endif %}
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="site-name" href="{{ '/' | relative_url }}">William Harris</a>
+      <nav aria-label="Main">
+        <a href="{{ '/#work' | relative_url }}">Work</a>
+        <a href="{{ '/#publications' | relative_url }}">Publications</a>
+        <a href="{{ site.resume | relative_url }}">Resume</a>
+        <a href="{{ '/#contact' | relative_url }}">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    {{ content }}
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="wrap footer-inner">
+      <p class="footer-lede">Open to full-time mechanical and robotics roles starting summer 2027.</p>
+      <ul class="contact-links">
+        <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+        <li><a href="{{ site.linkedin }}">LinkedIn</a></li>
+        <li><a href="{{ site.github }}">GitHub</a></li>
+        <li><a href="{{ site.resume | relative_url }}">Resume (PDF)</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

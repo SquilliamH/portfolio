@@ -1,0 +1,63 @@
+---
+layout: default
+---
+{% comment %}
+  Template for every file in _projects/. The front matter at the top of
+  each project file (title, role, specs, ...) is read here as page.field.
+  The Markdown body of the project file becomes the content variable.
+{% endcomment %}
+<article class="project wrap">
+  <a class="back" href="{{ '/#work' | relative_url }}">All work</a>
+
+  <h1 class="project-title">{{ page.title }}</h1>
+  <p class="project-summary">{{ page.summary }}</p>
+
+  <!-- Modeled on a drawing title block: the facts a reviewer wants first. -->
+  <dl class="title-block">
+    {% if page.role %}<div class="tb-cell tb-wide"><dt>Role</dt><dd>{{ page.role }}</dd></div>{% endif %}
+    {% if page.context %}<div class="tb-cell"><dt>Where</dt><dd>{{ page.context }}</dd></div>{% endif %}
+    {% if page.dates %}<div class="tb-cell"><dt>When</dt><dd>{{ page.dates }}</dd></div>{% endif %}
+    {% if page.tools %}<div class="tb-cell tb-wide"><dt>Tools</dt><dd>{{ page.tools | join: ", " }}</dd></div>{% endif %}
+    {% for s in page.specs %}
+      <div class="tb-cell tb-spec"><dt>{{ s.label }}</dt><dd>{{ s.value }}</dd></div>
+    {% endfor %}
+  </dl>
+
+  {% if page.links %}
+  <p class="project-links">
+    {% for l in page.links %}<a class="btn" href="{{ l.url | relative_url }}">{{ l.label }}</a>{% endfor %}
+  </p>
+  {% endif %}
+
+  <figure class="project-hero">
+    {% if page.hero_video %}
+      <video autoplay muted loop playsinline {% if page.thumbnail %}poster="{{ page.thumbnail | relative_url }}"{% endif %}>
+        <source src="{{ page.hero_video | relative_url }}" type="video/mp4">
+      </video>
+    {% elsif page.thumbnail %}
+      <img src="{{ page.thumbnail | relative_url }}" alt="{{ page.hero_alt | default: page.title }}">
+    {% else %}
+      <div class="media-missing">Add a hero image or short loop (set thumbnail or hero_video)</div>
+    {% endif %}
+    {% if page.hero_caption %}<figcaption>{{ page.hero_caption }}</figcaption>{% endif %}
+  </figure>
+
+  <div class="prose">
+    {{ content }}
+  </div>
+
+  {% comment %} Link to the next project so readers keep going. {% endcomment %}
+  {% assign sorted = site.projects | where_exp: "p", "p.hidden != true" | sort: "order" %}
+  {% for p in sorted %}
+    {% if p.url == page.url %}
+      {% assign next_index = forloop.index0 | plus: 1 %}
+      {% assign next = sorted[next_index] %}
+    {% endif %}
+  {% endfor %}
+  {% if next %}
+  <nav class="next-project" aria-label="Next project">
+    <span class="next-label">Next project</span>
+    <a href="{{ next.url | relative_url }}">{{ next.title }}</a>
+  </nav>
+  {% endif %}
+</article>

@@ -1,0 +1,77 @@
+---
+layout: default
+---
+<section class="hero wrap">
+  <div class="hero-text">
+    <h1 class="hero-name">William Harris</h1>
+    <p class="hero-lede">Mechanical engineer building robotic hardware for search and rescue and medical devices. MS student at UC San Diego in the Advanced Robotics and Controls Lab.</p>
+    <p class="hero-actions">
+      <a class="btn btn-solid" href="#work">See my work</a>
+      <a class="btn" href="{{ site.resume | relative_url }}">Resume</a>
+    </p>
+  </div>
+  <figure class="hero-media">
+    <video autoplay muted loop playsinline preload="metadata" poster="{{ '/assets/img/morphing-leg/thumb.jpg' | relative_url }}" aria-label="Bipedal robot walking on morphing legs">
+      <source src="{{ '/assets/video/leg-loop.mp4' | relative_url }}" type="video/mp4">
+    </video>
+  </figure>
+</section>
+
+<section class="section wrap" id="work">
+  <h2 class="section-title">Selected work</h2>
+  <ol class="work-list">
+    {% comment %}
+      site.projects holds every file in _projects/. Sorting by the
+      "order" field in each file's front matter controls the sequence.
+    {% endcomment %}
+    {% assign projects = site.projects | where_exp: "p", "p.hidden != true" | sort: "order" %}
+    {% for p in projects %}
+    <li class="work-item">
+      <a class="work-link" href="{{ p.url | relative_url }}">
+        <div class="work-thumb">
+          {% if p.thumbnail %}
+            <img src="{{ p.thumbnail | relative_url }}" alt="" loading="lazy">
+          {% else %}
+            <div class="media-missing">thumbnail</div>
+          {% endif %}
+        </div>
+        <div class="work-text">
+          <h3>{{ p.title }}</h3>
+          <p class="work-summary">{{ p.summary }}</p>
+          <p class="work-meta">{{ p.context }}{% if p.dates %}, {{ p.dates }}{% endif %}</p>
+        </div>
+      </a>
+    </li>
+    {% endfor %}
+  </ol>
+</section>
+
+<section class="section wrap" id="publications">
+  <h2 class="section-title">Publications</h2>
+  <ul class="pub-list">
+    {% for pub in site.data.publications %}
+    <li class="pub">
+      <p class="pub-title">{{ pub.title }}</p>
+      <p class="pub-meta"><strong>{{ pub.venue }}</strong>, {{ pub.status }}. {{ pub.role }}.</p>
+      {% if pub.links %}
+      <p class="pub-links">
+        {% for l in pub.links %}<a href="{{ l.url | relative_url }}">{{ l.label }}</a>{% endfor %}
+      </p>
+      {% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section class="section wrap about" id="about">
+  <h2 class="section-title">About</h2>
+  <div class="about-body">
+    <p>I design and build robotic systems for emergency response and medical robotics. My research centers on legged locomotion, physical human-robot interaction, and mechanisms that adapt their behavior to the task. Most of my time goes into the hardware itself: CAD, machining, motor bring-up over CAN, and the testing that shows whether a design actually works.</p>
+    <p>Before grad school I led mechanical design for Triton Robotics and later served as its president. I finish my MS in 2027.</p>
+  </div>
+  <div class="skills">
+    <div><h3>Design and fabrication</h3><p>SolidWorks, Creo, Ansys FEA, Fusion 360 CAM, DFMA, CNC and manual machining, laser and waterjet cutting, rapid prototyping</p></div>
+    <div><h3>Electronics and controls</h3><p>PCB design (EasyEDA), BLDC motor control, CAN, circuit design</p></div>
+    <div><h3>Software</h3><p>Python, MATLAB, C (Arduino), ROS 2, embedded Linux</p></div>
+  </div>
+</section>

@@ -1,0 +1,16 @@
+# Files in _data/ are plain data. This list is read by index.html as
+# site.data.publications, so adding a paper means adding an entry here.
+- title: "Dynamically Extensible and Retractable Robotic Leg Linkages for Multi-task Execution in Search and Rescue Scenarios"
+  venue: ICRA 2026
+  status: Accepted
+  role: Co-first author
+  links:
+    - label: arXiv
+      url: https://arxiv.org/abs/2511.10816
+    - label: Project page
+      url: /projects/morphing-leg/
+
+- title: "Discovery to Extraction: Biomechanically Safe Manipulation of Human Limbs Using Robotic Manipulation in Search and Rescue Scenarios"
+  venue: Science Robotics
+  status: In review
+  role: Contributor
