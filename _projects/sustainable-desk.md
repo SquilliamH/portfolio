@@ -29,15 +29,25 @@ The challenge was to build a desk from chipboard alone, with no adhesives or fas
 I built the SolidWorks models for each design iteration and the drawings for laser cutting, tuning the interlocking joint geometry and cutting arcs out of the outer edges where the stress analysis showed material wasn't working. In simulation, a 27.5 lb (12.5 kg) load produced peak stress of about 4.95 × 10⁵ N/m², a minimum factor of safety of 6.07, and a maximum deflection of 0.04 mm at the top edges.
 
 <figure>
-  <img src="/assets/img/sustainable-desk/fea.jpg" alt="FEA displacement plot of an early design">
+  <img src="{{ '/assets/img/sustainable-desk/fea.jpg' | relative_url }}" alt="FEA displacement plot of an early design">
   <figcaption>FEA displacement study of an early design.</figcaption>
 </figure>
 
 <figure>
-  <img src="/assets/img/sustainable-desk/topology.jpg" alt="Topology optimization result">
+  <img src="{{ '/assets/img/sustainable-desk/topology.jpg' | relative_url }}" alt="Topology optimization result">
   <figcaption>Topology optimization showing where material is needed.</figcaption>
+</figure>
+
+<figure>
+  <img src="{{ '/assets/img/sustainable-desk/final-build.jpg' | relative_url }}" alt="The assembled chipboard desk structure">
+  <figcaption>The assembled structure.</figcaption>
 </figure>
 
 ## Results
 
 The structure weighed 0.12 kg, held 26 lb against a 20 lb requirement, and failed at 28 lb, which matched the FEA prediction to 94.4%. It is fully recyclable and needs no other materials.
+
+<figure>
+  <img src="{{ '/assets/img/sustainable-desk/load-test.jpg' | relative_url }}" alt="A bin of tools loaded on top of the desk structure">
+  <figcaption>Load test with a bin of tools on the structure.</figcaption>
+</figure>

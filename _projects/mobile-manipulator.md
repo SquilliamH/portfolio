@@ -24,7 +24,7 @@ links:
 This platform is a testbed for studying how a robot can safely handle and extract a person in a rescue scenario. I built the mobile base that carries two 7-DoF Franka Panda arms, along with an active stage that moves the robot's center of mass as loads shift.
 
 <figure>
-  <img src="/assets/img/mobile-manipulator/cad-iso.jpg" alt="SolidWorks render of the mobile base with two arms and counterweights">
+  <img src="{{ '/assets/img/mobile-manipulator/cad-iso.jpg' | relative_url }}" alt="SolidWorks render of the mobile base with two arms and counterweights">
   <figcaption>CAD of the base, arms, and counterweights.</figcaption>
 </figure>
 
@@ -33,7 +33,7 @@ This platform is a testbed for studying how a robot can safely handle and extrac
 The chassis is aluminum extrusion, chosen so the lab could modify it and rebuild test setups quickly. I used FEA to check stiffness and stress under uneven, dynamic loading and removed material where it wasn't doing work. With the arms cantilevered over the front in the operating configuration, the worst case needs about 60 kg of counterweight to keep the center of mass between the wheels. For transport, the arms curl in and counterweights come off, and switching between the two modes takes minutes.
 
 <figure>
-  <img src="/assets/img/mobile-manipulator/frame.jpg" alt="Aluminum extrusion chassis with two arm mounting plates">
+  <img src="{{ '/assets/img/mobile-manipulator/frame.jpg' | relative_url }}" alt="Aluminum extrusion chassis with two arm mounting plates">
   <figcaption>The extrusion chassis with the arm mounting plates.</figcaption>
 </figure>
 

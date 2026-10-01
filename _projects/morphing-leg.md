@@ -37,7 +37,7 @@ To check the simulation against reality, I built a planar testbed with interchan
 
 <!-- Add a figure like this once you have images:
 <figure>
-  <img src="/assets/img/morphing-leg/testbed.jpg" alt="Planar 5-bar testbed with interchangeable link mounts">
+  <img src="{{ '/assets/img/morphing-leg/testbed.jpg' | relative_url }}" alt="Planar 5-bar testbed with interchangeable link mounts">
   <figcaption>Testbed with interchangeable link mounts for evaluating different geometries.</figcaption>
 </figure>
 -->
@@ -51,8 +51,8 @@ The leg changes geometry with a non-backdrivable capstan actuator: a worm-gear m
 I wrote Python position control over CAN to coordinate the joint motors with the gait cycle and the reconfiguration actuator. On the bipedal prototype, this let the robot walk in one configuration, reconfigure, and continue in the other.
 
 <figure>
-  <video controls muted loop playsinline preload="none" poster="/assets/img/morphing-leg/drag.jpg">
-    <source src="/assets/video/leg-drag.mp4" type="video/mp4">
+  <video controls muted loop playsinline preload="none" poster="{{ '/assets/img/morphing-leg/drag.jpg' | relative_url }}">
+    <source src="{{ '/assets/video/leg-drag.mp4' | relative_url }}" type="video/mp4">
   </video>
   <figcaption>Rescue mode: the legs retract and the robot drags a load.</figcaption>
 </figure>

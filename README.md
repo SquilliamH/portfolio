@@ -34,7 +34,13 @@ Open http://localhost:4000. Pages rebuild when you save.
 
 ## Switching williamlh.com over (do this last)
 
+The site currently lives at https://squilliamh.github.io/portfolio, so `baseurl` in `_config.yml` is `/portfolio`. When the custom domain is live, set `url` to the domain and `baseurl` to `""`.
+
 1. Settings > Pages > Custom domain: enter `www.williamlh.com`. This adds a `CNAME` file.
 2. At the domain registrar, add the records from GitHub's "Managing a custom domain" docs and remove the Google Sites mapping.
 3. Once the certificate is issued, check "Enforce HTTPS".
 4. Set `url: https://www.williamlh.com` in `_config.yml`.
+
+## Hiding a project
+
+Add `hidden: true` to a project's front matter to keep it off the home page and out of the next-project links. The page still exists at its URL.
