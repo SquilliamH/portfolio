@@ -14,6 +14,10 @@ specs:
     value: "6"
   - label: Launcher
     value: 42 mm projectile, 16 m/s
+  - label: Rotation speed
+    value: "+40%"
+  - label: Targeting accuracy
+    value: "+50%"
 thumbnail:
 ---
 
@@ -30,4 +34,4 @@ The second redesign aimed to optimize rotation, keep the turret free to rotate i
 ## President, 2023–24
 
 As president I led the 80-member team across mechanical, electrical, and software sub-teams and overhauled the training program and documentation so new members could get up to speed faster. The team competed at the RoboMaster North American regionals in Seattle (2023) and Boulder (2024).
-<!-- TODO: add photos or CAD renders, and numbers for rotation speed and reliability -->
+<!-- TODO: add photos or CAD renders, and reliability numbers -->

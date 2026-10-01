@@ -4,8 +4,6 @@ _site/
 Gemfile.lock
 .DS_Store
 
-# Raw source media (1.8 GB) stays local; only processed files in assets/ are published
-Website Media/
-Website_Files/
-preview-*.png
-footpath_comparison.py
+# Archive is kept in git except for bulky raw source material and scratch files
+archive/source-media/
+archive/scratch/

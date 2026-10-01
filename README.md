@@ -9,7 +9,9 @@ Personal engineering portfolio, built with Jekyll and hosted on GitHub Pages.
 - `_layouts/project.html`: the template for project pages, including the title block.
 - `_projects/*.md`: one file per project. Front matter controls the title block and the home page listing; the body is the write-up.
 - `_data/publications.yml`: the publications list on the home page.
-- `index.html`: the home page.
+- `index.html`: the About / home page. `projects.html`, `publications.html`, `404.html` are the other pages.
+- `assets/`: published media only (`img/`, `video/`, `docs/`, and the resume PDF).
+- `archive/`: not published (excluded in `_config.yml`). `hidden-projects/` holds drafted project pages (move one back into `_projects/` to restore it), `unused-assets/` holds processed images not currently placed, and `source-media/` and `scratch/` are local-only (gitignored).
 - `assets/css/style.css`: all styling. Colors and fonts are tokens at the top.
 
 ## Adding a project
@@ -43,4 +45,4 @@ The site currently lives at https://squilliamh.github.io/portfolio, so `baseurl`
 
 ## Hiding a project
 
-Add `hidden: true` to a project's front matter to keep it off the home page and out of the next-project links. The page still exists at its URL.
+Add `published: false` to a project's front matter to remove it from the site entirely, or move its file into `archive/hidden-projects/`.
