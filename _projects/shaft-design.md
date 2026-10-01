@@ -1,8 +1,8 @@
 ---
 title: Automated Shaft Design in MATLAB
 summary: A 500-line script that sizes a shaft under combined bending and torsion in about five iterations.
+published: false
 order: 9
-hidden: true
 role: Individual project
 context: MAE 190 Design of Machine Elements, UC San Diego
 dates: 2025

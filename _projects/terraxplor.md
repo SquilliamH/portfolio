@@ -2,6 +2,7 @@
 title: GeckoRov Subsurface Exploration Robot Proposal
 summary: A research proposal for a folding, wall-climbing Mars robot combining shape-memory polymers and micro-grippers.
 kind: Proposal
+published: false
 order: 5
 role: Principal investigator
 context: TerraXplor, Team 08

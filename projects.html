@@ -17,13 +17,3 @@ summary: Research, team, and course projects in robotics and mechanical design.
     {% endfor %}
   </div>
 </section>
-
-<section class="section wrap">
-  <h2 class="section-title">More coursework</h2>
-  <ul class="more-list">
-    {% assign more = site.projects | where: "hidden", true | sort: "order" %}
-    {% for p in more %}
-    <li><a href="{{ p.url | relative_url }}">{{ p.title }}</a><span>{{ p.context }}</span></li>
-    {% endfor %}
-  </ul>
-</section>

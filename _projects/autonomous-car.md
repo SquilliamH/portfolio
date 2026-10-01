@@ -1,8 +1,8 @@
 ---
 title: Line-Following Car That Plays Music
 summary: A ROS 2 robot car that follows a track and plays a note each time it sees a colored marker.
+published: false
 order: 8
-hidden: true
 role: Team project; hardware and integration
 context: MAE 148 Autonomous Vehicles, UC San Diego
 dates: Fall 2024

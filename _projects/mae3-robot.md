@@ -1,8 +1,8 @@
 ---
 title: Dual Four-Bar Lift Robot
 summary: A lift mechanism for a game-piece retrieval robot, with the torque analysis checked against a test to about 1%.
+published: false
 order: 14
-hidden: true
 role: Lift mechanism design and analysis (teammates built the intake and drivetrain)
 context: MAE 3, UC San Diego
 dates: Fall 2022
