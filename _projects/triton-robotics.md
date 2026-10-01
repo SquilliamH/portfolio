@@ -1,6 +1,7 @@
 ---
 title: Triton Robotics Competition Robot
 summary: Two generations of chassis for a projectile-launching competition robot, then a year leading the 80-member team.
+kind: Team leadership
 order: 7
 role: Lead mechanical engineer (2021–23), president (2023–24)
 context: Triton Robotics, UC San Diego

@@ -3,6 +3,7 @@
 # second --- line is the page body.
 title: Adaptive Morphing Leg for Search and Rescue
 summary: A reconfigurable 5-bar leg that switches between fast traversal and high-force load dragging. ICRA 2026.
+kind: Research
 order: 1
 role: Mechanical design, prototyping, and experimental validation. Co-first author.
 context: ARCLab, UC San Diego

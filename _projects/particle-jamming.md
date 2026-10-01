@@ -1,6 +1,7 @@
 ---
 title: Particle-Jamming Limb Stabilization
 summary: A vacuum-tunable particle-jamming interface for stabilizing a limb quickly in the field, tested against strap splints.
+kind: Course project
 order: 3
 role: Solo project, design through testing
 context: Course project, UC San Diego

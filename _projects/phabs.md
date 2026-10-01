@@ -1,6 +1,7 @@
 ---
 title: PHABS Haptic Teleoperation Device
 summary: A handheld bimanual teleoperation device with pinch and lateral force feedback, built to improve the quality of demonstrations for robot learning.
+kind: Research / course project
 order: 4
 role: Team member; first prototype of the lateral force feedback mechanism
 context: Haptic Systems course project and ARCLab, UC San Diego

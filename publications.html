@@ -1,0 +1,26 @@
+---
+layout: default
+title: Publications
+permalink: /publications/
+summary: Papers from the Advanced Robotics and Controls Lab.
+---
+<section class="wrap page-head">
+  <h1>Publications</h1>
+  <p class="page-lede">Work from the Advanced Robotics and Controls Lab at UC San Diego.</p>
+</section>
+
+<section class="wrap">
+  <ol class="pub-list pub-full">
+    {% for pub in site.data.publications %}
+    <li class="pub">
+      <p class="pub-title">{{ pub.title }}</p>
+      <p class="pub-meta"><strong>{{ pub.venue }}</strong> · {{ pub.status }} · {{ pub.role }}</p>
+      {% if pub.links %}
+      <p class="pub-links">
+        {% for l in pub.links %}<a class="btn btn-small" href="{{ l.url | relative_url }}">{{ l.label }}</a>{% endfor %}
+      </p>
+      {% endif %}
+    </li>
+    {% endfor %}
+  </ol>
+</section>

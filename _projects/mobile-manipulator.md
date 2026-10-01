@@ -1,6 +1,7 @@
 ---
 title: Mobile Manipulator for Rescue Operations
 summary: A mobile base carrying two Franka Panda arms, with an actively shifted center of mass for safe human extraction experiments.
+kind: Research
 order: 2
 role: Structural frame, center-of-mass stage, and soft gripper design
 context: ARCLab, UC San Diego

@@ -1,6 +1,7 @@
 ---
 title: Fastener-Free Chipboard Desk
 summary: A structural desk designed with FEA and topology optimization that held about 100 times its own weight.
+kind: Course project
 order: 6
 role: Team project with Anya Ustinova; CAD, FEA, and laser-cut drawings
 context: MAE 191 Sustainable Engineering Design, UC San Diego

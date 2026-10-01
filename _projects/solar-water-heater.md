@@ -2,7 +2,7 @@
 title: Solar Water Heater Installations
 summary: Installing and commissioning rooftop solar water heating systems on trips with a student team.
 order: 12
-hidden: true
+published: false
 role: Team member
 context: Student project team, UC San Diego
 dates: 2023

@@ -2,7 +2,7 @@
 title: Ultrasonic Hat Alarm
 summary: A small Arduino project built around an ultrasonic sensor mounted on a wall plate.
 order: 13
-hidden: true
+published: false
 role: Individual project
 context: Personal project
 dates: Nov 2021
