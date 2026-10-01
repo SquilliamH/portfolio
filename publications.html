@@ -14,6 +14,7 @@ summary: Papers from the Advanced Robotics and Controls Lab.
     {% for pub in site.data.publications %}
     <li class="pub">
       <p class="pub-title">{{ pub.title }}</p>
+      {% if pub.authors %}<p class="pub-authors">{{ pub.authors }}</p>{% endif %}
       <p class="pub-meta"><strong>{{ pub.venue }}</strong> · {{ pub.status }} · {{ pub.role }}</p>
       {% if pub.links %}
       <p class="pub-links">

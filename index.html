@@ -55,6 +55,22 @@ layout: default
 </section>
 
 <section class="section wrap">
+  <h2 class="section-title">Experience</h2>
+  <ol class="timeline">
+    {% for e in site.data.experience %}
+    <li>
+      <p class="tl-dates">{{ e.dates }}</p>
+      <div>
+        <p class="tl-role">{{ e.role }}</p>
+        <p class="tl-org">{{ e.org }}</p>
+        {% if e.note != "" %}<p class="tl-note">{{ e.note }}</p>{% endif %}
+      </div>
+    </li>
+    {% endfor %}
+  </ol>
+</section>
+
+<section class="section wrap">
   <div class="section-head">
     <h2 class="section-title">Selected projects</h2>
     <a class="link-arrow" href="{{ '/projects/' | relative_url }}">All projects</a>
@@ -76,6 +92,7 @@ layout: default
     {% for pub in site.data.publications %}
     <li class="pub">
       <p class="pub-title">{{ pub.title }}</p>
+      {% if pub.authors %}<p class="pub-authors">{{ pub.authors }}</p>{% endif %}
       <p class="pub-meta"><strong>{{ pub.venue }}</strong> · {{ pub.status }} · {{ pub.role }}</p>
     </li>
     {% endfor %}
