@@ -26,27 +26,48 @@ Particle jamming is another route. Granular material in a flexible membrane is s
 
 ## The prototype
 
+<div class="split" markdown="1">
+<div markdown="1">
 I built it from what was in the lab:
 
 - a blue nitrile glove filled with coffee grounds,
 - the lab's vacuum line, on or off at about 25 inHg (no regulation),
-- a limb surrogate made from a foam-wrapped pencil standing in for flesh and bone,
+- a limb surrogate: a foam-wrapped pencil standing in for flesh and bone,
 - a three-strap splint as the baseline.
+</div>
+<figure>
+  <img src="{{ '/assets/img/particle-jamming/pencil-glove.jpg' | relative_url }}" alt="Glove with a pencil limb surrogate inside, connected to a vacuum line" loading="lazy">
+  <figcaption>The glove pad holding the pencil surrogate.</figcaption>
+</figure>
+</div>
 
 ## Two tests
 
-<div class="figure-row">
-<div class="mode-card">
-  <h3>Pull-out</h3>
-  <p>Pull the surrogate out with a crane scale and record the peak force. The strap was tensioned with hanging masses at three preloads.</p>
+<div class="split flip tall-media" markdown="1">
+<div markdown="1">
+### Pull-out
+
+Pull the surrogate out with a crane scale and record the peak force. The strap baseline was tensioned with hanging masses at three preloads, so its resistance could be compared like for like.
 </div>
-<div class="mode-card">
-  <h3>Load spread</h3>
-  <p>Three force-sensing resistors under the contact region, read on an Arduino. Each was calibrated at 100, 200, and 300 g, with a simple drift correction.</p>
+<div class="stack">
+<figure>
+  <img src="{{ '/assets/img/particle-jamming/pullout.jpg' | relative_url }}" alt="Pulling the limb surrogate out of the pad with a crane scale" loading="lazy">
+  <figcaption>Pull-out test with the crane scale.</figcaption>
+</figure>
+<figure>
+  <img src="{{ '/assets/img/particle-jamming/strap-rig.jpg' | relative_url }}" alt="Strap splint clamped to a bench with a hanging mass" loading="lazy">
+  <figcaption>The strap rig, tensioned with a hanging mass.</figcaption>
+</figure>
 </div>
 </div>
 
-<div class="figure-row">
+<div class="split tall-media" markdown="1">
+<div markdown="1">
+### Load spread
+
+Three force-sensing resistors under the contact region, read through voltage dividers on an Arduino. I calibrated each at 100, 200, and 300 g, with piecewise curves and a simple drift correction.
+</div>
+<div class="stack">
 <figure>
   <img src="{{ '/assets/img/particle-jamming/fsr-setup.jpg' | relative_url }}" alt="FSR array, Arduino, and calibration weights on the bench" loading="lazy">
   <figcaption>FSR calibration with reference weights.</figcaption>
@@ -56,9 +77,12 @@ I built it from what was in the lab:
   <figcaption>FSR arrays on the contact blocks.</figcaption>
 </figure>
 </div>
+</div>
 
 ## Results
 
+<div class="split wide" markdown="1">
+<div markdown="1">
 The jammed pad beat the strap at every preload. The strap tended to dig into the foam and slip suddenly, while the pad let go smoothly.
 
 | Strap preload | Strap peak | Jamming peak | Ratio |
@@ -67,9 +91,15 @@ The jammed pad beat the strap at every preload. The strap tended to dig into the
 | 0.6 kg | 147 N | 343 N | 2.3× |
 | 1.0 kg | 255 N | 412 N | 1.6× |
 
-With the strap, nearly all the load landed on one FSR. With the jammer, all three read nonzero, so the load was shared.
+With the strap, nearly all the load landed on one FSR at a time. With the jammer, all three read nonzero.
+</div>
+<figure>
+  <img src="{{ '/assets/img/particle-jamming/fsr-average.jpg' | relative_url }}" alt="Bar chart of average FSR readings for straps and the jamming pad" loading="lazy">
+  <figcaption>Average FSR readings: the jamming pad loads each sensor less than the straps.</figcaption>
+</figure>
+</div>
 
 ## How far to trust it
 
 {: .callout}
-**The pull-out result is solid. The pressure result is suggestive.** The jammer's average load was lower, but the FSRs were inconsistent, so a better sensor is the next step. I also learned afterward that fast-acting jamming splints already exist, so the real value was learning the method and building the test setup.
+**The pull-out result is solid. The pressure result is suggestive.** The FSRs drifted and disagreed with each other, so a better sensor is the next step. I also learned afterward that fast-acting jamming splints already exist, so the real value was learning the method and building the test setup.

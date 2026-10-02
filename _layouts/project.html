@@ -12,9 +12,9 @@ layout: default
   {% if page.kind %}<p class="eyebrow">{{ page.kind }}</p>{% endif %}
   <h1 class="project-title">{{ page.title }}</h1>
   <p class="project-summary">{{ page.summary }}</p>
-  <p class="project-meta">{{ page.context }}{% if page.dates %} &middot; {{ page.dates }}{% endif %}</p>
+  <p class="project-meta">{% if page.context_url %}<a href="{{ page.context_url }}">{{ page.context }}</a>{% else %}{{ page.context }}{% endif %}{% if page.dates %} &middot; {{ page.dates }}{% endif %}</p>
 
-  {% if page.hero_video or page.thumbnail %}
+  {% if page.hero_video or page.thumbnail %}{% unless page.hide_hero %}
   <figure class="project-hero">
     {% if page.hero_video %}
       <video autoplay muted loop playsinline {% if page.thumbnail %}poster="{{ page.thumbnail | relative_url }}"{% endif %}>
@@ -25,7 +25,7 @@ layout: default
     {% endif %}
     {% if page.hero_caption %}<figcaption>{{ page.hero_caption }}</figcaption>{% endif %}
   </figure>
-  {% endif %}
+  {% endunless %}{% endif %}
 
   {% if page.stats %}
   <ul class="stats">

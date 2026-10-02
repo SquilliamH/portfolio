@@ -5,6 +5,7 @@ kind: Research
 order: 3
 role: Structural frame, center-of-mass stage, and soft gripper design
 context: ARCLab, UC San Diego
+context_url: https://ucsdarclab.com/
 dates: Jun 2024 – Present
 tools: [SolidWorks, Ansys FEA, ODrive, BLDC, TPU printing]
 stats:
@@ -26,13 +27,10 @@ links:
 
 This platform is a testbed for studying how a robot can safely handle and extract a person in a rescue scenario. I built the base that carries the two arms, an active stage that moves the center of mass as loads shift, and a soft gripper for touching human limbs.
 
-<figure>
-  <img src="{{ '/assets/img/mobile-manipulator/cad-iso.jpg' | relative_url }}" alt="SolidWorks render of the mobile base with two arms and counterweights">
-  <figcaption>CAD of the base, arms, and counterweights.</figcaption>
-</figure>
-
 ## The frame
 
+<div class="split wide" markdown="1">
+<div markdown="1">
 The chassis is aluminum extrusion, so the lab can modify it and rebuild test setups quickly. I used FEA to check stiffness and stress under uneven, dynamic loads and removed material that wasn't doing work.
 
 The arms are heavy and reach out over the front, so balance sets the design:
@@ -43,6 +41,12 @@ The arms are heavy and reach out over the front, so balance sets the design:
 - **Transport mode:** arms curl in and counterweights come off, in minutes.
 
 The wheels are driven by off-the-shelf electric scooter hub motors.
+</div>
+<figure>
+  <img src="{{ '/assets/img/mobile-manipulator/cad-iso.jpg' | relative_url }}" alt="SolidWorks render of the mobile base with two arms and counterweights" loading="lazy">
+  <figcaption>CAD of the base, arms, and counterweights.</figcaption>
+</figure>
+</div>
 
 <div class="figure-row">
 <figure>
@@ -64,9 +68,13 @@ Instead of carrying that mass fixed, I designed a capstan-driven linear stage th
 
 ## A gentler gripper
 
-The lab's commercial hand was too heavy for the Panda arm, and its grip was too strong for physical contact with a person. I designed a lightweight fin-ray-effect TPU gripper instead. The fins conform to a limb rather than concentrating force at a few points.
+<div class="split flip" markdown="1">
+<div markdown="1">
+The lab's commercial hand was too heavy for the Panda arm, and its grip was too strong for physical contact with a person.
 
-<div class="figure-row">
+I designed a lightweight fin-ray-effect TPU gripper instead. The fins conform to a limb rather than concentrating force at a few points.
+</div>
+<div class="stack">
 <figure>
   <img src="{{ '/assets/img/mobile-manipulator/soft-gripper.jpg' | relative_url }}" alt="Fin-ray-effect TPU gripper mounted on a Panda hand" loading="lazy">
   <figcaption>The gripper on the Panda hand.</figcaption>
@@ -76,12 +84,17 @@ The lab's commercial hand was too heavy for the Panda arm, and its grip was too 
   <figcaption>A finger resting on a wrist. It conforms rather than pinching.</figcaption>
 </figure>
 </div>
+</div>
 
 ## Out in the field
 
+<div class="split" markdown="1">
+<div markdown="1">
 We took the platform outdoors onto uneven, loose ground, with the arms positioned over a volunteer on a stretcher.
 
-<div class="figure-row">
+This work supports a labmate's research on safe physical human-robot interaction during rescue manipulation.
+</div>
+<div class="stack">
 <figure>
   <img src="{{ '/assets/img/mobile-manipulator/field-setup.jpg' | relative_url }}" alt="Team setting up the mobile manipulator in a eucalyptus grove" loading="lazy">
   <figcaption>Setting up on uneven ground.</figcaption>
@@ -91,5 +104,4 @@ We took the platform outdoors onto uneven, loose ground, with the arms positione
   <figcaption>Arms over a person during an extraction trial.</figcaption>
 </figure>
 </div>
-
-This work supports a labmate's research on safe physical human-robot interaction during rescue manipulation.
+</div>

@@ -5,6 +5,7 @@ kind: Research
 order: 2
 role: Kinematic model, optimization framework, hexapod design and analysis
 context: ARCLab, UC San Diego
+context_url: https://ucsdarclab.com/
 dates: 2025 – Present
 tools: [Python, MATLAB, SolidWorks, MuJoCo, CubeMars AK60-6]
 stats:
@@ -17,7 +18,7 @@ stats:
   - n: "10.76 kg"
     label: hexapod mass budget, against an 11 kg target
 thumbnail: /assets/img/hexapod/search-mode.jpg
-hero_caption: Simulated search-mode result. The optimized geometry (left) takes steps 12.6 times larger than the rescue-mode reference (middle).
+hide_hero: true
 ---
 
 The [morphing leg]({{ '/projects/morphing-leg/' | relative_url }}) showed that changing a five-bar linkage's geometry changes both its workspace and its force. But the geometry I tested was symmetric and picked by hand.
@@ -29,28 +30,33 @@ This project asks what geometry is actually best for each mode, and designs the 
 
 ## A more general leg model
 
+<div class="split wide" markdown="1">
+<div markdown="1">
 I generalized the kinematics so the links don't have to be symmetric and the ankle can sit at an offset angle. That gives seven design variables: the two actuated links, the two passive links, the motor separation, the ankle link, and the ankle offset.
 
 - I derived the forward kinematics, inverse kinematics, and the foot Jacobian.
 - I checked the model by confirming it reduces to the standard symmetric 5-bar when the new terms are zero.
 - The ankle offset rotates the leg's force ellipse without changing its size, which separates force direction from force magnitude.
+</div>
+<figure>
+  <img src="{{ '/assets/img/hexapod/force-heatmaps.jpg' | relative_url }}" alt="Workspace force heatmaps for several link-length configurations" loading="lazy">
+  <figcaption>Horizontal force across the workspace as each link is changed in turn.</figcaption>
+</figure>
+</div>
 
 ## Rescue mode: the weakest point decides
 
+<div class="split flip wide" markdown="1">
+<div markdown="1">
 A drag fails at the weakest point of the stance, not on average. So the optimizer maximizes the **minimum** horizontal force across the whole stance path.
 
 Strong regions of a 5-bar's workspace sit near singularities, where force transmission becomes unreliable. The optimizer is held to a Jacobian condition number of 10 or less, a bound taken from the AK60-6's current-sensing accuracy rather than picked arbitrarily.
 
 Other constraints: inverse kinematics must be feasible, the foot must clear the ground, and forward and inverse kinematics must agree. The objective is non-smooth, so I used multi-seed differential evolution followed by a Powell refinement.
-
-<div class="figure-row">
+</div>
 <figure>
   <img src="{{ '/assets/img/hexapod/condition-number.jpg' | relative_url }}" alt="Workspace map of the Jacobian condition number" loading="lazy">
   <figcaption>Jacobian condition number across the workspace. The optimizer stays out of the magenta regions near singularities.</figcaption>
-</figure>
-<figure>
-  <img src="{{ '/assets/img/hexapod/force-heatmaps.jpg' | relative_url }}" alt="Workspace force heatmaps for several link-length configurations" loading="lazy">
-  <figcaption>Horizontal force across the workspace as each link is changed in turn.</figcaption>
 </figure>
 </div>
 
@@ -78,16 +84,19 @@ Optimized links: 14.6, 11.8, 23.5, 23.0, and 2.8 cm, a 3.9 cm motor separation, 
 
 ### Choosing the swing path
 
+<div class="split wide" markdown="1">
+<div markdown="1">
 I compared six candidate swing paths: a capsule, a pure half-ellipse, a cycloid with blended ends, the raw cycloid, an ellipse with Bézier blends, and a degree-6 polynomial. The pure half-ellipse won.
 
 - **It needs no blend.** Its tangent is vertical at the ground, so the foot touches down moving horizontally.
 - **Bézier blends fail by construction.** A quintic Bézier that turns about 90° in a short distance always produces an inflection point.
 - **A raw cycloid has a cusp** with unbounded curvature at touchdown, which a real controller can't follow. I made sure not to hide that by resampling before differentiating.
-
+</div>
 <figure>
   <img src="{{ '/assets/img/hexapod/search-footpath.jpg' | relative_url }}" alt="Kinematic analysis of the search-mode footpath" loading="lazy">
   <figcaption>Speed, acceleration, and curvature of the chosen swing path against the raw cycloid.</figcaption>
 </figure>
+</div>
 
 ## The hexapod
 

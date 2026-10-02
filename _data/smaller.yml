@@ -1,11 +1,5 @@
 # Shown under "Smaller projects" on the Projects page.
 # page: a project page to link to. pdf: a PDF to show inline in an expandable section.
-- title: Fastener-Free Chipboard Desk
-  context: MAE 191 Sustainable Engineering Design, UC San Diego · 2024
-  image: /assets/img/sustainable-desk/desk.jpg
-  alt: Chipboard desk structure under load
-  text: A desk made only of interlocking chipboard that carried 11.8 kg on a 0.12 kg structure, 98 times its own weight, and landed within 6% of its FEA prediction.
-  page: /projects/sustainable-desk/
 - title: Line-Following Car That Plays Music
   context: MAE 148 Introduction to Autonomous Vehicles, UC San Diego · Summer 2024
   image: /assets/img/autonomous-car/car-bench.jpg

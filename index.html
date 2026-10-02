@@ -4,8 +4,8 @@ layout: default
 <section class="hero wrap">
   <div class="hero-text">
     <p class="eyebrow">Mechanical engineer · robotics and medical devices</p>
-    <h1>I build robots that work safely around people.</h1>
-    <p class="hero-lede">I've been hooked on robots since a fourth-grade LEGO class. Now I'm a mechanical engineering MS student at UC San Diego, working in the Advanced Robotics and Controls Lab on legged robots and mobile manipulators for search and rescue.</p>
+    <h1>I build robots that help in emergencies.</h1>
+    <p class="hero-lede">Hi, I'm William. I'm a mechanical engineering MS student at UC San Diego, and in the <a href="https://ucsdarclab.com/">Advanced Robotics and Controls Lab (ARCLab)</a> I've built a mobile manipulator and a shape-changing leg for search and rescue. I've been hooked on robots since a fourth-grade LEGO class.</p>
     <p class="hero-lede">I'm looking for full-time roles and internships in medical robotics and medical devices, where mechanical design, prototyping, and careful testing decide whether something is safe to use around people.</p>
     <p class="hero-actions">
       <a class="btn btn-solid" href="{{ '/projects/' | relative_url }}">See my projects</a>
@@ -13,9 +13,9 @@ layout: default
       <a class="btn" href="mailto:{{ site.email }}">Email me</a>
     </p>
     <ul class="facts">
-      <li>MS Mechanical Engineering, UC San Diego, expected June 2027</li>
-      <li>BS Mechanical Engineering, minor in Design, 2025</li>
-      <li>Advisor: Prof. Michael Yip</li>
+      <li>MS Mechanical Engineering, <a href="https://mae.ucsd.edu/">UC San Diego</a>, expected June 2027</li>
+      <li>BS Mechanical Engineering, minor in Design, June 2025</li>
+      <li>Thesis advisor: <a href="https://yip.eng.ucsd.edu/">Prof. Michael Yip</a></li>
     </ul>
   </div>
   <figure class="hero-photo">
@@ -31,68 +31,10 @@ layout: default
     <div>
       <p class="eyebrow">What I'm working on</p>
       <h2>A leg that changes shape</h2>
-      <p>A search and rescue robot has to cross rough ground quickly, then pull a heavy load once it reaches someone. This leg does both by changing its link lengths on the fly. The paper is accepted at ICRA 2026.</p>
+      <p>A search and rescue robot has to cross rough ground quickly, then pull a heavy load once it reaches someone. This leg does both by changing its link lengths on the fly. The paper was accepted to <a href="https://arxiv.org/abs/2511.10816">ICRA 2026</a>.</p>
       <p><a class="link-arrow" href="{{ '/projects/morphing-leg/' | relative_url }}">Read the project</a></p>
     </div>
   </div>
-</section>
-
-<section class="section wrap">
-  <h2 class="section-title">How I got here</h2>
-  <ol class="chapters">
-    <li>
-      <p class="ch-when">4th grade</p>
-      <div>
-        <h3>LEGO and wheel rotations</h3>
-        <p>A few of us huddled around a LEGO Mindstorms robot after school, working out how many wheel rotations it would take to reach a marker across the room. Watching the math turn into a robot rolling across the floor is what got me hooked.</p>
-      </div>
-    </li>
-    <li>
-      <p class="ch-when">Middle school</p>
-      <div>
-        <h3>Friday engineering class</h3>
-        <p>My public school district had almost no STEM programs, but there was one class called Engineering Design and Robotics. We flew balsa wood gliders across the gym, built towers out of spaghetti and marshmallows, and ran solar-powered robots on the basketball court.</p>
-      </div>
-    </li>
-    <li>
-      <p class="ch-when">2021</p>
-      <div>
-        <h3>Joining Triton Robotics</h3>
-        <p>Most of my teammates had run FRC, FTC, or VEX teams in high school. I didn't even know those existed. I started with less experience than anyone, worked up to leading the Hero robot's mechanical design, and ended up president of the 80-person team. What I loved most was helping newcomers go from intimidated to confident, because I'd been one.</p>
-      </div>
-    </li>
-    <li>
-      <p class="ch-when">2023</p>
-      <div>
-        <h3>Hot water in Tijuana</h3>
-        <p>With UCSD's Baja Solar group I worked on a solar water heater for an orphanage. Hot water there meant cooking, cleaning dishes, and more than a two-minute shower, and that made engineering feel very direct.</p>
-      </div>
-    </li>
-    <li>
-      <p class="ch-when">2024 to now</p>
-      <div>
-        <h3>Rescue robots at ARCLab</h3>
-        <p>I joined Prof. Michael Yip's lab to build hardware for emergency response. That became a mobile manipulator, a leg that changes shape, and a paper at ICRA 2026.</p>
-      </div>
-    </li>
-  </ol>
-  <p class="chapters-next"><strong>Where I'm headed.</strong> I came into grad school drawn to bio-inspired robots for search and rescue, and that's still my daily work. Increasingly I'm interested in medical and assistive robotics: haptics, soft robotics, and devices that touch a person, where mechanical design and careful testing decide whether it's safe.</p>
-</section>
-
-<section class="section wrap">
-  <h2 class="section-title">Experience</h2>
-  <ol class="timeline">
-    {% for e in site.data.experience %}
-    <li>
-      <p class="tl-dates">{{ e.dates }}</p>
-      <div>
-        <p class="tl-role">{{ e.role }}</p>
-        <p class="tl-org">{{ e.org }}</p>
-        {% if e.note != "" %}<p class="tl-note">{{ e.note }}</p>{% endif %}
-      </div>
-    </li>
-    {% endfor %}
-  </ol>
 </section>
 
 <section class="section wrap">
@@ -106,6 +48,100 @@ layout: default
       {% include project-card.html p=p %}
     {% endfor %}
   </div>
+</section>
+
+<section class="section wrap beyond">
+  <div class="beyond-card">
+    <h2 class="section-title">What I work with</h2>
+    <dl class="toolbox">
+      <div>
+        <dt>Design and fabrication</dt>
+        <dd class="tool-use">Frames, capstan drives, TPU grippers, laser-cut and machined parts</dd>
+        <dd><ul class="chips"><li>SolidWorks</li><li>Creo</li><li>Ansys FEA</li><li>Fusion 360 CAM</li><li>DFMA</li><li>CNC and manual machining</li><li>Laser and waterjet</li><li>3D printing</li><li>MIG welding</li></ul></dd>
+      </div>
+      <div>
+        <dt>Electronics and controls</dt>
+        <dd class="tool-use">BLDC motors over CAN, ODrive, sensor circuits</dd>
+        <dd><ul class="chips"><li>BLDC motor control</li><li>CAN</li><li>PCB design (EasyEDA)</li><li>Circuit design</li></ul></dd>
+      </div>
+      <div>
+        <dt>Software</dt>
+        <dd class="tool-use">Python control and optimization, MATLAB analysis, ROS 2 on a Jetson</dd>
+        <dd><ul class="chips"><li>Python</li><li>MATLAB</li><li>C (Arduino)</li><li>ROS 2</li><li>Embedded Linux</li><li>MuJoCo</li></ul></dd>
+      </div>
+    </dl>
+  </div>
+  <div class="beyond-card">
+    <h2 class="section-title">Outside the lab</h2>
+    <p>When I'm not in the lab, you'll usually find me on a bike trail, on a badminton court, or testing a new recipe.</p>
+    <ul class="tiles">
+      <li><span aria-hidden="true">🚴</span> Biking trails</li>
+      <li><span aria-hidden="true">🏸</span> Badminton</li>
+      <li><span aria-hidden="true">🍳</span> Recipe experiments</li>
+      <li><span aria-hidden="true">🎬</span> Movie reviews with friends</li>
+      <li><span aria-hidden="true">🏎️</span> Formula 1</li>
+      <li><span aria-hidden="true">🏋️</span> Lifting</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section wrap">
+  <h2 class="section-title">Experience</h2>
+  <ol class="chapters">
+    <li>
+      <p class="ch-when">Jun 2024 – now</p>
+      <div>
+        <h3>Graduate Researcher</h3>
+        <p><a href="https://ucsdarclab.com/">ARCLab</a>, UC San Diego. Thesis work on an adaptive morphing leg for search and rescue, plus a mobile manipulator for rescue research. Advisor: <a href="https://yip.eng.ucsd.edu/">Prof. Michael Yip</a>.</p>
+      </div>
+    </li>
+    <li>
+      <p class="ch-when">Jul 2023 – Jun 2024</p>
+      <div>
+        <h3>President</h3>
+        <p><a href="https://studentorg.ucsd.edu/Home/Details/19098">Triton Robotics</a>. Led an 80-member competition robotics team and rebuilt its training program for newcomers.</p>
+      </div>
+    </li>
+    <li>
+      <p class="ch-when">Dec 2022 – Jun 2023</p>
+      <div>
+        <h3>Team Lead, Baja Del Sol</h3>
+        <p><a href="https://globalties.ucsd.edu/what/projects/baja-solar-water-heater.html">UCSD Global TIES</a>. Revived a solar water heater project for an orphanage in Tijuana, and translated between the students and the house parents.</p>
+      </div>
+    </li>
+    <li>
+      <p class="ch-when">May 2022 – Jul 2023</p>
+      <div>
+        <h3>Hero Robot Lead</h3>
+        <p>Triton Robotics. Led the Hero subteam and its chassis redesign, with an X-drive and a slip-ring turret.</p>
+      </div>
+    </li>
+    <li>
+      <p class="ch-when">Sep 2021 – May 2022</p>
+      <div>
+        <h3>Mechanical Team Member</h3>
+        <p>Triton Robotics. Designed and built a lighter Hero chassis with 30% less aluminum tubing.</p>
+      </div>
+    </li>
+  </ol>
+
+  <h2 class="section-title sub">Education</h2>
+  <ol class="chapters">
+    <li>
+      <p class="ch-when">Expected Jun 2027</p>
+      <div>
+        <h3>MS Mechanical Engineering</h3>
+        <p><a href="https://mae.ucsd.edu/">UC San Diego</a>. GPA 3.68. Robotics, linear control, haptics, soft robotics, and parametric identification.</p>
+      </div>
+    </li>
+    <li>
+      <p class="ch-when">Jun 2025</p>
+      <div>
+        <h3>BS Mechanical Engineering, minor in Design</h3>
+        <p>UC San Diego.</p>
+      </div>
+    </li>
+  </ol>
 </section>
 
 <section class="section wrap">
@@ -122,27 +158,4 @@ layout: default
     </li>
     {% endfor %}
   </ul>
-</section>
-
-<section class="section wrap">
-  <h2 class="section-title">Skills</h2>
-  <div class="skill-groups">
-    <div>
-      <h3>Design and fabrication</h3>
-      <ul class="chips"><li>SolidWorks</li><li>Creo</li><li>Ansys FEA</li><li>Fusion 360 CAM</li><li>DFMA</li><li>CNC and manual machining</li><li>Laser and waterjet</li><li>3D printing</li><li>MIG welding</li></ul>
-    </div>
-    <div>
-      <h3>Electronics and controls</h3>
-      <ul class="chips"><li>BLDC motor control</li><li>CAN</li><li>PCB design (EasyEDA)</li><li>Circuit design</li></ul>
-    </div>
-    <div>
-      <h3>Software</h3>
-      <ul class="chips"><li>Python</li><li>MATLAB</li><li>C (Arduino)</li><li>ROS 2</li><li>Embedded Linux</li><li>MuJoCo</li></ul>
-    </div>
-  </div>
-</section>
-
-<section class="section wrap off-clock">
-  <h2 class="section-title">Off the clock</h2>
-  <p class="lede">I lift, play badminton, and ride my bike. In the kitchen I treat recipes like experiments. I watch and review movies with friends, and I follow Formula 1.</p>
 </section>

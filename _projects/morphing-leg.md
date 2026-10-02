@@ -5,6 +5,7 @@ kind: Research
 order: 1
 role: Mechanical design, prototyping, and experimental validation. Co-first author.
 context: ARCLab, UC San Diego
+context_url: https://ucsdarclab.com/
 dates: Jun 2024 – Present
 tools: [SolidWorks, Ansys FEA, Python, CAN, CubeMars AK60-6]
 stats:
@@ -45,6 +46,8 @@ A gear change alters the torque-speed ratio but not where the foot can reach. Ch
 
 ## Results
 
+<div class="split wide" markdown="1">
+<div markdown="1">
 I measured peak static pushing force at the foot with a crane scale, with motor bus current limited to 1 A and five trials per configuration.
 
 | Configuration | Foot force | Change |
@@ -53,15 +56,15 @@ I measured peak static pushing force at the foot with a crane scale, with motor 
 | Retracted passive links | 91 ± 1 N | +57% |
 | Elongated ground link | 106 ± 2 N | +83% |
 
-{: .callout}
-**On the biped,** the robot follows a foot path, walks, then reconfigures and drags a load of at least 5 lb (2.3 kg) with the passive links retracted to 18 cm and the ground link extended to 13 cm.
-
+On the biped, the robot follows a foot path, walks, then reconfigures and drags a load of at least 5 lb (2.3 kg) with the passive links retracted to 18 cm and the ground link extended to 13 cm.
+</div>
 <figure>
   <video controls muted loop playsinline preload="none" poster="{{ '/assets/img/morphing-leg/drag.jpg' | relative_url }}">
     <source src="{{ '/assets/video/leg-drag.mp4' | relative_url }}" type="video/mp4">
   </video>
   <figcaption>Rescue mode: the legs retract and the robot drags a load.</figcaption>
 </figure>
+</div>
 
 <figure>
   <img src="{{ '/assets/img/morphing-leg/workspace-forces.jpg' | relative_url }}" alt="Simulated workspace force maps and measured foot forces for three configurations" loading="lazy">
@@ -70,35 +73,52 @@ I measured peak static pushing force at the foot with a crane scale, with motor 
 
 ## How it's built
 
+<div class="split" markdown="1">
+<div markdown="1">
 ### The testbed
 
 A planar testbed with interchangeable link mounts lets me swap in different 5-bar geometries and measure each one. Two CubeMars AK60-6 BLDC motors drive the joints, and I compared measured force against the model's prediction (τ = Jᵀ·F).
-
+</div>
 <figure>
   <img src="{{ '/assets/img/morphing-leg/testbed.jpg' | relative_url }}" alt="Labeled photo of the planar 5-bar testbed" loading="lazy">
-  <figcaption>The testbed: AK60-6 motors on an adjustable frame, a manually adjustable 5-bar linkage, and a crane scale on a rail-mounted platform.</figcaption>
+  <figcaption>The testbed, with a crane scale on a rail-mounted platform to read foot force.</figcaption>
 </figure>
+</div>
 
+<div class="split flip" markdown="1">
+<div markdown="1">
 ### Capstan-driven reconfiguration
 
 A worm-gear motor winds a tensioned steel cable around a spool to change a link's length from 64 to 273 mm.
 
 - **It can't be backdriven,** so the leg holds its shape under load without drawing power.
 - **The cable drive is smooth** and has no backlash.
-
+</div>
 <figure>
   <img src="{{ '/assets/img/morphing-leg/capstan.jpg' | relative_url }}" alt="Capstan reconfiguration module with steel cable and worm-gear motor" loading="lazy">
-  <figcaption>The capstan module: a 1:302 worm-gear motor winds steel cable along the link, with guide bearings and a cable tensioner.</figcaption>
+  <figcaption>The 1:302 capstan module, with guide bearings and a cable tensioner.</figcaption>
 </figure>
+</div>
 
+<div class="split" markdown="1">
+<div markdown="1">
 ### Control and the biped
 
-I wrote the Python position control that runs over CAN and coordinates the joint motors with the gait cycle and the reconfiguration actuators. The biped has four AK60-6 joint motors, capstan drives for the passive links, and a stepper-driven linear stage for the ground link.
+I wrote the Python position control that runs over CAN and coordinates the joint motors with the gait cycle and the reconfiguration actuators.
 
+The biped has four AK60-6 joint motors, capstan drives for the passive links, and a stepper-driven linear stage for the ground link. It hangs from a boom arm during testing.
+</div>
+<div class="stack">
 <figure>
-  <img src="{{ '/assets/img/morphing-leg/biped.jpg' | relative_url }}" alt="Bipedal prototype on its boom arm" loading="lazy">
-  <figcaption>The bipedal prototype, hung from a boom arm for stability during testing.</figcaption>
+  <img src="{{ '/assets/img/morphing-leg/prototype.jpg' | relative_url }}" alt="Front view of the bipedal prototype on its boom arm" loading="lazy">
+  <figcaption>Front view of the biped.</figcaption>
 </figure>
+<figure>
+  <img src="{{ '/assets/img/morphing-leg/biped.jpg' | relative_url }}" alt="Bipedal prototype dragging a weight" loading="lazy">
+  <figcaption>The biped in rescue mode.</figcaption>
+</figure>
+</div>
+</div>
 
 ## What didn't work yet
 
@@ -117,13 +137,16 @@ Our team set out to compare three scaled leg designs: a 5-bar pantograph, a swin
 
 ## ICRA 2026
 
+<div class="split wide" markdown="1">
+<div markdown="1">
 The paper was accepted to ICRA 2026, and I presented the poster there.
 
+### What's next
+
+The single-leg result doesn't say how the legs should work together with the body. I've since built a formal optimization of the leg's geometry and footpath, and I'm planning a reinforcement learning approach across all legs. It's covered in [Hexapod Rescue Robot and Leg Optimization]({{ '/projects/hexapod-optimization/' | relative_url }}).
+</div>
 <figure>
   <img src="{{ '/assets/img/morphing-leg/icra-poster.jpg' | relative_url }}" alt="Presenting the morphing-leg poster at ICRA 2026" loading="lazy">
   <figcaption>At the ICRA 2026 poster session.</figcaption>
 </figure>
-
-## What's next
-
-The single-leg result doesn't say how the legs should work together with the body. I've since built a formal optimization of the leg's geometry and footpath, and I'm planning a reinforcement learning approach across all legs. It's covered in [Hexapod Rescue Robot and Leg Optimization]({{ '/projects/hexapod-optimization/' | relative_url }}).
+</div>
