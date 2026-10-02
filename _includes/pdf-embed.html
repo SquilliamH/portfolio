@@ -1,0 +1,8 @@
+{% comment %}
+  Shows a PDF on the page. Usage:
+  {% include pdf-embed.html src="/assets/docs/file.pdf" title="Project report" %}
+{% endcomment %}
+<figure class="pdf-embed">
+  <iframe src="{{ include.src | relative_url }}#view=FitH" title="{{ include.title }}" loading="lazy"></iframe>
+  <figcaption>{{ include.title }}. <a href="{{ include.src | relative_url }}" target="_blank" rel="noopener">Open full size</a></figcaption>
+</figure>

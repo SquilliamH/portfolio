@@ -2,40 +2,55 @@
 title: Triton Robotics Competition Robot
 summary: Two generations of chassis for a projectile-launching competition robot, then a year leading the 80-member team.
 kind: Team leadership
-order: 8
-role: Lead mechanical engineer (2021–23), president (2023–24)
+order: 6
+role: Lead mechanical engineer (2021–23), then president (2023–24)
 context: Triton Robotics, UC San Diego
 dates: Sep 2021 – Jun 2024
-tools: [SolidWorks, CNC machining, manual machining]
-specs:
-  - label: Team size
-    value: 80 members
-  - label: Engineers mentored
-    value: "6"
-  - label: Robot size (2022–23)
-    value: 684 × 541 × 472 mm
-  - label: Launcher
-    value: 42 mm projectile, 16 m/s
-  - label: Rotation speed
-    value: "+40%"
-  - label: Targeting accuracy
-    value: "+50%"
-thumbnail:
+tools: [SolidWorks, CNC machining, manual machining, waterjet, laser cutting]
+stats:
+  - n: "80"
+    label: team members led as president
+  - n: "+40%"
+    label: chassis rotation speed
+  - n: "+50%"
+    label: targeting accuracy
+  - n: "−30%"
+    label: aluminum tubing in the 2021–22 redesign
 ---
 
-Triton Robotics builds robots for the RoboMaster competition. The Hero robot is remote-controlled, fires 42 mm projectiles at 16 m/s, and is the team's main offensive unit. I worked on two generations of its chassis.
+Triton Robotics builds robots for the RoboMaster competition. The Hero is remote-controlled, fires 42 mm projectiles at 16 m/s, and is the team's main offensive unit. I led its mechanical design through two chassis generations, then became president of the team.
 
-## 2021–22 chassis
+## 2021–22: smaller, lighter, easier to fix
 
-The goals were a smaller, lighter, cheaper, more accessible chassis. The old design was hard to maintain and transport because it had no access ports and used too much material. The redesign used 30% less aluminum square tubing, with polycarbonate plates carrying the electronics and a hinged top plate for access to the internals. The finished robot could climb a 15° ramp, rotated its turret independently of the chassis, and had a modular suspension, with a 45° elevation and 30° depression range for aiming.
+The old chassis was hard to maintain and transport. It had no access ports and used too much material.
 
-Two problems from the first version shaped the final design. The suspension lunged under acceleration, so we moved to a standardized, proven layout with shock absorbers parallel to the mecanum wheels. And the sprocket-and-chain yaw drive on the turret deformed, which restricted rotation, so I replaced it with a belt system that spreads the stress more evenly.
+- **30% less aluminum tubing,** with polycarbonate plates carrying the electronics.
+- **A hinged top plate** for access to the internals.
+- **A modular suspension,** and a turret that rotates independently of the chassis.
+- **Performance:** climbs a 15° ramp, with 45° elevation and 30° depression for aiming.
 
-## 2022–23 chassis
+Two failures from the first version drove the fixes:
 
-The second redesign aimed to optimize rotation, keep the turret free to rotate independently, and be modular to build. It used omni-wheels in an X-drive to make better use of motor power, a circular chassis, and a slip ring so the turret could rotate without limit. It still climbed a 15° ramp, with no suspension. The omni-wheel X-drive allows planar translation and efficient rotation about the center, a shielded bumper ring on bearings lets the robot deflect off obstacles without stopping its spin, and the drivetrain, bumper, and frame are modular so the robot is quick to assemble and repair. A revolver-inspired serializer indexes the 42 mm projectiles and feeds them up through a 50 mm-bore slip ring to the turret, which is back-fed with a simplified ball path to reduce jamming. The robot measured about 684 × 541 × 472 mm. I mentored six mechanical engineers through CAD, drawings, and machine shop work.
+1. **The suspension lunged under acceleration.** We moved to a standard layout with shock absorbers parallel to the mecanum wheels.
+2. **The chain-driven turret yaw deformed and restricted rotation.** I replaced it with a belt drive that spreads the stress.
+
+## 2022–23: built to spin
+
+The second redesign optimized rotation and modularity.
+
+- **Omni-wheel X-drive** for planar movement and efficient rotation about the center.
+- **A circular chassis** with a bumper ring on bearings, so the robot can deflect off obstacles without interrupting its spin.
+- **A 50 mm-bore slip ring** so the turret rotates without limit and the wires don't tangle.
+- **A revolver-inspired serializer** that indexes the projectiles and feeds them up through the slip ring to a back-fed turret, with a simple ball path to reduce jams.
+- **Modular drivetrain, bumper, and frame,** so it is quick to assemble and repair.
+
+It climbed the same 15° ramp with no suspension, and measured about 684 × 541 × 472 mm. I mentored six mechanical engineers through CAD, drawings, and machine shop work.
 
 ## President, 2023–24
 
-As president I led the 80-member team across mechanical, electrical, and software sub-teams and overhauled the training program and documentation so new members could get up to speed faster. The training program brought in about 40 new members over the year, which addressed a succession problem that had left my term short of team leads. The team competed at the RoboMaster North American regionals in Seattle (2023) and Boulder (2024). At the competition during my term the robots took damage in shipping, but we still won two 1v1 matches and held our own in the 3v3 matches.
-<!-- TODO: add photos or CAD renders, and reliability numbers -->
+I led the 80-member team across mechanical, electrical, and software sub-teams and rebuilt the training program and documentation so new members could get up to speed faster.
+
+{: .callout}
+**About 40 new members** came through training that year, which fixed a succession problem that had left my term short of team leads.
+
+The team competed at the RoboMaster North American regionals in Seattle (2023) and Boulder (2024). During my term the robots were damaged in shipping, but we still won two 1v1 matches and put up a fight in the 3v3 matches.

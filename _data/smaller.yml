@@ -1,19 +1,31 @@
 # Shown under "Smaller projects" on the Projects page.
+# page: a project page to link to. pdf: a PDF to show inline in an expandable section.
+- title: Fastener-Free Chipboard Desk
+  context: MAE 191 Sustainable Engineering Design, UC San Diego · 2024
+  image: /assets/img/sustainable-desk/desk.jpg
+  alt: Chipboard desk structure under load
+  text: A desk made only of interlocking chipboard that carried 11.8 kg on a 0.12 kg structure, 98 times its own weight, and landed within 6% of its FEA prediction.
+  page: /projects/sustainable-desk/
+- title: Line-Following Car That Plays Music
+  context: MAE 148 Introduction to Autonomous Vehicles, UC San Diego · Summer 2024
+  image: /assets/img/autonomous-car/car-bench.jpg
+  alt: The small autonomous car on a bench
+  text: A ROS 2 car on a Jetson Nano that follows a track and plays a note when it sees a colored marker. I handled hardware setup and system integration on a team of four.
+  page: /projects/autonomous-car/
 - title: Mobile Manipulation Capstone
-  context: MAE 204 Robotics, UC San Diego
+  context: MAE 204 Robotics, UC San Diego · 2026
   image: /assets/img/smaller/mae204-error.jpg
   alt: Plot of end-effector twist error converging to zero over 20 seconds
-  text: Planned and controlled a simulated mobile manipulator in MATLAB, following the Modern Robotics capstone. I wrote an eight-segment screw-motion trajectory generator, a kinematic simulator for the wheeled base, and a feedforward plus PI task-space controller, then ran it in CoppeliaSim to pick up a cube and place it at a new pose. I compared a well-tuned gain set against an integral-gain overshoot case and a new pick-and-place task; the plot shows end-effector error settling in about 4 s.
+  text: Planned and controlled a simulated mobile manipulator in MATLAB, following the Modern Robotics capstone. I wrote an eight-segment screw-motion trajectory generator, a kinematic simulator for the wheeled base, and a feedforward plus PI task-space controller, then ran pick-and-place tasks in CoppeliaSim. Error settles in about 4 s, and a too-high integral gain shows the overshoot.
 - title: Rectilinear System Identification
-  context: MAE 283A Parametric Identification, UC San Diego
+  context: MAE 283A Parametric Identification, UC San Diego · 2026
   image: /assets/img/smaller/sysid-spa.jpg
   alt: Spectral analysis frequency response estimate with magnitude and phase
-  text: Identified a lightly damped three-cart spring-mass system from experimental input-output data. I started with non-parametric analysis (correlation, spectra, a spectral frequency response estimate over the 1–6 Hz excitation band, and an FIR impulse response), then fit an FIR model and low-order state-space models, checking them with residual correlation tests.
+  text: Identified a lightly damped three-cart spring-mass system from experimental data. Non-parametric analysis (correlation, spectra, a frequency response estimate over the 1 to 6 Hz excitation band, and an FIR impulse response) came first, followed by low-order state-space models checked with residual correlation tests.
 - title: Automated Shaft Design
-  context: MAE 190 Design of Machine Elements, UC San Diego
-  text: A 500-line MATLAB script that sizes a shaft under combined bending and torsion. Sizing a shaft by hand is circular, because the diameter sets the stress concentration and size factors that set the diameter, so the script iterates for you. It interpolates stress concentration factors, applies the Marin factors, and uses the DE-Gerber criterion. On a textbook-style test shaft (3750 lb-in mean and 2250 lb-in alternating bending, 99.9% reliability, target safety factor 1.5) it converged in 5 iterations to a 1.539 in diameter with a fatigue safety factor of 1.505. I also compared it with an AI-generated version of the same tool, which converged in 4 iterations but gave a much higher yield safety factor (3.01 against my 2.36), and wrote up what that showed about validating generated engineering code.
-  links:
-    - label: Code documentation (PDF)
-      url: /assets/docs/shaft-design-documentation.pdf
-    - label: AI comparison (PDF)
-      url: /assets/docs/shaft-design-ai-comparison.pdf
+  context: MAE 190 Design of Machine Elements, UC San Diego · Fall 2024
+  text: A 500-line MATLAB script that sizes a shaft under combined bending and torsion. On a test shaft it converged in 5 iterations to 1.539 in with a fatigue safety factor of 1.505. An AI-generated version converged in 4 but gave a much higher yield safety factor (3.01 against 2.36), which became a write-up on validating generated engineering code.
+  pdf: /assets/docs/shaft-design-documentation.pdf
+  pdf_title: Shaft design code documentation
+  pdf2: /assets/docs/shaft-design-ai-comparison.pdf
+  pdf2_title: Comparison with AI-generated code

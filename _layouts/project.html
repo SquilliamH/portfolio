@@ -9,25 +9,10 @@ layout: default
 <article class="project wrap">
   <a class="back" href="{{ '/projects/' | relative_url }}">All projects</a>
 
+  {% if page.kind %}<p class="eyebrow">{{ page.kind }}</p>{% endif %}
   <h1 class="project-title">{{ page.title }}</h1>
   <p class="project-summary">{{ page.summary }}</p>
-
-  <!-- Modeled on a drawing title block: the facts a reviewer wants first. -->
-  <dl class="title-block">
-    {% if page.role %}<div class="tb-cell tb-wide"><dt>Role</dt><dd>{{ page.role }}</dd></div>{% endif %}
-    {% if page.context %}<div class="tb-cell"><dt>Where</dt><dd>{{ page.context }}</dd></div>{% endif %}
-    {% if page.dates %}<div class="tb-cell"><dt>When</dt><dd>{{ page.dates }}</dd></div>{% endif %}
-    {% if page.tools %}<div class="tb-cell tb-wide"><dt>Tools</dt><dd>{{ page.tools | join: ", " }}</dd></div>{% endif %}
-    {% for s in page.specs %}
-      <div class="tb-cell tb-spec"><dt>{{ s.label }}</dt><dd>{{ s.value }}</dd></div>
-    {% endfor %}
-  </dl>
-
-  {% if page.links %}
-  <p class="project-links">
-    {% for l in page.links %}<a class="btn" href="{{ l.url | relative_url }}">{{ l.label }}</a>{% endfor %}
-  </p>
-  {% endif %}
+  <p class="project-meta">{{ page.context }}{% if page.dates %} &middot; {{ page.dates }}{% endif %}</p>
 
   {% if page.hero_video or page.thumbnail %}
   <figure class="project-hero">
@@ -41,6 +26,28 @@ layout: default
     {% if page.hero_caption %}<figcaption>{{ page.hero_caption }}</figcaption>{% endif %}
   </figure>
   {% endif %}
+
+  {% if page.stats %}
+  <ul class="stats">
+    {% for s in page.stats %}
+    <li><span class="stat-n">{{ s.n }}</span><span class="stat-l">{{ s.label }}</span></li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+
+  <div class="project-facts">
+    {% if page.role %}<p class="project-role"><strong>My role</strong> {{ page.role }}</p>{% endif %}
+    {% if page.tools %}
+    <ul class="chips" aria-label="Tools">
+      {% for t in page.tools %}<li>{{ t }}</li>{% endfor %}
+    </ul>
+    {% endif %}
+    {% if page.links %}
+    <p class="project-links">
+      {% for l in page.links %}<a class="btn btn-small" href="{{ l.url | relative_url }}">{{ l.label }}</a>{% endfor %}
+    </p>
+    {% endif %}
+  </div>
 
   <div class="prose">
     {{ content }}

@@ -5,7 +5,8 @@ layout: default
   <div class="hero-text">
     <p class="eyebrow">Mechanical engineer · robotics and medical devices</p>
     <h1>I build robots that work safely around people.</h1>
-    <p class="hero-lede">I'm a mechanical engineering MS student at UC San Diego, working in the Advanced Robotics and Controls Lab on legged robots and mobile manipulators for search and rescue. I'm looking for full-time roles and internships in medical robotics and medical devices, where mechanical design, prototyping, and careful testing decide whether a device works.</p>
+    <p class="hero-lede">I've been hooked on robots since a fourth-grade LEGO class. Now I'm a mechanical engineering MS student at UC San Diego, working in the Advanced Robotics and Controls Lab on legged robots and mobile manipulators for search and rescue.</p>
+    <p class="hero-lede">I'm looking for full-time roles and internships in medical robotics and medical devices, where mechanical design, prototyping, and careful testing decide whether something is safe to use around people.</p>
     <p class="hero-actions">
       <a class="btn btn-solid" href="{{ '/projects/' | relative_url }}">See my projects</a>
       <a class="btn" href="{{ site.resume | relative_url }}">Resume</a>
@@ -37,21 +38,45 @@ layout: default
 </section>
 
 <section class="section wrap">
-  <h2 class="section-title">How I work</h2>
-  <div class="triptych">
-    <div>
-      <h3>Build it to find out</h3>
-      <p>I take ideas from CAD to working hardware: aluminum frames, capstan drives, TPU-printed grippers, and the motor control that runs them over CAN.</p>
-    </div>
-    <div>
-      <h3>Check the model against reality</h3>
-      <p>A lift mechanism's predicted stall load landed within about 1% of the measured one, and a chipboard desk failed within 6% of its FEA prediction. I compare, then explain the gap.</p>
-    </div>
-    <div>
-      <h3>Design for contact with people</h3>
-      <p>A lot of my work touches a person: a soft gripper for human limbs, a vacuum-stiffening limb splint, and a haptic teleoperation device.</p>
-    </div>
-  </div>
+  <h2 class="section-title">How I got here</h2>
+  <ol class="chapters">
+    <li>
+      <p class="ch-when">4th grade</p>
+      <div>
+        <h3>LEGO and wheel rotations</h3>
+        <p>A few of us huddled around a LEGO Mindstorms robot after school, working out how many wheel rotations it would take to reach a marker across the room. Watching the math turn into a robot rolling across the floor is what got me hooked.</p>
+      </div>
+    </li>
+    <li>
+      <p class="ch-when">Middle school</p>
+      <div>
+        <h3>Friday engineering class</h3>
+        <p>My public school district had almost no STEM programs, but there was one class called Engineering Design and Robotics. We flew balsa wood gliders across the gym, built towers out of spaghetti and marshmallows, and ran solar-powered robots on the basketball court.</p>
+      </div>
+    </li>
+    <li>
+      <p class="ch-when">2021</p>
+      <div>
+        <h3>Joining Triton Robotics</h3>
+        <p>Most of my teammates had run FRC, FTC, or VEX teams in high school. I didn't even know those existed. I started with less experience than anyone, worked up to leading the Hero robot's mechanical design, and ended up president of the 80-person team. What I loved most was helping newcomers go from intimidated to confident, because I'd been one.</p>
+      </div>
+    </li>
+    <li>
+      <p class="ch-when">2023</p>
+      <div>
+        <h3>Hot water in Tijuana</h3>
+        <p>With UCSD's Baja Solar group I worked on a solar water heater for an orphanage. Hot water there meant cooking, cleaning dishes, and more than a two-minute shower, and that made engineering feel very direct.</p>
+      </div>
+    </li>
+    <li>
+      <p class="ch-when">2024 to now</p>
+      <div>
+        <h3>Rescue robots at ARCLab</h3>
+        <p>I joined Prof. Michael Yip's lab to build hardware for emergency response. That became a mobile manipulator, a leg that changes shape, and a paper at ICRA 2026.</p>
+      </div>
+    </li>
+  </ol>
+  <p class="chapters-next"><strong>Where I'm headed.</strong> I came into grad school drawn to bio-inspired robots for search and rescue, and that's still my daily work. Increasingly I'm interested in medical and assistive robotics: haptics, soft robotics, and devices that touch a person, where mechanical design and careful testing decide whether it's safe.</p>
 </section>
 
 <section class="section wrap">
@@ -99,18 +124,25 @@ layout: default
   </ul>
 </section>
 
-<section class="section wrap about-lower">
-  <div>
-    <h2 class="section-title">Tools</h2>
-    <dl class="skills">
-      <div><dt>Design and fabrication</dt><dd>SolidWorks, Creo, Ansys FEA, Fusion 360 CAM, DFMA, CNC and manual machining, laser and waterjet cutting, 3D printing, MIG welding</dd></div>
-      <div><dt>Electronics and controls</dt><dd>BLDC motor control, CAN, PCB design (EasyEDA), circuit design</dd></div>
-      <div><dt>Software</dt><dd>Python, MATLAB, C (Arduino), ROS 2, embedded Linux</dd></div>
-    </dl>
+<section class="section wrap">
+  <h2 class="section-title">Skills</h2>
+  <div class="skill-groups">
+    <div>
+      <h3>Design and fabrication</h3>
+      <ul class="chips"><li>SolidWorks</li><li>Creo</li><li>Ansys FEA</li><li>Fusion 360 CAM</li><li>DFMA</li><li>CNC and manual machining</li><li>Laser and waterjet</li><li>3D printing</li><li>MIG welding</li></ul>
+    </div>
+    <div>
+      <h3>Electronics and controls</h3>
+      <ul class="chips"><li>BLDC motor control</li><li>CAN</li><li>PCB design (EasyEDA)</li><li>Circuit design</li></ul>
+    </div>
+    <div>
+      <h3>Software</h3>
+      <ul class="chips"><li>Python</li><li>MATLAB</li><li>C (Arduino)</li><li>ROS 2</li><li>Embedded Linux</li><li>MuJoCo</li></ul>
+    </div>
   </div>
-  <div>
-    <h2 class="section-title">Outside the lab</h2>
-    <p>I lift, play badminton, and ride my bike. I like cooking experiments, watching and reviewing films with friends, and following Formula 1.</p>
-    <p>Before grad school I led mechanical design for Triton Robotics, a competition robotics team, and later served as its president.</p>
-  </div>
+</section>
+
+<section class="section wrap off-clock">
+  <h2 class="section-title">Off the clock</h2>
+  <p class="lede">I lift, play badminton, and ride my bike. In the kitchen I treat recipes like experiments. I watch and review movies with friends, and I follow Formula 1.</p>
 </section>

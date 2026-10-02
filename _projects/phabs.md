@@ -1,52 +1,83 @@
 ---
 title: PHABS Haptic Teleoperation Device
-summary: A handheld bimanual teleoperation device with pinch and lateral force feedback, built to improve the quality of demonstrations for robot learning.
-kind: Research / course project
-order: 5
-role: Team of four with Emma Fickett, Calvin Joyce, and Lucas Yager; first prototype of the lateral force feedback mechanism
+summary: A handheld bimanual teleoperation device with pinch and lateral force feedback, built to improve demonstrations for robot learning.
+kind: Research and course project
+order: 4
+role: Team of four with Emma Fickett, Calvin Joyce, and Lucas Yager. I built the first prototype of the lateral force-feedback mechanism.
 context: Haptic Systems course project and ARCLab, UC San Diego
 dates: 2-week course project, with later lab work
 tools: [Arduino Mega, PyBullet, Vive trackers, capstan drives]
-specs:
-  - label: Pinch force
-    value: ~0.65 N max
-  - label: Jaw opening
-    value: 20 mm
-  - label: Pilot task success
-    value: 3/3 with haptics, 1/3 without
+stats:
+  - n: "3 of 3"
+    label: pilot participants completed the task with haptics (1 of 3 without)
+  - n: "0.65 N"
+    label: maximum pinch force
+  - n: "20 mm"
+    label: jaw opening
+  - n: "2"
+    label: force-feedback axes, pinch and lateral
 thumbnail: /assets/img/phabs/thumb.jpg
 hero_video: /assets/video/phabs-demo.mp4
 hero_caption: Using PHABS to manipulate objects in the PyBullet environment.
-links:
-  - label: Project paper (PDF)
-    url: /assets/docs/phabs-paper.pdf
 ---
 
-I came to PHABS from MAE 219, a haptics course where we built and programmed instructor-provided Hapkit devices and rendered virtual environments on them. PHABS was the group project that followed.
+Most portable teleoperation systems track only position. The operator can't feel contact, which makes teleoperation clumsy and the demonstration data poor. PHABS (Portable Haptic Assisted Bimanual System) adds force feedback to close that loop.
 
-PHABS (Portable Haptic Assisted Bimanual System) is a handheld device for teleoperating two robot arms. Most portable teleoperation systems track position only, so operators can't feel contact forces, which makes for poor teleoperation and low-quality demonstration data. PHABS adds pinching and lateral force feedback to close that loop.
+It came out of MAE 219, a haptics course where we built and programmed Hapkit devices. PHABS was the group project that followed.
 
-## Mechanical design
+## How it works
 
-The pinch axis uses a motor with a direct-drive capstan. A 2-axis gimbal lets the wrist align passively with the target. The lateral axis uses a motor, a 1:5.625 timing pulley, and a linear capstan on rails. I developed the first prototype of the lateral mechanism, using a linear capstan design drawn from a dynamically extensible leg mechanism.
+<div class="figure-row">
+<div class="mode-card">
+  <h3>Pinch</h3>
+  <p>A motor drives a capstan that opposes the thumb and index finger. A 2-axis gimbal lets the wrist align on its own.</p>
+</div>
+<div class="mode-card">
+  <h3>Lateral</h3>
+  <p>A motor, a 1:5.625 timing pulley, and a linear capstan on rails resist squeezing the hands together. I built the first prototype of this axis.</p>
+</div>
+</div>
 
-The pinch force is F = (r_s / r_d)(τ/r_h): with a Mabuchi RF-370CA motor, a 75 mm sector, and a 4.75 mm drive wheel, that comes to about 0.65 N at the fingertip.
+Pinch force follows F = (r_s / r_d)(τ / r_h). With a Mabuchi RF-370CA motor, a 75 mm sector, and a 4.75 mm drive wheel, that gives about 0.65 N.
 
-## Hardware and software
+An Arduino Mega reads the sensors and drives the motors. Vive trackers give each hand's 6-DoF pose to a PyBullet scene, where contact force is rendered as a spring-damper, F = kx + bẋ, with a god-object proxy that keeps the virtual fingers from sinking into objects.
 
-An Arduino Mega handles sensing and motor control, with potentiometers for jaw distance and an encoder for lateral position. Serial runs at 38,400 baud, the highest rate that was reliable over the long cable runs. Potentiometer signals go through an IIR low-pass filter. Vive trackers give 6-DoF pose to a PyBullet virtual environment, where contact force is rendered as a spring-damper (F = kx + bẋ) using a god-object proxy to keep the virtual fingers from penetrating objects.
+### Details worth knowing
 
+- Serial runs at 38,400 baud, the fastest rate that was reliable over the long cables.
+- Potentiometer signals pass through an IIR low-pass filter.
+- Motors run on a 22 V rail at reduced duty cycle to stay within thermal limits.
 
 ## Pilot study
 
-We ran a small pilot with three participants, with haptics on and off, and without the lateral axis. Every participant picked the stiffer of two virtual blocks (2000 and 1800 N/m) correctly with haptics. On a fragile-object transfer task, all three succeeded with haptics and one of three without. Two of three rated the feedback useful or very useful. With three participants this is an indication, not a statistical result.
+Three participants tried two tasks with haptics on and off.
 
-## What happened next
+{: .callout}
+**Stiffness:** 3 of 3 picked the stiffer of two virtual blocks (2000 and 1800 N/m) with haptics. **Fragile-object handoff:** 3 of 3 succeeded with haptics and 1 of 3 without. Two of three rated the feedback useful or very useful.
 
-The lateral mechanism was left out of the pilot because it bound. The bearing blocks had adjustable preload screws, but that set up a tradeoff: tightening them removed slop and let the 3D-printed surfaces drag on the wooden rails, while loosening them let the moment from the pincher assemblies bind the carriage. The gimbal added a second problem, since when both roll axes align it reaches a singularity and can no longer hold up its own weight. I handed the fix over to undergraduate researchers in the lab, who have since made design updates.
+With three people, this is an indication rather than a statistical result. Without feedback, participants said it was hard to tell when contact happened, so they grasped hesitantly and repeatedly.
 
-## Lessons
+## What went wrong
 
-The paper's main takeaways for a next version were to move to a lighter motor closer to the capstan, test each subsystem on its own before integrating, and decouple the pinch sensor from the rotation shaft. The housing was sized to our team's hands, so a future version needs an adjustable handle and per-user calibration. Motor current also needs limiting after one pincher motor was weakened during testing, and shielded cables would allow a faster serial link.
+The lateral axis bound, so it was left out of the pilot.
 
-The lab has since connected PHABS to a robot arm, mapping the pinch aperture to the gripper command and sending the robot's measured contact force back as pinch feedback, with motion and force logged together for robot-learning data.
+- **Bearing blocks:** the preload screws traded one problem for another. Tight, and the printed surfaces dragged on the wooden rails. Loose, and the pincher's moment jammed the carriage.
+- **Gimbal:** when both roll axes align, it hits a singularity and can no longer hold its own weight.
+
+I handed the fix to undergraduate researchers in the lab, who have since made design updates.
+
+### What I'd change
+
+- A lighter motor mounted closer to the capstan.
+- Testing each subsystem on its own before integrating.
+- A pinch sensor decoupled from the rotating shaft.
+- An adjustable handle with per-user calibration, since the housing was sized to our hands.
+- Current limiting, after one pincher motor was weakened during testing.
+
+## Since then
+
+The lab has connected PHABS to a robot arm. The pinch aperture sets the gripper command, the robot's measured contact force comes back as pinch feedback, and motion and force are logged together for robot-learning data.
+
+## The paper
+
+{% include pdf-embed.html src="/assets/docs/phabs-paper.pdf" title="PHABS project paper" %}

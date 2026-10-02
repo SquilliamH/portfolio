@@ -2,18 +2,19 @@
 title: Line-Following Car That Plays Music
 summary: A ROS 2 car on a Jetson Nano that follows a track and plays a note when it sees a colored marker.
 kind: Course project
-order: 6
+order: 21
+hidden: true
 role: Team of four; hardware setup, system debugging, and software integration
 context: MAE 148 Introduction to Autonomous Vehicles, UC San Diego
 dates: Summer 2024
 tools: [ROS 2, Ubuntu 20.04, Docker, NVIDIA Jetson Nano, OAK-D camera, OpenCV, DonkeyCar]
-specs:
-  - label: Notes
-    value: "3 colors: C4, D4, E4"
-  - label: Compute
-    value: Jetson Nano
-  - label: Demo song
-    value: Au Clair de la Lune
+stats:
+  - n: "3"
+    label: colors mapped to notes (C4, D4, E4)
+  - n: "4"
+    label: team members
+  - n: "Jetson Nano"
+    label: onboard compute, with an OAK-D camera
 thumbnail: /assets/img/autonomous-car/car-bench.jpg
 hero_caption: The car on the bench during development.
 links:
@@ -27,15 +28,20 @@ The team was Kim Garbez, Kenneth Ho, Daniel Weng, and me. We built on UCSD's Rob
 
 ## My part
 
-I worked on the hardware setup, system debugging, and the integration between the pieces: mounting the camera, electronics, and speaker, and getting the modified ROS 2 and OpenCV packages to run together on the Jetson. We used DonkeyCar for early testing in simulation before moving to the physical car.
+- **Hardware setup:** mounting the camera, electronics, and speaker.
+- **Integration and debugging:** getting the modified ROS 2 and OpenCV packages to run together on the Jetson.
+- **Early testing:** DonkeyCar simulation before moving to the physical car.
 
 ## How it works
 
-The line following uses the Robocar lane detection node, which we modified so it could run alongside a color-detection node. The color node looks for the target marker colors in the camera image and triggers the matching note on the speaker.
+The Robocar lane detection node handles line following, and we modified it to run alongside a color-detection node. The color node looks for the target marker colors in the camera image and triggers the matching note on the speaker.
 
 ## What didn't work
 
-Following the line around curves while also detecting colors was unreliable, and the car sometimes played the same note more than once for a single marker. Our proposed fixes were to run lane detection in its own thread so it doesn't compete with color detection, and to control the car's speed to set the tempo of the song.
+- Following the line around curves while also detecting colors was unreliable.
+- The car sometimes played the same note more than once for one marker.
+
+Our proposed fixes: run lane detection in its own thread so it doesn't compete with color detection, and control the car's speed to set the song's tempo.
 
 <figure>
   <img src="{{ '/assets/img/autonomous-car/car-closeup.jpg' | relative_url }}" alt="Close-up of the car at night" loading="lazy">

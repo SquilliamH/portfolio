@@ -6,7 +6,7 @@ summary: Research, team, and course projects in robotics and mechanical design.
 ---
 <section class="wrap page-head">
   <h1>Projects</h1>
-  <p class="page-lede">Research hardware for rescue robotics first, then the team and course projects behind it.</p>
+  <p class="page-lede">Research hardware for search and rescue, haptics, and soft robotics, plus the team leadership behind it.</p>
 </section>
 
 <section class="wrap">
@@ -18,25 +18,23 @@ summary: Research, team, and course projects in robotics and mechanical design.
   </div>
 </section>
 
-<section class="wrap">
-  <h2>More projects</h2>
-  <div class="cards">
-    {% for p in shown %}
-      {% if p.order > 8 %}{% include project-card.html p=p %}{% endif %}
-    {% endfor %}
-  </div>
-</section>
-
 <section class="wrap smaller">
   <h2>Smaller projects</h2>
   {% for p in site.data.smaller %}
-  <article class="smaller-item">
-    {% if p.image %}<img src="{{ p.image | relative_url }}" alt="{{ p.alt }}" loading="lazy">{% else %}<div></div>{% endif %}
+  <article class="smaller-item{% unless p.image %} no-img{% endunless %}">
+    {% if p.image %}<img src="{{ p.image | relative_url }}" alt="{{ p.alt }}" loading="lazy">{% endif %}
     <div>
       <h3>{{ p.title }}</h3>
       <p class="card-meta">{{ p.context }}</p>
       <p>{{ p.text }}</p>
-      {% if p.links %}<p>{% for l in p.links %}<a href="{{ l.url | relative_url }}">{{ l.label }}</a>{% unless forloop.last %} · {% endunless %}{% endfor %}</p>{% endif %}
+      {% if p.page %}<p class="smaller-links"><a class="btn btn-small" href="{{ p.page | relative_url }}">Read the project</a></p>{% endif %}
+      {% if p.pdf %}
+      <details>
+        <summary>Read the write-up</summary>
+        {% include pdf-embed.html src=p.pdf title=p.pdf_title %}
+        {% if p.pdf2 %}{% include pdf-embed.html src=p.pdf2 title=p.pdf2_title %}{% endif %}
+      </details>
+      {% endif %}
     </div>
   </article>
   {% endfor %}
