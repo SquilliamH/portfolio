@@ -33,6 +33,7 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - archive
+  - Portfolio_Stuff
 
 plugins:
   - jekyll-sitemap

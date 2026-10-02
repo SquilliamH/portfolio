@@ -1,0 +1,19 @@
+# Shown under "Smaller projects" on the Projects page.
+- title: Mobile Manipulation Capstone
+  context: MAE 204 Robotics, UC San Diego
+  image: /assets/img/smaller/mae204-error.jpg
+  alt: Plot of end-effector twist error converging to zero over 20 seconds
+  text: Planned and controlled a simulated mobile manipulator in MATLAB, following the Modern Robotics capstone. I wrote an eight-segment screw-motion trajectory generator, a kinematic simulator for the wheeled base, and a feedforward plus PI task-space controller, then ran it in CoppeliaSim to pick up a cube and place it at a new pose. I compared a well-tuned gain set against an integral-gain overshoot case and a new pick-and-place task; the plot shows end-effector error settling in about 4 s.
+- title: Rectilinear System Identification
+  context: MAE 283A Parametric Identification, UC San Diego
+  image: /assets/img/smaller/sysid-spa.jpg
+  alt: Spectral analysis frequency response estimate with magnitude and phase
+  text: Identified a lightly damped three-cart spring-mass system from experimental input-output data. I started with non-parametric analysis (correlation, spectra, a spectral frequency response estimate over the 1–6 Hz excitation band, and an FIR impulse response), then fit an FIR model and low-order state-space models, checking them with residual correlation tests.
+- title: Automated Shaft Design
+  context: MAE 190 Design of Machine Elements, UC San Diego
+  text: A 500-line MATLAB script that sizes a shaft under combined bending and torsion. Sizing a shaft by hand is circular, because the diameter sets the stress concentration and size factors that set the diameter, so the script iterates for you. It interpolates stress concentration factors, applies the Marin factors, and uses the DE-Gerber criterion. On a textbook-style test shaft (3750 lb-in mean and 2250 lb-in alternating bending, 99.9% reliability, target safety factor 1.5) it converged in 5 iterations to a 1.539 in diameter with a fatigue safety factor of 1.505. I also compared it with an AI-generated version of the same tool, which converged in 4 iterations but gave a much higher yield safety factor (3.01 against my 2.36), and wrote up what that showed about validating generated engineering code.
+  links:
+    - label: Code documentation (PDF)
+      url: /assets/docs/shaft-design-documentation.pdf
+    - label: AI comparison (PDF)
+      url: /assets/docs/shaft-design-ai-comparison.pdf

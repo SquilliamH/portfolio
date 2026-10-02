@@ -7,3 +7,6 @@ Gemfile.lock
 # Archive is kept in git except for bulky raw source material and scratch files
 archive/source-media/
 archive/scratch/
+
+# Raw project source material (large); only web-sized copies go in assets/
+Portfolio_Stuff/

@@ -29,6 +29,7 @@ layout: default
   </p>
   {% endif %}
 
+  {% if page.hero_video or page.thumbnail %}
   <figure class="project-hero">
     {% if page.hero_video %}
       <video autoplay muted loop playsinline {% if page.thumbnail %}poster="{{ page.thumbnail | relative_url }}"{% endif %}>
@@ -36,11 +37,10 @@ layout: default
       </video>
     {% elsif page.thumbnail %}
       <img src="{{ page.thumbnail | relative_url }}" alt="{{ page.hero_alt | default: page.title }}">
-    {% else %}
-      <div class="media-missing">Add a hero image or short loop (set thumbnail or hero_video)</div>
     {% endif %}
     {% if page.hero_caption %}<figcaption>{{ page.hero_caption }}</figcaption>{% endif %}
   </figure>
+  {% endif %}
 
   <div class="prose">
     {{ content }}

@@ -1,8 +1,7 @@
 ---
 title: Affordable Housing Materials Study
 summary: A weighted decision-matrix study of roof, floor, and wall materials for a solar decathlon ADU.
-order: 11
-published: false
+order: 13
 role: Team member
 context: ENG 100D / Triton Solar Decathlon, UC San Diego
 dates: Fall 2023

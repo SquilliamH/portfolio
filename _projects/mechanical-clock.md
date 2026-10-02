@@ -1,7 +1,6 @@
 ---
 title: Pendulum Mechanical Clock
 summary: A personalized pendulum for a mechanical clock, with theoretical timing compared to measurement.
-published: false
 order: 10
 role: Individual project
 context: MAE 3, UC San Diego
