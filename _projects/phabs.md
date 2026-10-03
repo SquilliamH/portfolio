@@ -1,6 +1,8 @@
 ---
 title: PHABS Haptic Teleoperation Device
 summary: A handheld bimanual teleoperation device with pinch and lateral force feedback, built to improve demonstrations for robot learning.
+group: research
+blurb: "A handheld bimanual haptic device that lets operators feel contact while teaching robots."
 kind: Research and course project
 order: 4
 role: Team of four with Emma Fickett, Calvin Joyce, and Lucas Yager. I built the first prototype of the lateral force-feedback mechanism.

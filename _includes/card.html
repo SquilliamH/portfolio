@@ -1,0 +1,20 @@
+<article class="card">
+  {% if include.url %}<a class="card-link" href="{{ include.url | relative_url }}" aria-label="{{ include.title }}"></a>{% endif %}
+  <div class="card-media">
+    {% if include.image %}
+      <img src="{{ include.image | relative_url }}" alt="" loading="lazy">
+    {% else %}
+      <span class="card-ph" aria-hidden="true">{{ include.title | slice: 0, 2 }}</span>
+    {% endif %}
+  </div>
+  <div class="card-body">
+    <h3>{{ include.title }}</h3>
+    <p class="card-sum">{{ include.blurb }}</p>
+    <p class="card-meta">{{ include.meta }}</p>
+    {% if include.links %}
+    <p class="card-links">
+      {% for l in include.links %}<a class="btn" href="{{ l.url | relative_url }}" target="_blank" rel="noopener">{{ l.label }}</a>{% endfor %}
+    </p>
+    {% endif %}
+  </div>
+</article>

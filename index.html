@@ -35,10 +35,11 @@ layout: default
     <h2 class="section-title">Selected projects</h2>
     <a class="link-arrow" href="{{ '/projects/' | relative_url }}">All projects</a>
   </div>
-  <div class="works">
-    {% assign featured = site.projects | where_exp: "p", "p.hidden != true" | sort: "order" %}
+  <div class="cards">
+    {% assign featured = site.projects | where: "group", "research" | sort: "order" %}
     {% for p in featured limit: 3 %}
-      {% include project-entry.html p=p %}
+      {% capture meta %}{{ p.context }} · {{ p.dates }}{% endcapture %}
+      {% include card.html title=p.title url=p.url image=p.thumbnail blurb=p.blurb meta=meta links=p.links %}
     {% endfor %}
   </div>
 </section>

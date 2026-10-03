@@ -1,6 +1,8 @@
 ---
 title: Hexapod Rescue Robot and Leg Optimization
 summary: A formal optimization of the morphing leg's geometry and footpath for search and rescue modes, and the design of the hexapod it will run on.
+group: research
+blurb: "Optimizing the leg geometry and footpath, and designing the 11 kg hexapod it runs on."
 kind: Research
 order: 2
 role: Kinematic model, optimization framework, hexapod design and analysis

@@ -1,6 +1,8 @@
 ---
 title: Mobile Manipulator for Rescue Operations
 summary: A mobile base carrying two Franka Panda arms, with an actively shifted center of mass for safe human extraction research.
+group: research
+blurb: "A mobile base with two Franka arms and a moving counterweight for safe human extraction research."
 kind: Research
 order: 3
 role: Structural frame, center-of-mass stage, and soft gripper design

@@ -6,39 +6,31 @@ summary: Research, team, and course projects in robotics and mechanical design.
 ---
 <section class="wrap page-head">
   <h1>Projects</h1>
-  <p class="page-lede">Research hardware for search and rescue, haptics, and soft robotics, plus the team leadership behind it.</p>
+  <p class="page-lede">Robots and mechanisms I have helped design and build, from rescue legs to haptic devices.</p>
+  <p class="jump">Jump to: <a href="#research">research</a> <a href="#leadership-coursework">leadership &amp; coursework</a></p>
 </section>
 
-<section class="wrap">
-  <div class="works">
-    {% assign shown = site.projects | where_exp: "p", "p.hidden != true" | sort: "order" %}
-    {% for p in shown %}
-      {% include project-entry.html p=p %}
-    {% endfor %}
+{% assign all = site.projects | sort: "order" %}
+
+<section class="wrap group" id="research">
+  <h2 class="group-title">Research</h2>
+  <div class="cards">
+    {% for p in all %}{% if p.group == "research" %}
+      {% capture meta %}{{ p.context }} · {{ p.dates }}{% endcapture %}
+      {% include card.html title=p.title url=p.url image=p.thumbnail blurb=p.blurb meta=meta links=p.links %}
+    {% endif %}{% endfor %}
   </div>
 </section>
 
-<section class="wrap section">
-  <h2 class="section-title">Smaller projects</h2>
-  <div class="works">
+<section class="wrap group" id="leadership-coursework">
+  <h2 class="group-title">Leadership &amp; coursework</h2>
+  <div class="cards">
+    {% for p in all %}{% if p.group == "coursework" %}
+      {% capture meta %}{{ p.context }} · {{ p.dates }}{% endcapture %}
+      {% include card.html title=p.title url=p.url image=p.thumbnail blurb=p.blurb meta=meta links=p.links %}
+    {% endif %}{% endfor %}
     {% for p in site.data.smaller %}
-    <article class="work small{% unless p.image %} no-media{% endunless %}">
-      {% if p.image %}
-      <div class="work-media"><img src="{{ p.image | relative_url }}" alt="{{ p.alt }}" loading="lazy"></div>
-      {% endif %}
-      <div class="work-body">
-        <h3>{% if p.page %}<a href="{{ p.page | relative_url }}">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</h3>
-        <p class="work-sum">{{ p.text }}</p>
-        <p class="work-meta">{{ p.context }}</p>
-        {% if p.page or p.pdf %}
-        <p class="work-links">
-          {% if p.page %}<a class="btn" href="{{ p.page | relative_url }}">Project page</a>{% endif %}
-          {% if p.pdf %}<a class="btn" href="{{ p.pdf | relative_url }}" target="_blank" rel="noopener">Write-up (PDF)</a>{% endif %}
-          {% if p.pdf2 %}<a class="btn" href="{{ p.pdf2 | relative_url }}" target="_blank" rel="noopener">AI comparison (PDF)</a>{% endif %}
-        </p>
-        {% endif %}
-      </div>
-    </article>
+      {% include card.html title=p.title url=p.url image=p.image blurb=p.blurb meta=p.meta links=p.links %}
     {% endfor %}
   </div>
 </section>
