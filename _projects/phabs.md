@@ -6,7 +6,7 @@ order: 4
 role: Team of four with Emma Fickett, Calvin Joyce, and Lucas Yager. I built the first prototype of the lateral force-feedback mechanism.
 context: Haptic Systems course project and ARCLab, UC San Diego
 context_url: https://ucsdarclab.com/
-dates: 2-week course project, with later lab work
+dates: 2026
 tools: [Arduino Mega, PyBullet, Vive trackers, capstan drives]
 result: "In a three-person pilot, everyone completed a fragile-object handoff with haptic feedback, and only one of three did without it."
 thumbnail: /assets/img/phabs/thumb.jpg

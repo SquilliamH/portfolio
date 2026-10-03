@@ -35,10 +35,10 @@ layout: default
     <h2 class="section-title">Selected projects</h2>
     <a class="link-arrow" href="{{ '/projects/' | relative_url }}">All projects</a>
   </div>
-  <div class="plates three">
+  <div class="works">
     {% assign featured = site.projects | where_exp: "p", "p.hidden != true" | sort: "order" %}
     {% for p in featured limit: 3 %}
-      {% include project-plate.html p=p %}
+      {% include project-entry.html p=p %}
     {% endfor %}
   </div>
 </section>

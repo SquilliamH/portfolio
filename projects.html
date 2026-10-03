@@ -10,30 +10,32 @@ summary: Research, team, and course projects in robotics and mechanical design.
 </section>
 
 <section class="wrap">
-  <div class="plates">
+  <div class="works">
     {% assign shown = site.projects | where_exp: "p", "p.hidden != true" | sort: "order" %}
     {% for p in shown %}
-      {% include project-plate.html p=p %}
+      {% include project-entry.html p=p %}
     {% endfor %}
   </div>
 </section>
 
 <section class="wrap section">
   <h2 class="section-title">Smaller projects</h2>
-  <div class="rows">
+  <div class="works">
     {% for p in site.data.smaller %}
-    <article class="row{% unless p.image %} no-thumb{% endunless %}">
-      {% if p.image %}<img class="row-thumb" src="{{ p.image | relative_url }}" alt="{{ p.alt }}" loading="lazy">{% endif %}
-      <div>
+    <article class="work small{% unless p.image %} no-media{% endunless %}">
+      {% if p.image %}
+      <div class="work-media"><img src="{{ p.image | relative_url }}" alt="{{ p.alt }}" loading="lazy"></div>
+      {% endif %}
+      <div class="work-body">
+        <p class="work-kind">{{ p.context }}</p>
         <h3>{% if p.page %}<a href="{{ p.page | relative_url }}">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</h3>
-        <p>{{ p.text }}</p>
-        <p class="row-meta">{{ p.context }}</p>
-        {% if p.pdf %}
-        <details>
-          <summary>Read the write-up</summary>
-          {% include pdf-embed.html src=p.pdf title=p.pdf_title %}
-          {% if p.pdf2 %}{% include pdf-embed.html src=p.pdf2 title=p.pdf2_title %}{% endif %}
-        </details>
+        <p class="work-sum">{{ p.text }}</p>
+        {% if p.page or p.pdf %}
+        <p class="work-links">
+          {% if p.page %}<a class="btn" href="{{ p.page | relative_url }}">Project page</a>{% endif %}
+          {% if p.pdf %}<a class="btn" href="{{ p.pdf | relative_url }}" target="_blank" rel="noopener">Write-up (PDF)</a>{% endif %}
+          {% if p.pdf2 %}<a class="btn" href="{{ p.pdf2 | relative_url }}" target="_blank" rel="noopener">AI comparison (PDF)</a>{% endif %}
+        </p>
         {% endif %}
       </div>
     </article>
