@@ -10,7 +10,7 @@
     <p class="work-kind">{{ include.p.kind }}{% if include.p.dates %} · {{ include.p.dates }}{% endif %}</p>
     <h3><a href="{{ include.p.url | relative_url }}">{{ include.p.title }}</a></h3>
     <p class="work-sum">{{ include.p.summary }}</p>
-    <p class="work-meta">{{ include.p.context }}</p>
+    <p class="work-meta">{{ include.p.context }}{% if include.p.dates %} · {{ include.p.dates }}{% endif %}</p>
     <p class="work-links">
       <a class="btn" href="{{ include.p.url | relative_url }}">Project page</a>
       {% for l in include.p.links %}<a class="btn" href="{{ l.url | relative_url }}">{{ l.label }}</a>{% endfor %}

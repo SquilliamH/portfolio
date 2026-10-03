@@ -27,9 +27,9 @@ summary: Research, team, and course projects in robotics and mechanical design.
       <div class="work-media"><img src="{{ p.image | relative_url }}" alt="{{ p.alt }}" loading="lazy"></div>
       {% endif %}
       <div class="work-body">
-        <p class="work-kind">{{ p.context }}</p>
         <h3>{% if p.page %}<a href="{{ p.page | relative_url }}">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</h3>
         <p class="work-sum">{{ p.text }}</p>
+        <p class="work-meta">{{ p.context }}</p>
         {% if p.page or p.pdf %}
         <p class="work-links">
           {% if p.page %}<a class="btn" href="{{ p.page | relative_url }}">Project page</a>{% endif %}
