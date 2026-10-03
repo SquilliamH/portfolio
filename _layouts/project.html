@@ -7,7 +7,7 @@ layout: default
   The Markdown body of the project file becomes the content variable.
 {% endcomment %}
 <article class="project wrap">
-  <a class="back" href="{{ '/projects/' | relative_url }}">All projects</a>
+  <a class="back" href="{{ '/projects/' | relative_url }}">all projects</a>
 
   {% if page.kind %}<p class="eyebrow">{{ page.kind }}</p>{% endif %}
   <h1 class="project-title">{{ page.title }}</h1>
@@ -27,25 +27,25 @@ layout: default
   </figure>
   {% endunless %}{% endif %}
 
-  {% if page.stats %}
-  <ul class="stats">
-    {% for s in page.stats %}
-    <li><span class="stat-n">{{ s.n }}</span><span class="stat-l">{{ s.label }}</span></li>
-    {% endfor %}
-  </ul>
-  {% endif %}
-
-  <div class="project-facts">
-    {% if page.role %}<p class="project-role"><strong>My role</strong> {{ page.role }}</p>{% endif %}
-    {% if page.tools %}
-    <ul class="chips" aria-label="Tools">
-      {% for t in page.tools %}<li>{{ t }}</li>{% endfor %}
-    </ul>
-    {% endif %}
-    {% if page.links %}
-    <p class="project-links">
-      {% for l in page.links %}<a class="btn btn-small" href="{{ l.url | relative_url }}">{{ l.label }}</a>{% endfor %}
-    </p>
+  <div class="spec">
+    <div>
+      {% if page.role %}<p class="spec-role"><strong>My role.</strong> {{ page.role }}</p>{% endif %}
+      {% if page.tools %}<p class="tools-line">{{ page.tools | join: " / " }}</p>{% endif %}
+      {% if page.links %}
+      <p class="project-links">
+        {% for l in page.links %}<a class="btn" href="{{ l.url | relative_url }}">{{ l.label }}</a>{% endfor %}
+      </p>
+      {% endif %}
+    </div>
+    {% if page.stats %}
+    <div>
+      <p class="keyfigs-title">Key figures</p>
+      <ul class="keyfigs">
+        {% for s in page.stats %}
+        <li><span class="stat-n">{{ s.n }}</span><span class="stat-l">{{ s.label }}</span></li>
+        {% endfor %}
+      </ul>
+    </div>
     {% endif %}
   </div>
 

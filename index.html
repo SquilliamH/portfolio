@@ -1,36 +1,29 @@
 ---
 layout: default
 ---
-<section class="hero wrap">
-  <div class="hero-text">
-    <p class="eyebrow">Mechanical engineer · robotics and medical devices</p>
-    <h1>I build robots that help in emergencies.</h1>
-    <p class="hero-lede">Hi, I'm William. I'm a mechanical engineering MS student at UC San Diego, and in the <a href="https://ucsdarclab.com/">Advanced Robotics and Controls Lab (ARCLab)</a> I've built a mobile manipulator and a shape-changing leg for search and rescue. I've been hooked on robots since a fourth-grade LEGO class.</p>
-    <p class="hero-lede">I'm looking for full-time roles and internships in medical robotics and medical devices, where mechanical design, prototyping, and careful testing decide whether something is safe to use around people.</p>
-    <p class="hero-actions">
-      <a class="btn btn-solid" href="{{ '/projects/' | relative_url }}">See my projects</a>
-      <a class="btn" href="{{ site.resume | relative_url }}">Resume</a>
-      <a class="btn" href="mailto:{{ site.email }}">Email me</a>
-    </p>
-    <ul class="facts">
-      <li>MS Mechanical Engineering, <a href="https://mae.ucsd.edu/">UC San Diego</a>, expected June 2027</li>
-      <li>BS Mechanical Engineering, minor in Design, June 2025</li>
-      <li>Thesis advisor: <a href="https://yip.eng.ucsd.edu/">Prof. Michael Yip</a></li>
-    </ul>
+<section class="intro wrap">
+  <div class="intro-text">
+    <h1>William Harris</h1>
+    <p class="tagline">M.S. Mechanical Engineering @ <a href="https://mae.ucsd.edu/">UC San Diego</a> &middot; <a href="https://ucsdarclab.com/">ARCLab</a> &middot; Rescue Robotics, Haptics, Medical Devices</p>
+    <p class="status">Looking for full-time roles and internships in medical robotics and medical devices. (<a href="{{ site.resume | relative_url }}">resume</a>)</p>
+    <p>I build robots that help in emergencies. In the <a href="https://ucsdarclab.com/">Advanced Robotics and Controls Lab</a> I've built a mobile manipulator and a shape-changing leg for search and rescue, working with my thesis advisor, <a href="https://yip.eng.ucsd.edu/">Prof. Michael Yip</a>.</p>
+    <p>I design the hardware: frames and mechanisms, motors and their control, and the tests that show whether a design does what the model says. I've been hooked on robots since a fourth-grade LEGO class.</p>
   </div>
-  <figure class="hero-photo">
+  <figure class="portrait">
     <img src="{{ '/assets/img/home/william.jpg' | relative_url }}" alt="William Harris sitting by a fountain">
+    <figcaption>William Harris<br>La Jolla, CA</figcaption>
   </figure>
 </section>
 
-<section class="band">
-  <div class="wrap band-inner">
+<div class="numbered">
+<section class="section wrap">
+  <h2 class="section-title">What I'm working on</h2>
+  <div class="now">
     <video autoplay muted loop playsinline preload="metadata" poster="{{ '/assets/img/morphing-leg/thumb.jpg' | relative_url }}" aria-label="Bipedal robot walking on morphing legs">
       <source src="{{ '/assets/video/leg-loop.mp4' | relative_url }}" type="video/mp4">
     </video>
     <div>
-      <p class="eyebrow">What I'm working on</p>
-      <h2>A leg that changes shape</h2>
+      <h3>A leg that changes shape</h3>
       <p>A search and rescue robot has to cross rough ground quickly, then pull a heavy load once it reaches someone. This leg does both by changing its link lengths on the fly. The paper was accepted to <a href="https://arxiv.org/abs/2511.10816">ICRA 2026</a>.</p>
       <p><a class="link-arrow" href="{{ '/projects/morphing-leg/' | relative_url }}">Read the project</a></p>
     </div>
@@ -42,47 +35,18 @@ layout: default
     <h2 class="section-title">Selected projects</h2>
     <a class="link-arrow" href="{{ '/projects/' | relative_url }}">All projects</a>
   </div>
-  <div class="cards">
+  <div class="rows">
     {% assign featured = site.projects | where_exp: "p", "p.hidden != true" | sort: "order" %}
     {% for p in featured limit: 3 %}
-      {% include project-card.html p=p %}
+      {% include project-row.html p=p %}
     {% endfor %}
   </div>
 </section>
 
-<section class="section wrap beyond">
-  <div class="beyond-card">
-    <h2 class="section-title">What I work with</h2>
-    <dl class="toolbox">
-      <div>
-        <dt>Design and fabrication</dt>
-        <dd class="tool-use">Frames, capstan drives, TPU grippers, laser-cut and machined parts</dd>
-        <dd><ul class="chips"><li>SolidWorks</li><li>Creo</li><li>Ansys FEA</li><li>Fusion 360 CAM</li><li>DFMA</li><li>CNC and manual machining</li><li>Laser and waterjet</li><li>3D printing</li><li>MIG welding</li></ul></dd>
-      </div>
-      <div>
-        <dt>Electronics and controls</dt>
-        <dd class="tool-use">BLDC motors over CAN, ODrive, sensor circuits</dd>
-        <dd><ul class="chips"><li>BLDC motor control</li><li>CAN</li><li>PCB design (EasyEDA)</li><li>Circuit design</li></ul></dd>
-      </div>
-      <div>
-        <dt>Software</dt>
-        <dd class="tool-use">Python control and optimization, MATLAB analysis, ROS 2 on a Jetson</dd>
-        <dd><ul class="chips"><li>Python</li><li>MATLAB</li><li>C (Arduino)</li><li>ROS 2</li><li>Embedded Linux</li><li>MuJoCo</li></ul></dd>
-      </div>
-    </dl>
-  </div>
-  <div class="beyond-card">
-    <h2 class="section-title">Outside the lab</h2>
-    <p>When I'm not in the lab, you'll usually find me on a bike trail, on a badminton court, or testing a new recipe.</p>
-    <ul class="tiles">
-      <li><span aria-hidden="true">🚴</span> Biking trails</li>
-      <li><span aria-hidden="true">🏸</span> Badminton</li>
-      <li><span aria-hidden="true">🍳</span> Recipe experiments</li>
-      <li><span aria-hidden="true">🎬</span> Movie reviews with friends</li>
-      <li><span aria-hidden="true">🏎️</span> Formula 1</li>
-      <li><span aria-hidden="true">🏋️</span> Lifting</li>
-    </ul>
-  </div>
+<section class="section wrap">
+  <h2 class="section-title">Why this work</h2>
+  <p class="lede">I grew up in a public school district with almost no STEM programs. A LEGO Mindstorms robot in fourth grade, and a Friday engineering class in middle school, are where robots became my thing.</p>
+  <p class="lede">At Triton Robotics I started with less experience than most of my teammates, and I ended up making the team easier for beginners to join. At ARCLab I get to point those skills at something I care about: robots that can reach and help people when something has gone wrong.</p>
 </section>
 
 <section class="section wrap">
@@ -125,7 +89,7 @@ layout: default
     </li>
   </ol>
 
-  <h2 class="section-title sub">Education</h2>
+  <h3 class="section-title sub">Education</h3>
   <ol class="chapters">
     <li>
       <p class="ch-when">Expected Jun 2027</p>
@@ -149,13 +113,52 @@ layout: default
     <h2 class="section-title">Publications</h2>
     <a class="link-arrow" href="{{ '/publications/' | relative_url }}">Details</a>
   </div>
-  <ul class="pub-list">
+  <ol class="pubs">
     {% for pub in site.data.publications %}
     <li class="pub">
-      <p class="pub-title">{{ pub.title }}</p>
-      {% if pub.authors %}<p class="pub-authors">{{ pub.authors }}</p>{% endif %}
-      <p class="pub-meta"><strong>{{ pub.venue }}</strong> · {{ pub.status }} · {{ pub.role }}</p>
+      {% if pub.image %}<img class="pub-thumb" src="{{ pub.image | relative_url }}" alt="" loading="lazy">{% else %}<div class="pub-thumb ph" aria-hidden="true"></div>{% endif %}
+      <div>
+        <p class="pub-title">{{ pub.title }}</p>
+        {% if pub.authors %}<p class="pub-authors">{{ pub.authors }}</p>{% endif %}
+        <p class="pub-meta">{{ pub.venue }} &middot; {{ pub.status }} &middot; {{ pub.role }}</p>
+        {% if pub.links %}
+        <p class="pub-links">{% for l in pub.links %}<a class="btn" href="{{ l.url | relative_url }}">{{ l.label }}</a>{% endfor %}</p>
+        {% endif %}
+      </div>
     </li>
     {% endfor %}
-  </ul>
+  </ol>
 </section>
+
+<section class="section wrap">
+  <h2 class="section-title">What I work with</h2>
+  <dl class="toolbox">
+    <div>
+      <dt>Design and fabrication</dt>
+      <dd>
+        <p class="tool-use">Frames, capstan drives, TPU grippers, laser-cut and machined parts</p>
+        <ul class="chips"><li>SolidWorks</li><li>Creo</li><li>Ansys FEA</li><li>Fusion 360 CAM</li><li>DFMA</li><li>CNC and manual machining</li><li>Laser and waterjet</li><li>3D printing</li><li>MIG welding</li></ul>
+      </dd>
+    </div>
+    <div>
+      <dt>Electronics and controls</dt>
+      <dd>
+        <p class="tool-use">BLDC motors over CAN, ODrive, sensor circuits</p>
+        <ul class="chips"><li>BLDC motor control</li><li>CAN</li><li>PCB design (EasyEDA)</li><li>Circuit design</li></ul>
+      </dd>
+    </div>
+    <div>
+      <dt>Software</dt>
+      <dd>
+        <p class="tool-use">Python control and optimization, MATLAB analysis, ROS 2 on a Jetson</p>
+        <ul class="chips"><li>Python</li><li>MATLAB</li><li>C (Arduino)</li><li>ROS 2</li><li>Embedded Linux</li><li>MuJoCo</li></ul>
+      </dd>
+    </div>
+  </dl>
+</section>
+
+<section class="section wrap">
+  <h2 class="section-title">Outside the lab</h2>
+  <p class="lede">When I'm not in the lab, you'll usually find me on a bike trail, on a badminton court, or testing a new recipe. I lift, I review movies with friends, and I follow Formula 1.</p>
+</section>
+</div>
