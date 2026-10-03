@@ -8,15 +8,7 @@ context: ARCLab, UC San Diego
 context_url: https://ucsdarclab.com/
 dates: Jun 2024 – Present
 tools: [SolidWorks, Ansys FEA, ODrive, BLDC, TPU printing]
-stats:
-  - n: "36 kg"
-    label: two 7-DoF Franka Panda arms
-  - n: "10 kg"
-    label: payload
-  - n: "41–61 kg"
-    label: counterweight, depending on configuration
-  - n: "117–142 kg"
-    label: estimated total platform mass
+result: "A capstan-driven stage moves the counterweight so two Franka arms (36 kg together) and a 10 kg payload stay balanced on a platform weighing roughly 117 to 142 kg."
 thumbnail: /assets/img/mobile-manipulator/thumb.jpg
 hero_video: /assets/video/mobile-manipulator-loop.mp4
 hero_caption: Field testing the mobile manipulator outdoors.

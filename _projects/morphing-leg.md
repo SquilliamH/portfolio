@@ -8,15 +8,7 @@ context: ARCLab, UC San Diego
 context_url: https://ucsdarclab.com/
 dates: Jun 2024 – Present
 tools: [SolidWorks, Ansys FEA, Python, CAN, CubeMars AK60-6]
-stats:
-  - n: "+83%"
-    label: foot force from reconfiguring the same hardware (58 to 106 N)
-  - n: "4.3×"
-    label: link length range, 64 to 273 mm
-  - n: "1:302"
-    label: non-backdrivable capstan actuator
-  - n: "2.3 kg"
-    label: load dragged by the biped (5 lb minimum)
+result: "Changing link lengths raised measured foot force from 58 N to 106 N on the same motors, and the biped used it to drag a 2.3 kg load."
 thumbnail: /assets/img/morphing-leg/thumb.jpg
 hero_video: /assets/video/leg-loop.mp4
 hero_caption: Bipedal prototype switching from traversal to load-dragging mode.
@@ -50,11 +42,9 @@ A gear change alters the torque-speed ratio but not where the foot can reach. Ch
 <div markdown="1">
 I measured peak static pushing force at the foot with a crane scale, with motor bus current limited to 1 A and five trials per configuration.
 
-| Configuration | Foot force | Change |
-|---|---|---|
-| Baseline | 58 ± 1 N | |
-| Retracted passive links | 91 ± 1 N | +57% |
-| Elongated ground link | 106 ± 2 N | +83% |
+- Baseline: **58 ± 1 N**
+- Retracted passive links: **91 ± 1 N** (+57%)
+- Elongated ground link: **106 ± 2 N** (+83%)
 
 On the biped, the robot follows a foot path, walks, then reconfigures and drags a load of at least 5 lb (2.3 kg) with the passive links retracted to 18 cm and the ground link extended to 13 cm.
 </div>

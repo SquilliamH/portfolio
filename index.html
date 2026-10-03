@@ -6,7 +6,8 @@ layout: default
     <h1>William Harris</h1>
     <p class="tagline">M.S. Mechanical Engineering @ <a href="https://mae.ucsd.edu/">UC San Diego</a> &middot; <a href="https://ucsdarclab.com/">ARCLab</a> &middot; Rescue Robotics, Haptics, Medical Devices</p>
     <p class="status">Looking for full-time roles and internships in medical robotics and medical devices. (<a href="{{ site.resume | relative_url }}">resume</a>)</p>
-    <p>I build robots that help in emergencies. In the <a href="https://ucsdarclab.com/">Advanced Robotics and Controls Lab</a> I've built a mobile manipulator and a shape-changing leg for search and rescue, working with my thesis advisor, <a href="https://yip.eng.ucsd.edu/">Prof. Michael Yip</a>.</p>
+    <p class="statement">I build robots that help in emergencies.</p>
+    <p>In the <a href="https://ucsdarclab.com/">Advanced Robotics and Controls Lab</a> I've built a mobile manipulator and a shape-changing leg for search and rescue, working with my thesis advisor, <a href="https://yip.eng.ucsd.edu/">Prof. Michael Yip</a>.</p>
     <p>I design the hardware: frames and mechanisms, motors and their control, and the tests that show whether a design does what the model says. I've been hooked on robots since a fourth-grade LEGO class.</p>
   </div>
   <figure class="portrait">
@@ -15,7 +16,6 @@ layout: default
   </figure>
 </section>
 
-<div class="numbered">
 <section class="section wrap">
   <h2 class="section-title">What I'm working on</h2>
   <div class="now">
@@ -35,18 +35,18 @@ layout: default
     <h2 class="section-title">Selected projects</h2>
     <a class="link-arrow" href="{{ '/projects/' | relative_url }}">All projects</a>
   </div>
-  <div class="rows">
+  <div class="plates three">
     {% assign featured = site.projects | where_exp: "p", "p.hidden != true" | sort: "order" %}
     {% for p in featured limit: 3 %}
-      {% include project-row.html p=p %}
+      {% include project-plate.html p=p %}
     {% endfor %}
   </div>
 </section>
 
-<section class="section wrap">
-  <h2 class="section-title">Why this work</h2>
-  <p class="lede">I grew up in a public school district with almost no STEM programs. A LEGO Mindstorms robot in fourth grade, and a Friday engineering class in middle school, are where robots became my thing.</p>
-  <p class="lede">At Triton Robotics I started with less experience than most of my teammates, and I ended up making the team easier for beginners to join. At ARCLab I get to point those skills at something I care about: robots that can reach and help people when something has gone wrong.</p>
+<section class="section wrap background">
+  <h2 class="section-title">Background</h2>
+  <p>It started in fourth grade with a LEGO Mindstorms robot and a lot of arithmetic about wheel rotations. My public school district had almost no STEM programs, so a Friday engineering class in middle school, with balsa gliders and spaghetti towers, mattered a lot.</p>
+  <p>At UCSD I joined Triton Robotics knowing less than most of my teammates and ended up leading the team. Along the way I worked on a solar water heater for an orphanage in Tijuana, and since 2024 I've been building rescue robots at ARCLab.</p>
 </section>
 
 <section class="section wrap">
@@ -161,4 +161,3 @@ layout: default
   <h2 class="section-title">Outside the lab</h2>
   <p class="lede">When I'm not in the lab, you'll usually find me on a bike trail, on a badminton court, or testing a new recipe. I lift, I review movies with friends, and I follow Formula 1.</p>
 </section>
-</div>

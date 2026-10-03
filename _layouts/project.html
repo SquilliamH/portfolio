@@ -27,25 +27,15 @@ layout: default
   </figure>
   {% endunless %}{% endif %}
 
+  {% if page.result %}<p class="result">{{ page.result }}</p>{% endif %}
+
   <div class="spec">
-    <div>
-      {% if page.role %}<p class="spec-role"><strong>My role.</strong> {{ page.role }}</p>{% endif %}
-      {% if page.tools %}<p class="tools-line">{{ page.tools | join: " / " }}</p>{% endif %}
-      {% if page.links %}
-      <p class="project-links">
-        {% for l in page.links %}<a class="btn" href="{{ l.url | relative_url }}">{{ l.label }}</a>{% endfor %}
-      </p>
-      {% endif %}
-    </div>
-    {% if page.stats %}
-    <div>
-      <p class="keyfigs-title">Key figures</p>
-      <ul class="keyfigs">
-        {% for s in page.stats %}
-        <li><span class="stat-n">{{ s.n }}</span><span class="stat-l">{{ s.label }}</span></li>
-        {% endfor %}
-      </ul>
-    </div>
+    {% if page.role %}<p class="spec-role"><strong>My role.</strong> {{ page.role }}</p>{% endif %}
+    {% if page.tools %}<p class="tools-line">{{ page.tools | join: " / " }}</p>{% endif %}
+    {% if page.links %}
+    <p class="project-links">
+      {% for l in page.links %}<a class="btn" href="{{ l.url | relative_url }}">{{ l.label }}</a>{% endfor %}
+    </p>
     {% endif %}
   </div>
 

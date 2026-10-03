@@ -8,15 +8,7 @@ context: Triton Robotics, UC San Diego
 context_url: https://studentorg.ucsd.edu/Home/Details/19098
 dates: Sep 2021 – Jun 2024
 tools: [SolidWorks, CNC machining, manual machining, waterjet, laser cutting]
-stats:
-  - n: "80"
-    label: team members led as president
-  - n: "+40%"
-    label: chassis rotation speed
-  - n: "+50%"
-    label: targeting accuracy
-  - n: "−30%"
-    label: aluminum tubing in the 2021–22 redesign
+result: "I led the Hero robot's mechanical redesign, then the 80-member team."
 ---
 
 Triton Robotics builds robots for the RoboMaster competition. The Hero is remote-controlled, fires 42 mm projectiles at 16 m/s, and is the team's main offensive unit. I worked on two generations of its chassis, led the Hero subteam, and then served as team president.

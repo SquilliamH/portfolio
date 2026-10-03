@@ -1,0 +1,10 @@
+<a class="plate" href="{{ include.p.url | relative_url }}">
+  {% if include.p.thumbnail %}
+    <img class="plate-img" src="{{ include.p.thumbnail | relative_url }}" alt="" loading="lazy">
+  {% else %}
+    <div class="plate-img ph" aria-hidden="true">{{ include.p.title | slice: 0, 2 }}</div>
+  {% endif %}
+  <h3>{{ include.p.title }}</h3>
+  <p>{{ include.p.summary }}</p>
+  <p class="row-meta">{{ include.p.context }}{% if include.p.dates %} · {{ include.p.dates }}{% endif %}</p>
+</a>

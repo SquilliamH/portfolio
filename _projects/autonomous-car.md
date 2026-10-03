@@ -8,13 +8,7 @@ role: Team of four; hardware setup, system debugging, and software integration
 context: MAE 148 Introduction to Autonomous Vehicles, UC San Diego
 dates: Summer 2024
 tools: [ROS 2, Ubuntu 20.04, Docker, NVIDIA Jetson Nano, OAK-D camera, OpenCV, DonkeyCar]
-stats:
-  - n: "3"
-    label: colors mapped to notes (C4, D4, E4)
-  - n: "4"
-    label: team members
-  - n: "Jetson Nano"
-    label: onboard compute, with an OAK-D camera
+result: "A small ROS 2 car that follows a line and plays a note when it sees a colored marker."
 thumbnail: /assets/img/autonomous-car/car-bench.jpg
 hero_caption: The car on the bench during development.
 links:

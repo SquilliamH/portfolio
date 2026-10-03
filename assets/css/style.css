@@ -4,32 +4,32 @@
   a serif for reading, a sans for headings, a mono for labels and numbers.
 */
 :root {
-  --paper: #f4f0e8;
-  --panel: #ebe5d8;
-  --ink: #1c1b19;
-  --muted: #6b665c;
-  --rule: #d6cfbf;
-  --accent: #d4430a;
+  --paper: #f6f8fa;
+  --panel: #e9eef2;
+  --ink: #10161c;
+  --muted: #56626d;
+  --rule: #d3dbe2;
+  --accent: #0a6fc2;
   --accent-ink: #ffffff;
 
-  --font-body: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-ui: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
 
-  --wrap: 920px;
-  --measure: 66ch;
+  --wrap: 940px;
+  --measure: 68ch;
   --gap: clamp(1.1rem, 4vw, 1.8rem);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --paper: #171614;
-    --panel: #201e1b;
-    --ink: #ece8df;
-    --muted: #a39d90;
-    --rule: #35322c;
-    --accent: #ff7a3d;
-    --accent-ink: #171614;
+    --paper: #0d1217;
+    --panel: #151c23;
+    --ink: #e7edf2;
+    --muted: #96a3af;
+    --rule: #27313a;
+    --accent: #4aa8ff;
+    --accent-ink: #0d1217;
   }
 }
 
@@ -42,14 +42,14 @@ body {
   background: var(--paper);
   color: var(--ink);
   font-family: var(--font-body);
-  font-size: 1.075rem;
-  line-height: 1.62;
+  font-size: 1rem;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
 }
 
 img, video { display: block; max-width: 100%; height: auto; }
-a { color: inherit; text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 1.5px; text-underline-offset: 0.2em; }
-a:hover { color: var(--accent); }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; text-underline-offset: 0.2em; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
 h1, h2, h3 { font-family: var(--font-ui); font-weight: 600; letter-spacing: -0.015em; line-height: 1.2; margin: 0; }
@@ -60,7 +60,7 @@ p { margin: 0 0 1rem; }
 .skip:focus { left: 1rem; top: 1rem; background: var(--ink); color: var(--paper); padding: 0.5rem 0.75rem; z-index: 10; }
 
 /* Labels and small mono text */
-.label, .eyebrow, .row-meta, .project-meta, .keyfigs-title, .ch-when, figcaption, .btn, .site-header nav a {
+.label, .eyebrow, .row-meta, .project-meta, .ch-when, figcaption, .btn, .site-header nav a, .tools-line, .back, .link-arrow, .next-label {
   font-family: var(--font-mono);
 }
 .eyebrow { text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.75rem; color: var(--accent); margin-bottom: 0.6rem; }
@@ -92,12 +92,9 @@ p { margin: 0 0 1rem; }
 
 /* Sections */
 .section { padding-block: clamp(1.6rem, 4vw, 2.4rem); }
-main { counter-reset: sec; }
-.section-title { font-size: 1.3rem; margin-bottom: 1.1rem; padding-top: 0.9rem; border-top: 1px solid var(--ink); }
-.numbered .section-title::before { counter-increment: sec; content: counter(sec, decimal-leading-zero) "  "; font-family: var(--font-mono); font-weight: 400; font-size: 0.8rem; color: var(--accent); margin-right: 0.4rem; }
+.section-title { font-size: 1.35rem; margin-bottom: 1.1rem; padding-top: 0.9rem; border-top: 1px solid var(--rule); }
 .section-title.sub { margin-top: 1.8rem; font-size: 1.1rem; border-top: 1px solid var(--rule); }
-.section-title.sub::before { content: none !important; }
-.section-head { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; border-top: 1px solid var(--ink); padding-top: 0.9rem; margin-bottom: 1.1rem; }
+.section-head { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; border-top: 1px solid var(--rule); padding-top: 0.9rem; margin-bottom: 1.1rem; }
 .section-head .section-title { border-top: 0; padding-top: 0; margin-bottom: 0; }
 .page-head { padding-block: clamp(1.8rem, 5vw, 3rem) 1rem; }
 .page-head h1 { font-size: clamp(2rem, 5vw, 2.6rem); margin-bottom: 0.5rem; }
@@ -172,14 +169,6 @@ a.row:hover h3 { color: var(--accent); }
 .project-hero img, .project-hero video { width: 100%; border: 1px solid var(--rule); }
 .project-hero figcaption, .prose figcaption { font-size: 0.76rem; color: var(--muted); margin-top: 0.45rem; line-height: 1.45; }
 
-.spec { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1.5rem 2.5rem; margin-bottom: 2.2rem; padding-block: 1.3rem; border-block: 1px solid var(--ink); }
-.spec-role { margin-bottom: 0.8rem; }
-.keyfigs-title { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 0.4rem; }
-.keyfigs { list-style: none; margin: 0; padding: 0; }
-.keyfigs li { display: grid; grid-template-columns: 6.2rem minmax(0, 1fr); gap: 0.8rem; padding: 0.45rem 0; border-top: 1px solid var(--rule); align-items: baseline; }
-.keyfigs li:first-child { border-top: 0; }
-.stat-n { font-family: var(--font-mono); font-weight: 500; font-size: 1.15rem; color: var(--accent); }
-.stat-l { font-family: var(--font-ui); font-size: 0.88rem; line-height: 1.35; }
 .tools-line { font-family: var(--font-mono); font-size: 0.78rem; color: var(--muted); margin-bottom: 0.9rem; }
 .project-links { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0; }
 
@@ -222,7 +211,7 @@ a.row:hover h3 { color: var(--accent); }
 .next-project a:hover { color: var(--accent); }
 
 @media (max-width: 760px) {
-  .intro, .now, .spec, .split, .split.wide, .figure-row { grid-template-columns: 1fr; }
+  .intro, .now, .split, .split.wide, .figure-row { grid-template-columns: 1fr; }
   .portrait { order: -1; max-width: 220px; }
   .split.flip > :first-child { order: 0; }
   .row { grid-template-columns: 96px minmax(0, 1fr); gap: 0.9rem; }
@@ -234,3 +223,35 @@ a.row:hover h3 { color: var(--accent); }
 
 .row h3 a { text-decoration: none; }
 .row h3 a::after { content: " 92"; color: var(--accent); font-family: var(--font-mono); font-size: 0.85em; }
+
+/* Header logo mark (the WLH circle, tinted to the text color) */
+.logo { display: inline-block; width: 1.7rem; height: 1.7rem; vertical-align: -0.5rem; margin-right: 0.55rem; background-color: var(--ink); -webkit-mask: url("../img/logo-mask.png") center / contain no-repeat; mask: url("../img/logo-mask.png") center / contain no-repeat; }
+.site-name { display: inline-flex; align-items: center; }
+.site-name .logo { vertical-align: 0; }
+.site-header nav a[aria-current="page"] { text-decoration: underline; text-underline-offset: 0.35em; }
+
+/* Project plates: image over text, no card chrome */
+.plates { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.2rem 1.8rem; }
+.plates.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.plate { display: block; color: inherit; text-decoration: none; }
+.plate:hover { text-decoration: none; }
+.plate-img { display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border: 1px solid var(--rule); background: var(--panel); }
+.plate-img.ph { display: grid; place-items: center; font-family: var(--font-mono); font-size: 1.6rem; color: var(--accent); background: repeating-linear-gradient(135deg, transparent 0 6px, var(--rule) 6px 7px), var(--panel); }
+.plate h3 { font-size: 1.1rem; margin: 0.75rem 0 0.25rem; }
+.plate:hover h3 { color: var(--accent); }
+.plate p { margin: 0 0 0.35rem; font-size: 0.95rem; }
+.plate .row-meta { margin: 0; }
+@media (max-width: 760px) { .plates, .plates.three { grid-template-columns: 1fr; } }
+
+/* Project header: one headline result, then role and tools */
+.result { font-size: 1.25rem; line-height: 1.45; max-width: 52ch; margin: 0 0 1.4rem; padding-left: 1rem; border-left: 3px solid var(--accent); }
+.spec { display: block; border: 0; padding: 0; margin-bottom: 2rem; }
+.spec-role { margin-bottom: 0.4rem; }
+.background p { max-width: 64ch; }
+
+.statement { font-size: 1.3rem; line-height: 1.4; font-weight: 500; margin-bottom: 0.8rem; }
+
+.site-name, .site-header nav a, .back, .next-project a { color: var(--ink); }
+.site-header nav a:hover, .site-name:hover, .back:hover, .next-project a:hover { color: var(--accent); text-decoration: none; }
+.site-header nav a[aria-current="page"] { color: var(--accent); }
+.link-arrow { color: var(--accent); }

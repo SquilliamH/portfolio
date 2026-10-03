@@ -7,15 +7,7 @@ role: Solo project, from design through testing
 context: Soft Robotics course, UC San Diego
 dates: Oct – Dec 2025
 tools: [Vacuum pneumatics, FSR arrays, Arduino, MATLAB]
-stats:
-  - n: "1.6–4×"
-    label: higher pull-out force than a strap splint
-  - n: "~85 kPa"
-    label: vacuum (25 inHg)
-  - n: "3"
-    label: FSRs measuring load distribution
-  - n: "2 weeks"
-    label: solo build and test
+result: "The jamming pad took 1.6 to 4 times the pull-out force of a strap splint."
 thumbnail: /assets/img/particle-jamming/glove.jpg
 hero_caption: "The first prototype: a blue nitrile glove of coffee grounds on a vacuum line."
 ---
@@ -85,11 +77,11 @@ Three force-sensing resistors under the contact region, read through voltage div
 <div markdown="1">
 The jammed pad beat the strap at every preload. The strap tended to dig into the foam and slip suddenly, while the pad let go smoothly.
 
-| Strap preload | Strap peak | Jamming peak | Ratio |
-|---|---|---|---|
-| 0.3 kg | 39 N | 157 N | 4.0× |
-| 0.6 kg | 147 N | 343 N | 2.3× |
-| 1.0 kg | 255 N | 412 N | 1.6× |
+Peak pull-out force, strap against jamming pad:
+
+- At a 0.3 kg strap preload: 39 N against **157 N** (4.0×)
+- At 0.6 kg: 147 N against **343 N** (2.3×)
+- At 1.0 kg: 255 N against **412 N** (1.6×)
 
 With the strap, nearly all the load landed on one FSR at a time. With the jammer, all three read nonzero.
 </div>

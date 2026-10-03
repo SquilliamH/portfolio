@@ -8,15 +8,7 @@ context: ARCLab, UC San Diego
 context_url: https://ucsdarclab.com/
 dates: 2025 – Present
 tools: [Python, MATLAB, SolidWorks, MuJoCo, CubeMars AK60-6]
-stats:
-  - n: "7"
-    label: design variables, with asymmetric links and an ankle offset
-  - n: "12.6×"
-    label: larger search-mode step than the rescue reference (simulated)
-  - n: "~65 N"
-    label: friction-limited drag force of the 11 kg robot (simulated)
-  - n: "10.76 kg"
-    label: hexapod mass budget, against an 11 kg target
+result: "In simulation the optimized legs take search-mode steps about 12 times larger than the rescue-mode design, and an 11 kg robot turns out to be limited by foot friction, not motor torque."
 thumbnail: /assets/img/hexapod/search-mode.jpg
 hide_hero: true
 ---

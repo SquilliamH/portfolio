@@ -8,15 +8,7 @@ context: Haptic Systems course project and ARCLab, UC San Diego
 context_url: https://ucsdarclab.com/
 dates: 2-week course project, with later lab work
 tools: [Arduino Mega, PyBullet, Vive trackers, capstan drives]
-stats:
-  - n: "3 of 3"
-    label: pilot participants completed the task with haptics (1 of 3 without)
-  - n: "0.65 N"
-    label: maximum pinch force
-  - n: "20 mm"
-    label: jaw opening
-  - n: "2"
-    label: force-feedback axes, pinch and lateral
+result: "In a three-person pilot, everyone completed a fragile-object handoff with haptic feedback, and only one of three did without it."
 thumbnail: /assets/img/phabs/thumb.jpg
 hero_video: /assets/video/phabs-demo.mp4
 hero_caption: Using PHABS to manipulate objects in the PyBullet environment.

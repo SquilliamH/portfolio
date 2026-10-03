@@ -10,10 +10,10 @@ summary: Research, team, and course projects in robotics and mechanical design.
 </section>
 
 <section class="wrap">
-  <div class="rows">
+  <div class="plates">
     {% assign shown = site.projects | where_exp: "p", "p.hidden != true" | sort: "order" %}
     {% for p in shown %}
-      {% include project-row.html p=p %}
+      {% include project-plate.html p=p %}
     {% endfor %}
   </div>
 </section>
