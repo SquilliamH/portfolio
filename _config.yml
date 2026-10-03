@@ -7,10 +7,9 @@ linkedin: https://www.linkedin.com/in/williamlharris3rd/
 github: https://github.com/SquilliamH
 resume: /assets/William_Harris_Resume.pdf
 
-# Served at https://squilliamh.github.io/portfolio for now. When you move
-# williamlh.com over, set url to https://www.williamlh.com and baseurl to "".
-url: "https://squilliamh.github.io"
-baseurl: "/portfolio"
+# Served at https://www.williamlh.com (custom domain, see CNAME).
+url: "https://www.williamlh.com"
+baseurl: ""
 
 # A collection is a folder of similar pages. Every file in _projects/
 # becomes a page at /projects/<file-name>/ and shows up in site.projects.
