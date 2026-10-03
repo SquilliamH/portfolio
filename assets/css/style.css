@@ -222,7 +222,7 @@ a.row:hover h3 { color: var(--accent); }
 }
 
 .row h3 a { text-decoration: none; }
-.row h3 a::after { content: " 92"; color: var(--accent); font-family: var(--font-mono); font-size: 0.85em; }
+.row h3 a::after { content: " \2192"; color: var(--accent); font-family: var(--font-mono); font-size: 0.85em; }
 
 /* Header logo mark (the WLH circle, tinted to the text color) */
 .logo { display: inline-block; width: 1.7rem; height: 1.7rem; vertical-align: -0.5rem; margin-right: 0.55rem; background-color: var(--ink); -webkit-mask: url("../img/logo-mask.png") center / contain no-repeat; mask: url("../img/logo-mask.png") center / contain no-repeat; }
