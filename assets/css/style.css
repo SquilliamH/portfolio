@@ -413,8 +413,8 @@ section[id] { scroll-margin-top: 4.2rem; }
 .avail-dot { width: 8px; height: 8px; border-radius: 50%; background: #2fb36d; box-shadow: 0 0 0 3px color-mix(in srgb, #2fb36d 28%, transparent); flex: none; }
 
 /* ---------- Extras: scroll ECG, card roles, hover video, news, expandable timeline, resume band ---------- */
-.scroll-ecg { position: absolute; left: 0; right: 0; bottom: -11px; width: 100%; height: 22px; pointer-events: none; overflow: visible; }
-.scroll-ecg path { fill: none; stroke: var(--accent); stroke-width: 1.6; vector-effect: non-scaling-stroke; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1 1; stroke-dashoffset: calc(1 - var(--p, 0)); }
+.scroll-ecg { position: absolute; left: 0; right: 0; bottom: -11px; width: 100%; height: 22px; pointer-events: none; overflow: visible; clip-path: inset(-6px calc((1 - var(--p, 0)) * 100%) -6px 0); }
+.scroll-ecg path { fill: none; stroke: var(--accent); stroke-width: 1.6; vector-effect: non-scaling-stroke; stroke-linecap: round; stroke-linejoin: round; }
 
 .card-media { position: relative; }
 .card-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.18s ease; background: #000; }
