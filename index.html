@@ -9,13 +9,14 @@ layout: default
       <h1>William Harris</h1>
       <p class="hero3-statement">I build robots that help in emergencies.</p>
       <p class="hero3-lede">I'm a mechanical engineering master's student at UC San Diego. I design the hardware: frames and mechanisms, motors and their control, and the tests that show whether a design does what the model says. Right now that means rescue robots in the <a href="https://ucsdarclab.com/">Advanced Robotics and Controls Lab</a>.</p>
-      <ul class="badges" aria-label="Degrees and affiliations">
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11.5V16c0 1.4 2.7 3 6 3s6-1.6 6-3v-4.5"/></svg>M.S. Mechanical Engineering '27</li>
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11.5V16c0 1.4 2.7 3 6 3s6-1.6 6-3v-4.5"/></svg>B.S. '25, minor in Design</li>
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>UC San Diego</li>
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.8 3h10.4A2 2 0 0 0 19 18l-5-9V3"/></svg>ARCLab</li>
-      </ul>
-      <p class="avail"><span class="avail-dot" aria-hidden="true"></span>Available for full-time roles and internships starting summer 2027</p>
+      <dl class="nameplate" aria-label="About at a glance">
+        <div><dt>Focus</dt><dd>Rescue robotics · haptics · medical devices</dd></div>
+        <div><dt>Program</dt><dd>M.S. Mechanical Engineering '27 · B.S. '25, minor in Design</dd></div>
+        <div><dt>School</dt><dd>UC San Diego</dd></div>
+        <div><dt>Lab</dt><dd>ARCLab · advisor Prof. Michael Yip</dd></div>
+        <div><dt>Status</dt><dd><span class="avail-dot" aria-hidden="true"></span>Available for full-time roles and internships, summer 2027</dd></div>
+        <span class="barcode" aria-hidden="true"></span>
+      </dl>
       <p class="cta-row">
         <a class="cta cta-solid" href="#projects">See my projects</a>
         <a class="cta" href="{{ site.resume | relative_url }}">Resume</a>
@@ -33,7 +34,7 @@ layout: default
 
 <section class="section wrap" id="about">
   <p class="kicker">About</p>
-  <h2 class="h-big">Who I am</h2>
+  <h2 class="h-big">About me</h2>
   <div class="about-grid">
     <div class="bio">
       <p>I'm <strong>William Harris</strong>, a mechanical engineer and master's student at UC San Diego. I like the part of robotics where an idea has to survive contact with a real machine: <strong>frames, mechanisms, motors, and the tests</strong> that show whether the model was right.</p>
@@ -88,7 +89,7 @@ layout: default
 
 <section class="section wrap" id="projects">
   <p class="kicker">Projects</p>
-  <h2 class="h-big">Selected work</h2>
+  <h2 class="h-big">Things I've built</h2>
 
   {% assign all = site.projects | sort: "order" %}
   {% assign research = all | where: "group", "research" %}
@@ -172,7 +173,7 @@ layout: default
 <section class="section wrap two-up" id="more">
   <div>
     <p class="kicker">Tools</p>
-    <h2 class="h-mid">What I work with</h2>
+    <h2 class="h-mid">Toolbox</h2>
     <dl class="toolbox2">
       <dt>Design and fabrication</dt>
       <dd><ul class="chips"><li>SolidWorks</li><li>Creo</li><li>Ansys FEA</li><li>Fusion 360 CAM</li><li>DFMA</li><li>CNC and manual machining</li><li>Laser and waterjet</li><li>3D printing</li><li>MIG welding</li></ul></dd>
