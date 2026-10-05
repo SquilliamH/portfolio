@@ -452,3 +452,16 @@ section[id] { scroll-margin-top: 4.2rem; }
 .footer-fine { font-family: var(--font-mono); font-size: 0.72rem; color: var(--muted); margin: 0.6rem 0 0; }
 button.btn { cursor: pointer; font: inherit; font-family: var(--font-mono); font-size: 0.7rem; padding: 0.12rem 0.5rem; }
 @media (max-width: 800px) { .tl-hint { margin-left: 1.6rem; } }
+
+/* ---------- Typeface previews (add ?font=notebook|signage|plain to a page URL) ---------- */
+h1, h2, h3, .hero3-statement, .pub-title, .footer-lede, .site-name, .next-project a, .tl-role { font-family: var(--font-head, var(--font-ui)); }
+:root[data-font="notebook"] { --font-head: "Source Serif 4", Georgia, serif; }
+:root[data-font="notebook"] h1, :root[data-font="notebook"] h2, :root[data-font="notebook"] h3 { font-weight: 600; letter-spacing: -0.01em; }
+:root[data-font="signage"] { --font-head: "Barlow Condensed", "IBM Plex Sans", sans-serif; }
+:root[data-font="signage"] h1, :root[data-font="signage"] h2, :root[data-font="signage"] h3 { font-weight: 600; letter-spacing: 0.01em; }
+:root[data-font="signage"] h1 { font-size: clamp(3rem, 7.5vw, 4.2rem); text-transform: uppercase; letter-spacing: 0.02em; }
+:root[data-font="signage"] .h-big { font-size: clamp(2.2rem, 5vw, 2.9rem); text-transform: uppercase; letter-spacing: 0.02em; }
+:root[data-font="signage"] .hero3-statement { font-size: clamp(1.5rem, 3vw, 1.9rem); }
+:root[data-font="plain"] { --font-head: "Roboto Slab", Georgia, serif; --font-body: "Roboto", system-ui, sans-serif; --font-ui: "Roboto", system-ui, sans-serif; }
+:root[data-font="plain"] body { font-family: "Roboto", system-ui, sans-serif; }
+:root[data-font="plain"] h1, :root[data-font="plain"] h2, :root[data-font="plain"] h3 { font-weight: 500; }
