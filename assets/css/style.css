@@ -408,3 +408,6 @@ section[id] { scroll-margin-top: 4.2rem; }
   .hero3-inner { grid-template-columns: 1fr; }
   .hero3 .portrait { order: -1; max-width: 220px; justify-self: start; margin-bottom: 0.6rem; }
 }
+
+.avail { display: inline-flex; align-items: center; gap: 0.55rem; font-family: var(--font-mono); font-size: 0.78rem; margin: 0 0 1rem; color: var(--ink); }
+.avail-dot { width: 8px; height: 8px; border-radius: 50%; background: #2fb36d; box-shadow: 0 0 0 3px color-mix(in srgb, #2fb36d 28%, transparent); flex: none; }
