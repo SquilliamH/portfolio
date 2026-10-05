@@ -1,14 +1,13 @@
 ---
 title: PHABS Haptic Teleoperation Device
 summary: A handheld bimanual teleoperation device with pinch and lateral force feedback, built to improve demonstrations for robot learning.
-group: research
+group: coursework
 blurb: "A handheld bimanual haptic device that lets operators feel contact while teaching robots."
 card_role: "Built the first lateral force-feedback prototype."
-kind: Research and course project
-order: 4
+kind: Course project
+order: 7
 role: Team of four with Emma Fickett, Calvin Joyce, and Lucas Yager. I built the first prototype of the lateral force-feedback mechanism.
-context: Haptic Systems course project and ARCLab, UC San Diego
-context_url: https://ucsdarclab.com/
+context: MAE 219 Haptic Systems, UC San Diego
 dates: 2026
 tools: [Arduino Mega, PyBullet, Vive trackers, capstan drives]
 result: "In a three-person pilot, everyone completed a fragile-object handoff with haptic feedback, and only one of three did without it."
@@ -124,7 +123,7 @@ I handed the fix to undergraduate researchers in the lab, who have since made de
 
 ## Since then
 
-The lab has connected PHABS to a robot arm. The pinch aperture sets the gripper command, the robot's measured contact force comes back as pinch feedback, and motion and force are logged together for robot-learning data.
+After the course, PHABS continued as its own effort in the lab, and I wasn't part of that work. It has since been connected to a robot arm: the pinch aperture sets the gripper command, the robot's measured contact force comes back as pinch feedback, and motion and force are logged together for robot-learning data.
 
 ## The paper
 

@@ -38,7 +38,7 @@ layout: default
   <div class="about-grid">
     <div class="bio">
       <p>I'm <strong>William Harris</strong>, a mechanical engineer and master's student at UC San Diego. I like the part of robotics where an idea has to survive contact with a real machine: <strong>frames, mechanisms, motors, and the tests</strong> that show whether the model was right.</p>
-      <p>Most of my time goes to <strong>rescue robots</strong>. At the <a href="https://ucsdarclab.com/">Advanced Robotics and Controls Lab</a>, with my thesis advisor <a href="https://yip.eng.ucsd.edu/">Prof. Michael Yip</a>, I built the frame and center-of-mass stage for a <strong>mobile manipulator</strong> for human-extraction research, a <strong>leg that changes shape</strong> between fast travel and heavy dragging (<a href="https://arxiv.org/abs/2511.10816">ICRA 2026</a>), and the optimization and hexapod design that follow from it. I also helped build <strong>PHABS</strong>, a haptic device for teaching robots through touch.</p>
+      <p>Most of my time goes to <strong>rescue robots</strong>. At the <a href="https://ucsdarclab.com/">Advanced Robotics and Controls Lab</a>, with my thesis advisor <a href="https://yip.eng.ucsd.edu/">Prof. Michael Yip</a>, I built the frame and center-of-mass stage for a <strong>mobile manipulator</strong> for human-extraction research, a <strong>leg that changes shape</strong> between fast travel and heavy dragging (<a href="https://arxiv.org/abs/2511.10816">ICRA 2026</a>), and the optimization and hexapod design that follow from it.</p>
       <p>Before that I spent three years at <a href="https://studentorg.ucsd.edu/Home/Details/19098"><strong>Triton Robotics</strong></a>, from machining chassis parts to leading the Hero robot's redesign to serving as president of the 80-member team. I'm looking for full-time roles and internships in <strong>medical robotics and medical devices</strong>, where careful mechanical design and testing decide whether something is safe to use around people.</p>
 
       <div class="news">
@@ -60,7 +60,7 @@ layout: default
         </li>
         <li class="is-now">
           <details><summary><span class="tl-date">Jun 2024 – Present</span><span class="tl-role">Graduate Researcher</span><span class="tl-org"><a href="https://ucsdarclab.com/">ARCLab</a> · advisor Prof. Michael Yip</span></summary>
-            <p class="tl-more">A shape-changing 5-bar leg (+83% foot force, ICRA 2026), the frame and center-of-mass stage for a mobile manipulator, and a first force-feedback prototype for PHABS.</p></details>
+            <p class="tl-more">A shape-changing 5-bar leg (+83% foot force, ICRA 2026), the frame and center-of-mass stage for a mobile manipulator, and the optimization behind a hexapod rescue robot.</p></details>
         </li>
         <li>
           <details><summary><span class="tl-date">Jul 2023 – Jun 2024</span><span class="tl-role">President</span><span class="tl-org"><a href="https://studentorg.ucsd.edu/Home/Details/19098">Triton Robotics</a></span></summary>
@@ -110,7 +110,7 @@ layout: default
     </div>
   </article>
 
-  <div class="cards">
+  <div class="cards two">
     {% for p in research offset: 1 %}
       {% capture meta %}{{ p.context }} · {{ p.dates }}{% endcapture %}
       {% include card.html title=p.title url=p.url image=p.thumbnail video=p.hero_video blurb=p.blurb role=p.card_role meta=meta tools=p.tools links=p.links %}
@@ -118,7 +118,7 @@ layout: default
   </div>
 
   <h3 class="sub-head">Leadership &amp; coursework</h3>
-  <div class="cards">
+  <div class="cards flow">
     {% for p in all %}{% if p.group == "coursework" %}
       {% capture meta %}{{ p.context }} · {{ p.dates }}{% endcapture %}
       {% include card.html title=p.title url=p.url image=p.thumbnail blurb=p.blurb role=p.card_role meta=meta tools=p.tools links=p.links %}
