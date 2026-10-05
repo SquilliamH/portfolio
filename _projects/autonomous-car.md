@@ -3,6 +3,7 @@ title: Line-Following Car That Plays Music
 summary: A ROS 2 car on a Jetson Nano that follows a track and plays a note when it sees a colored marker.
 group: coursework
 blurb: "A ROS 2 car that follows a line and plays a note when it sees a colored marker."
+card_role: "Hardware setup and system integration."
 kind: Course project
 order: 21
 hidden: true

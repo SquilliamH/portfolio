@@ -3,6 +3,7 @@ title: Hexapod Rescue Robot and Leg Optimization
 summary: A formal optimization of the morphing leg's geometry and footpath for search and rescue modes, and the design of the hexapod it will run on.
 group: research
 blurb: "Optimizing the leg geometry and footpath, and designing the 11 kg hexapod it runs on."
+card_role: "Wrote the kinematic model and optimizer, and designed the hexapod."
 kind: Research
 order: 2
 role: Kinematic model, optimization framework, hexapod design and analysis
@@ -111,3 +112,5 @@ The quasi-static model prescribes how the robot walks and then optimizes the geo
 The next stage is a bilevel reinforcement learning framework. The outer loop searches over leg geometry, starting from this result instead of at random. The inner loop trains a walking policy for each candidate, with separate objectives for search and rescue.
 
 The central question: **does the geometry found by optimization still hold once the robot is free to discover its own behavior?** If the two differ, learning found something the optimizer couldn't. If they agree, the optimum has been validated independently. I proposed the optimization stage as a funding proposal for MAE 269 with Dillan Selitsch.
+
+<!-- TODO(William): add a short "What broke" section here, such as an optimizer or model result that surprised you. -->

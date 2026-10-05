@@ -3,6 +3,7 @@ title: Triton Robotics Competition Robot
 summary: Two generations of chassis for a projectile-launching competition robot, then a year leading the 80-member team.
 group: coursework
 blurb: "Two generations of a competition robot chassis, then a year leading the 80-member team."
+card_role: "Hero robot lead, then team president."
 kind: Team leadership
 order: 4
 role: Mechanical team member (2021–22), Hero robot lead (2022–23), president (2023–24)

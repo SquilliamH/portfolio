@@ -14,6 +14,7 @@
   group: coursework
   blurb: A MATLAB script that sizes shafts under bending and torsion, checked against AI-generated code.
   meta: MAE 190 Design of Machine Elements · Fall 2024
+  role: Individual project.
   links:
     - label: Write-up (PDF)
       url: /assets/docs/shaft-design-documentation.pdf

@@ -39,44 +39,50 @@ layout: default
       <p>I'm <strong>William Harris</strong>, a mechanical engineer and master's student at UC San Diego. I like the part of robotics where an idea has to survive contact with a real machine: <strong>frames, mechanisms, motors, and the tests</strong> that show whether the model was right.</p>
       <p>Most of my time goes to <strong>rescue robots</strong>. At the <a href="https://ucsdarclab.com/">Advanced Robotics and Controls Lab</a>, with my thesis advisor <a href="https://yip.eng.ucsd.edu/">Prof. Michael Yip</a>, I built the frame and center-of-mass stage for a <strong>mobile manipulator</strong> for human-extraction research, a <strong>leg that changes shape</strong> between fast travel and heavy dragging (<a href="https://arxiv.org/abs/2511.10816">ICRA 2026</a>), and the optimization and hexapod design that follow from it. I also helped build <strong>PHABS</strong>, a haptic device for teaching robots through touch.</p>
       <p>Before that I spent three years at <a href="https://studentorg.ucsd.edu/Home/Details/19098"><strong>Triton Robotics</strong></a>, from machining chassis parts to leading the Hero robot's redesign to serving as president of the 80-member team. I'm looking for full-time roles and internships in <strong>medical robotics and medical devices</strong>, where careful mechanical design and testing decide whether something is safe to use around people.</p>
+
+      <div class="news">
+        <p class="sub-label">News</p>
+        <ul>
+          {% for n in site.data.news %}
+          <li><span class="news-date">{{ n.date }}</span>{% if n.url %}<a href="{{ n.url }}">{{ n.text }}</a>{% else %}{{ n.text }}{% endif %}</li>
+          {% endfor %}
+        </ul>
+      </div>
     </div>
-    <ol class="timeline" aria-label="Timeline">
-      <li class="is-now">
-        <p class="tl-date">Expected Jun 2027</p>
-        <p class="tl-role">M.S. Mechanical Engineering</p>
-        <p class="tl-org"><a href="https://mae.ucsd.edu/">UC San Diego</a></p>
-      </li>
-      <li class="is-now">
-        <p class="tl-date">Jun 2024 – Present</p>
-        <p class="tl-role">Graduate Researcher</p>
-        <p class="tl-org"><a href="https://ucsdarclab.com/">ARCLab</a> · advisor Prof. Michael Yip</p>
-      </li>
-      <li>
-        <p class="tl-date">Jul 2023 – Jun 2024</p>
-        <p class="tl-role">President</p>
-        <p class="tl-org"><a href="https://studentorg.ucsd.edu/Home/Details/19098">Triton Robotics</a></p>
-      </li>
-      <li>
-        <p class="tl-date">Dec 2022 – Jun 2023</p>
-        <p class="tl-role">Team Lead, Baja Del Sol</p>
-        <p class="tl-org"><a href="https://globalties.ucsd.edu/what/projects/baja-solar-water-heater.html">UCSD Global TIES</a></p>
-      </li>
-      <li>
-        <p class="tl-date">May 2022 – Jul 2023</p>
-        <p class="tl-role">Hero Robot Lead</p>
-        <p class="tl-org">Triton Robotics</p>
-      </li>
-      <li>
-        <p class="tl-date">Sep 2021 – May 2022</p>
-        <p class="tl-role">Mechanical Team Member</p>
-        <p class="tl-org">Triton Robotics</p>
-      </li>
-      <li>
-        <p class="tl-date">Sep 2021 – Jun 2025</p>
-        <p class="tl-role">B.S. Mechanical Engineering</p>
-        <p class="tl-org">Minor in Design · UC San Diego</p>
-      </li>
-    </ol>
+
+    <div>
+      <p class="tl-hint">Click an entry for details</p>
+      <ol class="timeline" aria-label="Timeline">
+        <li class="is-now">
+          <details><summary><span class="tl-date">Expected Jun 2027</span><span class="tl-role">M.S. Mechanical Engineering</span><span class="tl-org"><a href="https://mae.ucsd.edu/">UC San Diego</a></span></summary>
+            <p class="tl-more">GPA 3.68. Coursework in robotics, linear control, haptics, soft robotics, and parametric identification.</p></details>
+        </li>
+        <li class="is-now">
+          <details><summary><span class="tl-date">Jun 2024 – Present</span><span class="tl-role">Graduate Researcher</span><span class="tl-org"><a href="https://ucsdarclab.com/">ARCLab</a> · advisor Prof. Michael Yip</span></summary>
+            <p class="tl-more">A shape-changing 5-bar leg (+83% foot force, ICRA 2026), the frame and center-of-mass stage for a mobile manipulator, and a first force-feedback prototype for PHABS.</p></details>
+        </li>
+        <li>
+          <details><summary><span class="tl-date">Jul 2023 – Jun 2024</span><span class="tl-role">President</span><span class="tl-org"><a href="https://studentorg.ucsd.edu/Home/Details/19098">Triton Robotics</a></span></summary>
+            <p class="tl-more">Led an 80-member team and rebuilt the training program, which brought in about 40 new members in a year.</p></details>
+        </li>
+        <li>
+          <details><summary><span class="tl-date">Dec 2022 – Jun 2023</span><span class="tl-role">Team Lead, Baja Del Sol</span><span class="tl-org"><a href="https://globalties.ucsd.edu/what/projects/baja-solar-water-heater.html">UCSD Global TIES</a></span></summary>
+            <p class="tl-more">Revived a solar water heater project for an orphanage in Tijuana, and translated between the students and the house parents.</p></details>
+        </li>
+        <li>
+          <details><summary><span class="tl-date">May 2022 – Jul 2023</span><span class="tl-role">Hero Robot Lead</span><span class="tl-org">Triton Robotics</span></summary>
+            <p class="tl-more">Led the Hero redesign, with an X-drive and a slip-ring turret: +40% rotation speed and +50% targeting accuracy.</p></details>
+        </li>
+        <li>
+          <details><summary><span class="tl-date">Sep 2021 – May 2022</span><span class="tl-role">Mechanical Team Member</span><span class="tl-org">Triton Robotics</span></summary>
+            <p class="tl-more">Designed and built a lighter Hero chassis with 30% less aluminum tubing and a modular suspension.</p></details>
+        </li>
+        <li>
+          <details><summary><span class="tl-date">Sep 2021 – Jun 2025</span><span class="tl-role">B.S. Mechanical Engineering</span><span class="tl-org">Minor in Design · UC San Diego</span></summary>
+            <p class="tl-more">Senior capstone: a hexapod rescue-robot leg, sponsored by ARCLab.</p></details>
+        </li>
+      </ol>
+    </div>
   </div>
 </section>
 
@@ -98,6 +104,7 @@ layout: default
       <p class="tag-line">ARCLab · Research · ICRA 2026</p>
       <h3>{{ lead.title }}</h3>
       <p>{{ lead.result }}</p>
+      <p class="card-role"><span>My part</span> {{ lead.card_role }}</p>
       <ul class="tags">{% for t in lead.tools limit: 5 %}<li>{{ t }}</li>{% endfor %}</ul>
     </div>
   </article>
@@ -105,7 +112,7 @@ layout: default
   <div class="cards">
     {% for p in research offset: 1 %}
       {% capture meta %}{{ p.context }} · {{ p.dates }}{% endcapture %}
-      {% include card.html title=p.title url=p.url image=p.thumbnail blurb=p.blurb meta=meta tools=p.tools links=p.links %}
+      {% include card.html title=p.title url=p.url image=p.thumbnail video=p.hero_video blurb=p.blurb role=p.card_role meta=meta tools=p.tools links=p.links %}
     {% endfor %}
   </div>
 
@@ -113,13 +120,23 @@ layout: default
   <div class="cards">
     {% for p in all %}{% if p.group == "coursework" %}
       {% capture meta %}{{ p.context }} · {{ p.dates }}{% endcapture %}
-      {% include card.html title=p.title url=p.url image=p.thumbnail blurb=p.blurb meta=meta tools=p.tools links=p.links %}
+      {% include card.html title=p.title url=p.url image=p.thumbnail blurb=p.blurb role=p.card_role meta=meta tools=p.tools links=p.links %}
     {% endif %}{% endfor %}
     {% for p in site.data.smaller %}
-      {% include card.html title=p.title url=p.url image=p.image blurb=p.blurb meta=p.meta links=p.links %}
+      {% include card.html title=p.title url=p.url image=p.image blurb=p.blurb role=p.role meta=p.meta links=p.links %}
     {% endfor %}
   </div>
 </section>
+
+{% if site.show_why %}
+<section class="section wrap" id="why">
+  <p class="kicker">Motivation</p>
+  <h2 class="h-big">{{ site.data.why.title }}</h2>
+  <div class="why">
+    {% for para in site.data.why.paragraphs %}<p>{{ para }}</p>{% endfor %}
+  </div>
+</section>
+{% endif %}
 
 <section class="section wrap" id="publications">
   <p class="kicker">Publications</p>
@@ -132,14 +149,25 @@ layout: default
         <p class="pub-title">{{ pub.title }}</p>
         {% if pub.authors %}<p class="pub-authors">{{ pub.authors }}</p>{% endif %}
         <p class="pub-meta">{{ pub.venue }} &middot; {{ pub.status }} &middot; {{ pub.role }}</p>
-        {% if pub.links %}
-        <p class="pub-links">{% for l in pub.links %}<a class="btn" href="{{ l.url | relative_url }}">{{ l.label }}</a>{% endfor %}</p>
-        {% endif %}
+        <p class="pub-links">
+          {% for l in pub.links %}<a class="btn" href="{{ l.url | relative_url }}">{{ l.label }}</a>{% endfor %}
+          {% if pub.video %}<a class="btn" href="{{ pub.video }}">Video</a>{% endif %}
+          {% if pub.bibtex %}<button class="btn copy-bib" type="button" data-bib="{{ pub.bibtex | escape }}">BibTeX</button>{% endif %}
+        </p>
       </div>
     </li>
     {% endfor %}
   </ol>
 </section>
+
+{% if site.show_github %}
+<section class="section wrap" id="code">
+  <p class="kicker">Code</p>
+  <h2 class="h-big">Live from GitHub</h2>
+  <div class="cards" id="gh-repos" data-user="SquilliamH"></div>
+  <p class="gh-more"><a class="link-arrow" href="{{ site.github }}">{{ site.github | remove: 'https://' }}</a></p>
+</section>
+{% endif %}
 
 <section class="section wrap two-up" id="more">
   <div>
@@ -152,11 +180,23 @@ layout: default
       <dd><ul class="chips"><li>BLDC motor control</li><li>CAN</li><li>PCB design (EasyEDA)</li><li>Circuit design</li></ul></dd>
       <dt>Software</dt>
       <dd><ul class="chips"><li>Python</li><li>MATLAB</li><li>C (Arduino)</li><li>ROS 2</li><li>Embedded Linux</li><li>MuJoCo</li></ul></dd>
+      <dt>Relevant coursework</dt>
+      <dd><ul class="chips"><li>Robotics (MAE 204)</li><li>Linear Control (MAE 143B)</li><li>Haptic Systems (MAE 219)</li><li>Soft Robotics (MAE 249)</li><li>Parametric Identification (MAE 283A)</li><li>Design of Machine Elements (MAE 190)</li><li>Intro to Autonomous Vehicles (MAE 148)</li><li>Mechanical Design capstone (MAE 156A/B)</li></ul></dd>
     </dl>
   </div>
   <div>
     <p class="kicker">Off the clock</p>
     <h2 class="h-mid">Outside the lab</h2>
     <p>When I'm not in the lab, you'll usually find me on a bike trail, on a badminton court, or testing a new recipe. I lift, I review movies with friends, and I follow Formula 1.</p>
+  </div>
+</section>
+
+<section class="wrap resume-band">
+  <div class="resume-bar">
+    <div>
+      <strong>Full résumé</strong>
+      <span>Education, experience, projects, and skills in one page.</span>
+    </div>
+    <a class="cta cta-solid" href="{{ site.resume | relative_url }}">Open PDF &#8599;</a>
   </div>
 </section>

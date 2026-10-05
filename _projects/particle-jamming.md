@@ -3,6 +3,7 @@ title: Particle-Jamming Limb Stabilization
 summary: A vacuum-tunable particle-jamming interface for stabilizing a limb quickly in the field, tested against strap splints.
 group: coursework
 blurb: "A vacuum-stiffening glove splint that out-held strap splints 1.6 to 4 times in pull-out tests."
+card_role: "Solo: design, build, and test."
 kind: Course project
 order: 5
 role: Solo project, from design through testing

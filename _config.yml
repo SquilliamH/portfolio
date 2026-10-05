@@ -7,6 +7,11 @@ linkedin: https://www.linkedin.com/in/williamlharris3rd/
 github: https://github.com/SquilliamH
 resume: /assets/William_Harris_Resume.pdf
 
+# Fill these in to turn the matching piece of the site on.
+scholar: ""          # Google Scholar profile URL; shows a footer link when set
+show_github: false   # true shows a live list of your public GitHub repos on the home page
+show_why: false      # true shows the short personal story section (text lives in _data/why.yml)
+
 # Served at https://www.williamlh.com (custom domain, see CNAME).
 url: "https://www.williamlh.com"
 baseurl: ""
@@ -33,6 +38,7 @@ exclude:
   - Gemfile.lock
   - archive
   - Portfolio_Stuff
+  - TODO.md
 
 plugins:
   - jekyll-sitemap

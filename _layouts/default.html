@@ -22,6 +22,8 @@
         var t = new URLSearchParams(location.search).get('theme') || localStorage.getItem('theme');
         if (t !== 'light' && t !== 'dark') t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
         document.documentElement.setAttribute('data-theme', t);
+        var a = new URLSearchParams(location.search).get('accent');
+        if (a && /^[0-9a-f]{6}$/i.test(a)) document.documentElement.style.setProperty('--accent', '#' + a);
       } catch (e) {}
     })();
   </script>
@@ -48,6 +50,7 @@
         </button>
       </nav>
     </div>
+    <svg class="scroll-ecg" aria-hidden="true" viewBox="0 0 1000 24" preserveAspectRatio="none"><path pathLength="1" d="M0 12H70 q5 -5 10 0 H90 l3 2 l5 -12 l5 14 l3 -4 H122 q7 -7 14 0H230 q5 -5 10 0 H250 l3 2 l5 -12 l5 14 l3 -4 H282 q7 -7 14 0H390 q5 -5 10 0 H410 l3 2 l5 -12 l5 14 l3 -4 H442 q7 -7 14 0H550 q5 -5 10 0 H570 l3 2 l5 -12 l5 14 l3 -4 H602 q7 -7 14 0H710 q5 -5 10 0 H730 l3 2 l5 -12 l5 14 l3 -4 H762 q7 -7 14 0H870 q5 -5 10 0 H890 l3 2 l5 -12 l5 14 l3 -4 H922 q7 -7 14 0H1000"/></svg>
   </header>
 
   <main id="main">
@@ -61,8 +64,11 @@
         <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
         <li><a href="{{ site.linkedin }}">LinkedIn</a></li>
         <li><a href="{{ site.github }}">GitHub</a></li>
+        {% if site.scholar != "" %}<li><a href="{{ site.scholar }}">Google Scholar</a></li>{% endif %}
         <li><a href="{{ site.resume | relative_url }}">Resume (PDF)</a></li>
       </ul>
+      <p class="footer-note">Email is the best way to reach me.</p>
+      <p class="footer-fine">&copy; {{ 'now' | date: '%Y' }} William Harris &middot; La Jolla, CA</p>
     </div>
   </footer>
 
@@ -75,6 +81,62 @@
         root.setAttribute('data-theme', next);
         try { localStorage.setItem('theme', next); } catch (e) {}
       });
+
+
+      /* Scroll progress drawn as an ECG trace under the header. */
+      var ecgPath = document.querySelector('.scroll-ecg');
+      if (ecgPath) {
+        var ticking = false;
+        var update = function () {
+          var h = document.documentElement.scrollHeight - window.innerHeight;
+          var p = h > 0 ? Math.min(1, Math.max(0, window.scrollY / h)) : 0;
+          ecgPath.style.setProperty('--p', p.toFixed(4));
+          ticking = false;
+        };
+        window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+        update();
+      }
+
+      /* Project cards play their video loop on hover. */
+      document.querySelectorAll('.card').forEach(function (card) {
+        var v = card.querySelector('.card-video');
+        if (!v) return;
+        card.addEventListener('mouseenter', function () {
+          if (!v.getAttribute('src')) v.setAttribute('src', v.getAttribute('data-src'));
+          var pr = v.play(); if (pr && pr.catch) pr.catch(function () {});
+        });
+        card.addEventListener('mouseleave', function () { v.pause(); v.currentTime = 0; });
+      });
+
+      /* Copy BibTeX. */
+      document.querySelectorAll('.copy-bib').forEach(function (b) {
+        b.addEventListener('click', function () {
+          var text = b.getAttribute('data-bib');
+          var done = function () { var old = b.textContent; b.textContent = 'Copied'; setTimeout(function () { b.textContent = old; }, 1400); };
+          if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done);
+          else { var t = document.createElement('textarea'); t.value = text; document.body.appendChild(t); t.select(); document.execCommand('copy'); t.remove(); done(); }
+        });
+      });
+
+      /* Optional live GitHub list (turn on with show_github in _config.yml). */
+      var gh = document.getElementById('gh-repos');
+      if (gh && window.fetch) {
+        fetch('https://api.github.com/users/' + gh.getAttribute('data-user') + '/repos?sort=updated&per_page=12')
+          .then(function (r) { return r.json(); })
+          .then(function (repos) {
+            if (!Array.isArray(repos)) return;
+            repos.filter(function (r) { return !r.fork && r.name.toLowerCase() !== 'portfolio'; }).slice(0, 3).forEach(function (r) {
+              var a = document.createElement('article'); a.className = 'card';
+              var when = new Date(r.pushed_at).toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+              var link = document.createElement('a'); link.className = 'card-link'; link.href = r.html_url; link.setAttribute('aria-label', r.name);
+              var body = document.createElement('div'); body.className = 'card-body';
+              var h = document.createElement('h3'); h.textContent = r.name;
+              var pp = document.createElement('p'); pp.className = 'card-sum'; pp.textContent = r.description || 'No description yet.';
+              var m = document.createElement('p'); m.className = 'card-meta'; m.textContent = (r.language ? r.language + ' · ' : '') + when;
+              body.appendChild(h); body.appendChild(pp); body.appendChild(m); a.appendChild(link); a.appendChild(body); gh.appendChild(a);
+            });
+          }).catch(function () {});
+      }
 
       /* Highlight the nav tab for the section in view (home page only). */
       var links = document.querySelectorAll('.site-header nav a[data-section]');

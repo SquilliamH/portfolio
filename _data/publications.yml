@@ -6,6 +6,7 @@
   image: /assets/img/morphing-leg/thumb.jpg
   status: Accepted
   role: Co-first author
+  bibtex: "@inproceedings{harris2026morphing,\n  title={Dynamically Extensible and Retractable Robotic Leg Linkages for Multi-task Execution in Search and Rescue Scenarios},\n  author={Harris, William and Yager, Lucas and Sylvester, S. and Peiros, Elizabeth and Yip, Michael C.},\n  booktitle={IEEE International Conference on Robotics and Automation (ICRA)},\n  year={2026},\n  note={arXiv:2511.10816}\n}"
   links:
     - label: arXiv
       url: https://arxiv.org/abs/2511.10816

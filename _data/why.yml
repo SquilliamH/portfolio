@@ -1,0 +1,7 @@
+# A short personal story for the "Why this work" section. Shown only when show_why: true in _config.yml.
+# Starter idea: the time you translated Spanish for the orphanage house parents in Tijuana.
+# Replace the text below with a real moment in your own words, 2 to 4 sentences.
+title: Why this work
+paragraphs:
+  - "REPLACE ME: one specific moment that made you want to build robots that help people."
+  - "REPLACE ME: how that connects to rescue robots and medical devices."

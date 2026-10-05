@@ -3,6 +3,7 @@ title: Adaptive Morphing Leg for Search and Rescue
 summary: A reconfigurable 5-bar leg that switches between fast traversal and high-force load dragging. Published at ICRA 2026.
 group: research
 blurb: "A 5-bar leg that changes shape to switch between fast travel and heavy dragging. ICRA 2026."
+card_role: "Designed and built the testbed and capstan actuator, wrote the control. Co-first author."
 kind: Research
 order: 1
 role: Mechanical design, prototyping, and experimental validation. Co-first author.
@@ -112,7 +113,7 @@ The biped has four AK60-6 joint motors, capstan drives for the passive links, an
 </div>
 </div>
 
-## What didn't work yet
+## What broke
 
 - The biped was tested on a boom arm, not free-standing.
 - The feet slipped during dynamic load dragging.

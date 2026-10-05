@@ -6,10 +6,14 @@
     {% else %}
       <span class="card-ph" aria-hidden="true">{{ include.title | slice: 0, 2 }}</span>
     {% endif %}
+    {% if include.video %}
+      <video class="card-video" muted loop playsinline preload="none" data-src="{{ include.video | relative_url }}" aria-hidden="true"></video>
+    {% endif %}
   </div>
   <div class="card-body">
     <h3>{{ include.title }}</h3>
     <p class="card-sum">{{ include.blurb }}</p>
+    {% if include.role %}<p class="card-role"><span>My part</span> {{ include.role }}</p>{% endif %}
     {% if include.tools %}<ul class="card-tags">{% for t in include.tools limit: 3 %}<li>{{ t }}</li>{% endfor %}</ul>{% endif %}
     <p class="card-meta">{{ include.meta }}</p>
     {% if include.links %}
