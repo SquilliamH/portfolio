@@ -1,21 +1,24 @@
 ---
 layout: default
 ---
-<section class="hero2">
-  <div class="wrap hero2-inner">
-    <p class="kicker">Mechanical engineering · Robotics · Medical devices</p>
-    <h1>Building robots that <span class="hl">walk,</span> <span class="hl">reach,</span> and <span class="hl">help</span> in emergencies.</h1>
-    <p class="hero2-lede">I'm a mechanical engineer at UC San Diego who designs the hardware: frames and mechanisms, motors and their control, and the tests that show whether a design does what the model says. Currently a researcher in the <a href="https://ucsdarclab.com/">Advanced Robotics and Controls Lab</a>.</p>
-    <ul class="pills">
-      <li>M.S. Mechanical Engineering '27</li>
-      <li>B.S. '25, minor in Design</li>
-      <li>UC San Diego</li>
-    </ul>
-    <p class="cta-row">
-      <a class="cta cta-solid" href="{{ '/projects/' | relative_url }}">View projects &rarr;</a>
-      <a class="cta" href="{{ site.resume | relative_url }}">Download resume</a>
-      <a class="cta" href="mailto:{{ site.email }}">Email me</a>
-    </p>
+<section class="hero3">
+  <div class="ecg" aria-hidden="true"></div>
+  <div class="wrap hero3-inner">
+    <div class="hero3-text">
+      <p class="kicker">Mechanical engineering · Robotics · Medical devices</p>
+      <h1>William Harris</h1>
+      <p class="hero3-statement">I build robots that help in emergencies.</p>
+      <p class="hero3-lede">I'm a mechanical engineering master's student at UC San Diego. I design the hardware: frames and mechanisms, motors and their control, and the tests that show whether a design does what the model says. Right now that means rescue robots in the <a href="https://ucsdarclab.com/">Advanced Robotics and Controls Lab</a>.</p>
+      <p class="cta-row">
+        <a class="cta cta-solid" href="#projects">See my projects</a>
+        <a class="cta" href="{{ site.resume | relative_url }}">Resume</a>
+        <a class="cta" href="mailto:{{ site.email }}">Email me</a>
+      </p>
+    </div>
+    <figure class="portrait">
+      <img src="{{ '/assets/img/home/william.jpg' | relative_url }}" alt="William Harris sitting by a fountain">
+      <figcaption>William Harris<br>La Jolla, CA</figcaption>
+    </figure>
   </div>
 </section>
 
@@ -26,7 +29,7 @@ layout: default
     <div class="bio">
       <p>I'm <strong>William Harris</strong>, a mechanical engineer and master's student at UC San Diego. I like the part of robotics where an idea has to survive contact with a real machine: <strong>frames, mechanisms, motors, and the tests</strong> that show whether the model was right.</p>
       <p>Most of my time goes to <strong>rescue robots</strong>. At the <a href="https://ucsdarclab.com/">Advanced Robotics and Controls Lab</a>, with my thesis advisor <a href="https://yip.eng.ucsd.edu/">Prof. Michael Yip</a>, I built the frame and center-of-mass stage for a <strong>mobile manipulator</strong> for human-extraction research, a <strong>leg that changes shape</strong> between fast travel and heavy dragging (<a href="https://arxiv.org/abs/2511.10816">ICRA 2026</a>), and the optimization and hexapod design that follow from it. I also helped build <strong>PHABS</strong>, a haptic device for teaching robots through touch.</p>
-      <p>Before that I spent three years at <a href="https://studentorg.ucsd.edu/Home/Details/19098"><strong>Triton Robotics</strong></a>, from machining chassis parts to leading the Hero robot's redesign to serving as president of the 80-member team. I'm looking for full-time roles and internships in <strong>medical robotics and medical devices</strong>, where careful mechanical design and testing decide whether something is safe to use around people. The projects below link to full write-ups.</p>
+      <p>Before that I spent three years at <a href="https://studentorg.ucsd.edu/Home/Details/19098"><strong>Triton Robotics</strong></a>, from machining chassis parts to leading the Hero robot's redesign to serving as president of the 80-member team. I'm looking for full-time roles and internships in <strong>medical robotics and medical devices</strong>, where careful mechanical design and testing decide whether something is safe to use around people.</p>
     </div>
     <ol class="timeline" aria-label="Timeline">
       <li class="is-now">
@@ -68,17 +71,13 @@ layout: default
   </div>
 </section>
 
-<section class="section wrap" id="work">
-  <div class="section-head2">
-    <div>
-      <p class="kicker">Projects</p>
-      <h2 class="h-big">Selected work</h2>
-    </div>
-    <a class="link-arrow" href="{{ '/projects/' | relative_url }}">All projects</a>
-  </div>
+<section class="section wrap" id="projects">
+  <p class="kicker">Projects</p>
+  <h2 class="h-big">Selected work</h2>
 
-  {% assign featured = site.projects | where: "group", "research" | sort: "order" %}
-  {% assign lead = featured | first %}
+  {% assign all = site.projects | sort: "order" %}
+  {% assign research = all | where: "group", "research" %}
+  {% assign lead = research | first %}
   <article class="feature">
     <a class="card-link" href="{{ lead.url | relative_url }}" aria-label="{{ lead.title }}"></a>
     <div class="feature-media">
@@ -94,22 +93,28 @@ layout: default
     </div>
   </article>
 
-  <div class="cards two">
-    {% for p in featured offset: 1 limit: 2 %}
+  <div class="cards">
+    {% for p in research offset: 1 %}
       {% capture meta %}{{ p.context }} · {{ p.dates }}{% endcapture %}
       {% include card.html title=p.title url=p.url image=p.thumbnail blurb=p.blurb meta=meta tools=p.tools links=p.links %}
     {% endfor %}
   </div>
+
+  <h3 class="sub-head">Leadership &amp; coursework</h3>
+  <div class="cards">
+    {% for p in all %}{% if p.group == "coursework" %}
+      {% capture meta %}{{ p.context }} · {{ p.dates }}{% endcapture %}
+      {% include card.html title=p.title url=p.url image=p.thumbnail blurb=p.blurb meta=meta tools=p.tools links=p.links %}
+    {% endif %}{% endfor %}
+    {% for p in site.data.smaller %}
+      {% include card.html title=p.title url=p.url image=p.image blurb=p.blurb meta=p.meta links=p.links %}
+    {% endfor %}
+  </div>
 </section>
 
-<section class="section wrap">
-  <div class="section-head2">
-    <div>
-      <p class="kicker">Publications</p>
-      <h2 class="h-big">Papers</h2>
-    </div>
-    <a class="link-arrow" href="{{ '/publications/' | relative_url }}">Details</a>
-  </div>
+<section class="section wrap" id="publications">
+  <p class="kicker">Publications</p>
+  <h2 class="h-big">Papers</h2>
   <ol class="pubs">
     {% for pub in site.data.publications %}
     <li class="pub">
@@ -127,7 +132,7 @@ layout: default
   </ol>
 </section>
 
-<section class="section wrap two-up">
+<section class="section wrap two-up" id="more">
   <div>
     <p class="kicker">Tools</p>
     <h2 class="h-mid">What I work with</h2>

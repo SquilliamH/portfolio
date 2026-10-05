@@ -1,30 +1,10 @@
 ---
-layout: default
-title: Publications
+layout: null
 permalink: /publications/
-summary: Papers from the Advanced Robotics and Controls Lab.
 ---
-<section class="wrap page-head">
-  <h1>Publications</h1>
-  <p class="page-lede">Work from the <a href="https://ucsdarclab.com/">Advanced Robotics and Controls Lab</a> at UC San Diego.</p>
-</section>
-
-<section class="wrap">
-  <ol class="pubs">
-    {% for pub in site.data.publications %}
-    <li class="pub">
-      {% if pub.image %}<img class="pub-thumb" src="{{ pub.image | relative_url }}" alt="" loading="lazy">{% else %}<div class="pub-thumb ph" aria-hidden="true"></div>{% endif %}
-      <div>
-        <p class="pub-title">{{ pub.title }}</p>
-        {% if pub.authors %}<p class="pub-authors">{{ pub.authors }}</p>{% endif %}
-        <p class="pub-meta">{{ pub.venue }} &middot; {{ pub.status }} &middot; {{ pub.role }}</p>
-        {% if pub.links %}
-        <p class="pub-links">
-          {% for l in pub.links %}<a class="btn" href="{{ l.url | relative_url }}">{{ l.label }}</a>{% endfor %}
-        </p>
-        {% endif %}
-      </div>
-    </li>
-    {% endfor %}
-  </ol>
-</section>
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Redirecting</title>
+<link rel="canonical" href="{{ '/' | relative_url }}#publications">
+<meta http-equiv="refresh" content="0; url={{ '/' | relative_url }}#publications">
+<script>location.replace("{{ '/' | relative_url }}#publications");</script>
+</head><body><a href="{{ '/' | relative_url }}#publications">Continue to the publications section</a></body></html>

@@ -1,36 +1,10 @@
 ---
-layout: default
-title: Projects
+layout: null
 permalink: /projects/
-summary: Research, team, and course projects in robotics and mechanical design.
 ---
-<section class="wrap page-head">
-  <h1>Projects</h1>
-  <p class="page-lede">Robots and mechanisms I have helped design and build, from rescue legs to haptic devices.</p>
-  <p class="jump">Jump to: <a href="#research">research</a> <a href="#leadership-coursework">leadership &amp; coursework</a></p>
-</section>
-
-{% assign all = site.projects | sort: "order" %}
-
-<section class="wrap group" id="research">
-  <h2 class="group-title">Research</h2>
-  <div class="cards">
-    {% for p in all %}{% if p.group == "research" %}
-      {% capture meta %}{{ p.context }} · {{ p.dates }}{% endcapture %}
-      {% include card.html title=p.title url=p.url image=p.thumbnail blurb=p.blurb meta=meta tools=p.tools links=p.links %}
-    {% endif %}{% endfor %}
-  </div>
-</section>
-
-<section class="wrap group" id="leadership-coursework">
-  <h2 class="group-title">Leadership &amp; coursework</h2>
-  <div class="cards">
-    {% for p in all %}{% if p.group == "coursework" %}
-      {% capture meta %}{{ p.context }} · {{ p.dates }}{% endcapture %}
-      {% include card.html title=p.title url=p.url image=p.thumbnail blurb=p.blurb meta=meta tools=p.tools links=p.links %}
-    {% endif %}{% endfor %}
-    {% for p in site.data.smaller %}
-      {% include card.html title=p.title url=p.url image=p.image blurb=p.blurb meta=p.meta links=p.links %}
-    {% endfor %}
-  </div>
-</section>
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Redirecting</title>
+<link rel="canonical" href="{{ '/' | relative_url }}#projects">
+<meta http-equiv="refresh" content="0; url={{ '/' | relative_url }}#projects">
+<script>location.replace("{{ '/' | relative_url }}#projects");</script>
+</head><body><a href="{{ '/' | relative_url }}#projects">Continue to the projects section</a></body></html>

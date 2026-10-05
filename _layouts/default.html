@@ -14,6 +14,17 @@
   <link rel="icon" type="image/png" href="{{ '/assets/img/favicon-32.png' | relative_url }}">
   <link rel="apple-touch-icon" href="{{ '/assets/img/favicon.png' | relative_url }}">
 
+  <script>
+    /* Pick the theme before first paint: a saved choice, else the system setting. ?theme=light|dark is for previews. */
+    (function () {
+      try {
+        var t = new URLSearchParams(location.search).get('theme') || localStorage.getItem('theme');
+        if (t !== 'light' && t !== 'dark') t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
@@ -26,10 +37,14 @@
     <div class="wrap header-inner">
       <a class="site-name" href="{{ '/' | relative_url }}"><span class="logo" aria-hidden="true"></span>William Harris</a>
       <nav aria-label="Main">
-        <a href="{{ '/' | relative_url }}"{% if page.url == "/" %} aria-current="page"{% endif %}>About</a>
-        <a href="{{ '/projects/' | relative_url }}"{% if page.url contains "/projects/" %} aria-current="page"{% endif %}>Projects</a>
-        <a href="{{ '/publications/' | relative_url }}"{% if page.url contains "/publications/" %} aria-current="page"{% endif %}>Publications</a>
+        <a href="{{ '/' | relative_url }}#about" data-section="about">About</a>
+        <a href="{{ '/' | relative_url }}#projects" data-section="projects">Projects</a>
+        <a href="{{ '/' | relative_url }}#publications" data-section="publications">Publications</a>
         <a class="nav-cta" href="{{ site.resume | relative_url }}">Resume</a>
+        <button class="theme-toggle" type="button" aria-label="Switch between light and dark mode" title="Switch between light and dark mode">
+          <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg>
+          <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
       </nav>
     </div>
   </header>
@@ -49,5 +64,42 @@
       </ul>
     </div>
   </footer>
+
+  <script>
+    (function () {
+      var root = document.documentElement;
+      var btn = document.querySelector('.theme-toggle');
+      if (btn) btn.addEventListener('click', function () {
+        var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', next);
+        try { localStorage.setItem('theme', next); } catch (e) {}
+      });
+
+      /* Highlight the nav tab for the section in view (home page only). */
+      var links = document.querySelectorAll('.site-header nav a[data-section]');
+      var targets = [];
+      links.forEach(function (a) {
+        var el = document.getElementById(a.getAttribute('data-section'));
+        if (el) targets.push({ a: a, el: el });
+      });
+      if (!targets.length || !('IntersectionObserver' in window)) return;
+      var current = null;
+      function setActive(a) {
+        if (a === current) return;
+        current = a;
+        links.forEach(function (l) { l.classList.toggle('is-active', l === a); });
+      }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            var hit = targets.filter(function (t) { return t.el === e.target; })[0];
+            if (hit) setActive(hit.a);
+          }
+        });
+      }, { rootMargin: '-45% 0px -50% 0px' });
+      targets.forEach(function (t) { io.observe(t.el); });
+      window.addEventListener('scroll', function () { if (window.scrollY < 120) setActive(null); }, { passive: true });
+    })();
+  </script>
 </body>
 </html>
