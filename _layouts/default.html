@@ -26,10 +26,10 @@
     <div class="wrap header-inner">
       <a class="site-name" href="{{ '/' | relative_url }}"><span class="logo" aria-hidden="true"></span>William Harris</a>
       <nav aria-label="Main">
-        <a href="{{ '/' | relative_url }}"{% if page.url == "/" %} aria-current="page"{% endif %}>about</a>
-        <a href="{{ '/projects/' | relative_url }}"{% if page.url contains "/projects/" %} aria-current="page"{% endif %}>projects</a>
-        <a href="{{ '/publications/' | relative_url }}"{% if page.url contains "/publications/" %} aria-current="page"{% endif %}>publications</a>
-        <a href="{{ site.resume | relative_url }}">resume</a>
+        <a href="{{ '/' | relative_url }}"{% if page.url == "/" %} aria-current="page"{% endif %}>About</a>
+        <a href="{{ '/projects/' | relative_url }}"{% if page.url contains "/projects/" %} aria-current="page"{% endif %}>Projects</a>
+        <a href="{{ '/publications/' | relative_url }}"{% if page.url contains "/publications/" %} aria-current="page"{% endif %}>Publications</a>
+        <a class="nav-cta" href="{{ site.resume | relative_url }}">Resume</a>
       </nav>
     </div>
   </header>

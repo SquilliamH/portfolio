@@ -1,117 +1,113 @@
 ---
 layout: default
 ---
-<section class="intro wrap">
-  <div class="intro-text">
-    <h1>William Harris</h1>
-    <p class="tagline">M.S. Mechanical Engineering @ <a href="https://mae.ucsd.edu/">UC San Diego</a> &middot; <a href="https://ucsdarclab.com/">ARCLab</a> &middot; Rescue Robotics, Haptics, Medical Devices</p>
-    <p class="status">Looking for full-time roles and internships in medical robotics and medical devices. (<a href="{{ site.resume | relative_url }}">resume</a>)</p>
-    <p class="statement">I build robots that help in emergencies.</p>
-    <p>In the <a href="https://ucsdarclab.com/">Advanced Robotics and Controls Lab</a> I've built a mobile manipulator and a shape-changing leg for search and rescue, working with my thesis advisor, <a href="https://yip.eng.ucsd.edu/">Prof. Michael Yip</a>.</p>
-    <p>I design the hardware: frames and mechanisms, motors and their control, and the tests that show whether a design does what the model says. I've been hooked on robots since a fourth-grade LEGO class.</p>
+<section class="hero2">
+  <div class="wrap hero2-inner">
+    <p class="kicker">Mechanical engineering · Robotics · Medical devices</p>
+    <h1>Building robots that <span class="hl">walk,</span> <span class="hl">reach,</span> and <span class="hl">help</span> in emergencies.</h1>
+    <p class="hero2-lede">I'm a mechanical engineer at UC San Diego who designs the hardware: frames and mechanisms, motors and their control, and the tests that show whether a design does what the model says. Currently a researcher in the <a href="https://ucsdarclab.com/">Advanced Robotics and Controls Lab</a>.</p>
+    <ul class="pills">
+      <li>M.S. Mechanical Engineering '27</li>
+      <li>B.S. '25, minor in Design</li>
+      <li>UC San Diego</li>
+    </ul>
+    <p class="cta-row">
+      <a class="cta cta-solid" href="{{ '/projects/' | relative_url }}">View projects &rarr;</a>
+      <a class="cta" href="{{ site.resume | relative_url }}">Download resume</a>
+      <a class="cta" href="mailto:{{ site.email }}">Email me</a>
+    </p>
   </div>
-  <figure class="portrait">
-    <img src="{{ '/assets/img/home/william.jpg' | relative_url }}" alt="William Harris sitting by a fountain">
-    <figcaption>William Harris<br>La Jolla, CA</figcaption>
-  </figure>
 </section>
 
-<section class="section wrap">
-  <h2 class="section-title">What I'm working on</h2>
-  <div class="now">
-    <video autoplay muted loop playsinline preload="metadata" poster="{{ '/assets/img/morphing-leg/thumb.jpg' | relative_url }}" aria-label="Bipedal robot walking on morphing legs">
-      <source src="{{ '/assets/video/leg-loop.mp4' | relative_url }}" type="video/mp4">
-    </video>
-    <div>
-      <h3>A leg that changes shape</h3>
-      <p>A search and rescue robot has to cross rough ground quickly, then pull a heavy load once it reaches someone. This leg does both by changing its link lengths on the fly. The paper was accepted to <a href="https://arxiv.org/abs/2511.10816">ICRA 2026</a>.</p>
-      <p><a class="link-arrow" href="{{ '/projects/morphing-leg/' | relative_url }}">Read the project</a></p>
+<section class="section wrap" id="about">
+  <p class="kicker">About</p>
+  <h2 class="h-big">Who I am</h2>
+  <div class="about-grid">
+    <div class="bio">
+      <p>I'm <strong>William Harris</strong>, a mechanical engineer and master's student at UC San Diego. I like the part of robotics where an idea has to survive contact with a real machine: <strong>frames, mechanisms, motors, and the tests</strong> that show whether the model was right.</p>
+      <p>Most of my time goes to <strong>rescue robots</strong>. At the <a href="https://ucsdarclab.com/">Advanced Robotics and Controls Lab</a>, with my thesis advisor <a href="https://yip.eng.ucsd.edu/">Prof. Michael Yip</a>, I built the frame and center-of-mass stage for a <strong>mobile manipulator</strong> for human-extraction research, a <strong>leg that changes shape</strong> between fast travel and heavy dragging (<a href="https://arxiv.org/abs/2511.10816">ICRA 2026</a>), and the optimization and hexapod design that follow from it. I also helped build <strong>PHABS</strong>, a haptic device for teaching robots through touch.</p>
+      <p>Before that I spent three years at <a href="https://studentorg.ucsd.edu/Home/Details/19098"><strong>Triton Robotics</strong></a>, from machining chassis parts to leading the Hero robot's redesign to serving as president of the 80-member team. I'm looking for full-time roles and internships in <strong>medical robotics and medical devices</strong>, where careful mechanical design and testing decide whether something is safe to use around people. The projects below link to full write-ups.</p>
     </div>
+    <ol class="timeline" aria-label="Timeline">
+      <li class="is-now">
+        <p class="tl-date">Expected Jun 2027</p>
+        <p class="tl-role">M.S. Mechanical Engineering</p>
+        <p class="tl-org"><a href="https://mae.ucsd.edu/">UC San Diego</a></p>
+      </li>
+      <li class="is-now">
+        <p class="tl-date">Jun 2024 – Present</p>
+        <p class="tl-role">Graduate Researcher</p>
+        <p class="tl-org"><a href="https://ucsdarclab.com/">ARCLab</a> · advisor Prof. Michael Yip</p>
+      </li>
+      <li>
+        <p class="tl-date">Jul 2023 – Jun 2024</p>
+        <p class="tl-role">President</p>
+        <p class="tl-org"><a href="https://studentorg.ucsd.edu/Home/Details/19098">Triton Robotics</a></p>
+      </li>
+      <li>
+        <p class="tl-date">Dec 2022 – Jun 2023</p>
+        <p class="tl-role">Team Lead, Baja Del Sol</p>
+        <p class="tl-org"><a href="https://globalties.ucsd.edu/what/projects/baja-solar-water-heater.html">UCSD Global TIES</a></p>
+      </li>
+      <li>
+        <p class="tl-date">May 2022 – Jul 2023</p>
+        <p class="tl-role">Hero Robot Lead</p>
+        <p class="tl-org">Triton Robotics</p>
+      </li>
+      <li>
+        <p class="tl-date">Sep 2021 – May 2022</p>
+        <p class="tl-role">Mechanical Team Member</p>
+        <p class="tl-org">Triton Robotics</p>
+      </li>
+      <li>
+        <p class="tl-date">Sep 2021 – Jun 2025</p>
+        <p class="tl-role">B.S. Mechanical Engineering</p>
+        <p class="tl-org">Minor in Design · UC San Diego</p>
+      </li>
+    </ol>
   </div>
 </section>
 
-<section class="section wrap">
-  <div class="section-head">
-    <h2 class="section-title">Selected projects</h2>
+<section class="section wrap" id="work">
+  <div class="section-head2">
+    <div>
+      <p class="kicker">Projects</p>
+      <h2 class="h-big">Selected work</h2>
+    </div>
     <a class="link-arrow" href="{{ '/projects/' | relative_url }}">All projects</a>
   </div>
-  <div class="cards">
-    {% assign featured = site.projects | where: "group", "research" | sort: "order" %}
-    {% for p in featured limit: 3 %}
+
+  {% assign featured = site.projects | where: "group", "research" | sort: "order" %}
+  {% assign lead = featured | first %}
+  <article class="feature">
+    <a class="card-link" href="{{ lead.url | relative_url }}" aria-label="{{ lead.title }}"></a>
+    <div class="feature-media">
+      <video autoplay muted loop playsinline preload="metadata" poster="{{ lead.thumbnail | relative_url }}" aria-label="Bipedal robot walking on morphing legs">
+        <source src="{{ lead.hero_video | relative_url }}" type="video/mp4">
+      </video>
+    </div>
+    <div class="feature-body">
+      <p class="tag-line">ARCLab · Research · ICRA 2026</p>
+      <h3>{{ lead.title }}</h3>
+      <p>{{ lead.result }}</p>
+      <ul class="tags">{% for t in lead.tools limit: 5 %}<li>{{ t }}</li>{% endfor %}</ul>
+    </div>
+  </article>
+
+  <div class="cards two">
+    {% for p in featured offset: 1 limit: 2 %}
       {% capture meta %}{{ p.context }} · {{ p.dates }}{% endcapture %}
-      {% include card.html title=p.title url=p.url image=p.thumbnail blurb=p.blurb meta=meta links=p.links %}
+      {% include card.html title=p.title url=p.url image=p.thumbnail blurb=p.blurb meta=meta tools=p.tools links=p.links %}
     {% endfor %}
   </div>
 </section>
 
-<section class="section wrap background">
-  <h2 class="section-title">Background</h2>
-  <p>It started in fourth grade with a LEGO Mindstorms robot and a lot of arithmetic about wheel rotations. My public school district had almost no STEM programs, so a Friday engineering class in middle school, with balsa gliders and spaghetti towers, mattered a lot.</p>
-  <p>At UCSD I joined Triton Robotics knowing less than most of my teammates and ended up leading the team. Along the way I worked on a solar water heater for an orphanage in Tijuana, and since 2024 I've been building rescue robots at ARCLab.</p>
-</section>
-
 <section class="section wrap">
-  <h2 class="section-title">Experience</h2>
-  <ol class="chapters">
-    <li>
-      <p class="ch-when">Jun 2024 – now</p>
-      <div>
-        <h3>Graduate Researcher</h3>
-        <p><a href="https://ucsdarclab.com/">ARCLab</a>, UC San Diego. Thesis work on an adaptive morphing leg for search and rescue, plus a mobile manipulator for rescue research. Advisor: <a href="https://yip.eng.ucsd.edu/">Prof. Michael Yip</a>.</p>
-      </div>
-    </li>
-    <li>
-      <p class="ch-when">Jul 2023 – Jun 2024</p>
-      <div>
-        <h3>President</h3>
-        <p><a href="https://studentorg.ucsd.edu/Home/Details/19098">Triton Robotics</a>. Led an 80-member competition robotics team and rebuilt its training program for newcomers.</p>
-      </div>
-    </li>
-    <li>
-      <p class="ch-when">Dec 2022 – Jun 2023</p>
-      <div>
-        <h3>Team Lead, Baja Del Sol</h3>
-        <p><a href="https://globalties.ucsd.edu/what/projects/baja-solar-water-heater.html">UCSD Global TIES</a>. Revived a solar water heater project for an orphanage in Tijuana, and translated between the students and the house parents.</p>
-      </div>
-    </li>
-    <li>
-      <p class="ch-when">May 2022 – Jul 2023</p>
-      <div>
-        <h3>Hero Robot Lead</h3>
-        <p>Triton Robotics. Led the Hero subteam and its chassis redesign, with an X-drive and a slip-ring turret.</p>
-      </div>
-    </li>
-    <li>
-      <p class="ch-when">Sep 2021 – May 2022</p>
-      <div>
-        <h3>Mechanical Team Member</h3>
-        <p>Triton Robotics. Designed and built a lighter Hero chassis with 30% less aluminum tubing.</p>
-      </div>
-    </li>
-  </ol>
-
-  <h3 class="section-title sub">Education</h3>
-  <ol class="chapters">
-    <li>
-      <p class="ch-when">Expected Jun 2027</p>
-      <div>
-        <h3>MS Mechanical Engineering</h3>
-        <p><a href="https://mae.ucsd.edu/">UC San Diego</a>. GPA 3.68. Robotics, linear control, haptics, soft robotics, and parametric identification.</p>
-      </div>
-    </li>
-    <li>
-      <p class="ch-when">Jun 2025</p>
-      <div>
-        <h3>BS Mechanical Engineering, minor in Design</h3>
-        <p>UC San Diego.</p>
-      </div>
-    </li>
-  </ol>
-</section>
-
-<section class="section wrap">
-  <div class="section-head">
-    <h2 class="section-title">Publications</h2>
+  <div class="section-head2">
+    <div>
+      <p class="kicker">Publications</p>
+      <h2 class="h-big">Papers</h2>
+    </div>
     <a class="link-arrow" href="{{ '/publications/' | relative_url }}">Details</a>
   </div>
   <ol class="pubs">
@@ -131,34 +127,22 @@ layout: default
   </ol>
 </section>
 
-<section class="section wrap">
-  <h2 class="section-title">What I work with</h2>
-  <dl class="toolbox">
-    <div>
+<section class="section wrap two-up">
+  <div>
+    <p class="kicker">Tools</p>
+    <h2 class="h-mid">What I work with</h2>
+    <dl class="toolbox2">
       <dt>Design and fabrication</dt>
-      <dd>
-        <p class="tool-use">Frames, capstan drives, TPU grippers, laser-cut and machined parts</p>
-        <ul class="chips"><li>SolidWorks</li><li>Creo</li><li>Ansys FEA</li><li>Fusion 360 CAM</li><li>DFMA</li><li>CNC and manual machining</li><li>Laser and waterjet</li><li>3D printing</li><li>MIG welding</li></ul>
-      </dd>
-    </div>
-    <div>
+      <dd><ul class="chips"><li>SolidWorks</li><li>Creo</li><li>Ansys FEA</li><li>Fusion 360 CAM</li><li>DFMA</li><li>CNC and manual machining</li><li>Laser and waterjet</li><li>3D printing</li><li>MIG welding</li></ul></dd>
       <dt>Electronics and controls</dt>
-      <dd>
-        <p class="tool-use">BLDC motors over CAN, ODrive, sensor circuits</p>
-        <ul class="chips"><li>BLDC motor control</li><li>CAN</li><li>PCB design (EasyEDA)</li><li>Circuit design</li></ul>
-      </dd>
-    </div>
-    <div>
+      <dd><ul class="chips"><li>BLDC motor control</li><li>CAN</li><li>PCB design (EasyEDA)</li><li>Circuit design</li></ul></dd>
       <dt>Software</dt>
-      <dd>
-        <p class="tool-use">Python control and optimization, MATLAB analysis, ROS 2 on a Jetson</p>
-        <ul class="chips"><li>Python</li><li>MATLAB</li><li>C (Arduino)</li><li>ROS 2</li><li>Embedded Linux</li><li>MuJoCo</li></ul>
-      </dd>
-    </div>
-  </dl>
-</section>
-
-<section class="section wrap">
-  <h2 class="section-title">Outside the lab</h2>
-  <p class="lede">When I'm not in the lab, you'll usually find me on a bike trail, on a badminton court, or testing a new recipe. I lift, I review movies with friends, and I follow Formula 1.</p>
+      <dd><ul class="chips"><li>Python</li><li>MATLAB</li><li>C (Arduino)</li><li>ROS 2</li><li>Embedded Linux</li><li>MuJoCo</li></ul></dd>
+    </dl>
+  </div>
+  <div>
+    <p class="kicker">Off the clock</p>
+    <h2 class="h-mid">Outside the lab</h2>
+    <p>When I'm not in the lab, you'll usually find me on a bike trail, on a badminton court, or testing a new recipe. I lift, I review movies with friends, and I follow Formula 1.</p>
+  </div>
 </section>

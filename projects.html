@@ -17,7 +17,7 @@ summary: Research, team, and course projects in robotics and mechanical design.
   <div class="cards">
     {% for p in all %}{% if p.group == "research" %}
       {% capture meta %}{{ p.context }} · {{ p.dates }}{% endcapture %}
-      {% include card.html title=p.title url=p.url image=p.thumbnail blurb=p.blurb meta=meta links=p.links %}
+      {% include card.html title=p.title url=p.url image=p.thumbnail blurb=p.blurb meta=meta tools=p.tools links=p.links %}
     {% endif %}{% endfor %}
   </div>
 </section>
@@ -27,7 +27,7 @@ summary: Research, team, and course projects in robotics and mechanical design.
   <div class="cards">
     {% for p in all %}{% if p.group == "coursework" %}
       {% capture meta %}{{ p.context }} · {{ p.dates }}{% endcapture %}
-      {% include card.html title=p.title url=p.url image=p.thumbnail blurb=p.blurb meta=meta links=p.links %}
+      {% include card.html title=p.title url=p.url image=p.thumbnail blurb=p.blurb meta=meta tools=p.tools links=p.links %}
     {% endif %}{% endfor %}
     {% for p in site.data.smaller %}
       {% include card.html title=p.title url=p.url image=p.image blurb=p.blurb meta=p.meta links=p.links %}
