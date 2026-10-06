@@ -4,6 +4,7 @@ summary: A reconfigurable 5-bar leg that switches between fast traversal and hig
 group: research
 blurb: "A 5-bar leg that changes shape to switch between fast travel and heavy dragging. ICRA 2026."
 card_role: "Designed and built the testbed and capstan actuator, wrote the control. Co-first author."
+phase: 2
 kind: Research
 order: 1
 role: Mechanical design, prototyping, and experimental validation. Co-first author.
@@ -124,9 +125,9 @@ These are the gaps the next stage targets.
 
 ## Where it came from
 
-The project began as my senior capstone (MAE 156A and 156B), sponsored by ARCLab. The brief was a hexapod leg, made from wood and 3D-printed parts, that could cover ground quickly and also drag a heavy load.
+The leg started as my senior capstone (MAE 156A and 156B), sponsored by ARCLab. A team of five picked a 5-bar pantograph leg for a hexapod that has to carry a 90 kg person, and built a test bed to show that lengthening the ground link gives the biggest and steadiest change in pushing force.
 
-Our team set out to compare three scaled leg designs: a 5-bar pantograph, a swinging 4-bar, and a modified Theo Jansen linkage with an extra degree of freedom. The plan was to use kinematic simulation to set each walk cycle, run them under PID control, and rank them by maximum pushing force in high-torque mode against stride length in high-speed mode. The 5-bar is the design that went forward.
+This paper is the next step: taking that leg from the test bed to a working biped. The full story of the capstone is in [Phase 1: Hexapod Leg Senior Design Project]({{ '/projects/senior-design-leg/' | relative_url }}).
 
 ## ICRA 2026
 
@@ -136,7 +137,7 @@ The paper was accepted to ICRA 2026, and I presented the poster there.
 
 ### What's next
 
-The single-leg result doesn't say how the legs should work together with the body. I've since built a formal optimization of the leg's geometry and footpath, and I'm planning a reinforcement learning approach across all legs. It's covered in [Hexapod Rescue Robot and Leg Optimization]({{ '/projects/hexapod-optimization/' | relative_url }}).
+The single-leg result doesn't say how the legs should work together with the body. I'm now optimizing the leg's geometry and footpath, with a reinforcement learning stage planned across all legs. Those are the next papers, covered in [Phase 3: Hexapod Rescue Robot and Leg Optimization]({{ '/projects/hexapod-optimization/' | relative_url }}).
 </div>
 <figure>
   <img src="{{ '/assets/img/morphing-leg/icra-poster.jpg' | relative_url }}" alt="Presenting the morphing-leg poster at ICRA 2026" loading="lazy">

@@ -39,6 +39,8 @@ layout: default
     {% endif %}
   </div>
 
+  {% if page.phase %}{% include phases.html current=page.phase %}{% endif %}
+
   <div class="prose">
     {{ content }}
   </div>

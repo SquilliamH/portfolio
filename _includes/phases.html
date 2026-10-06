@@ -1,0 +1,20 @@
+{% comment %}
+  Three-step strip for the legged robot story. Usage: {% include phases.html current=1 %} (use 0 for none highlighted).
+{% endcomment %}
+<nav class="phases" aria-label="Legged robot phases">
+  <a class="phase{% if include.current == 1 %} is-current{% endif %}" href="{{ '/projects/senior-design-leg/' | relative_url }}">
+    <span class="phase-n">Phase 1</span>
+    <span class="phase-t">Senior project</span>
+    <span class="phase-d">Jan – Jun 2025 · MAE 156A/B</span>
+  </a>
+  <a class="phase{% if include.current == 2 %} is-current{% endif %}" href="{{ '/projects/morphing-leg/' | relative_url }}">
+    <span class="phase-n">Phase 2</span>
+    <span class="phase-t">First paper</span>
+    <span class="phase-d">ICRA 2026 · morphing leg</span>
+  </a>
+  <a class="phase{% if include.current == 3 %} is-current{% endif %}" href="{{ '/projects/hexapod-optimization/' | relative_url }}">
+    <span class="phase-n">Phase 3</span>
+    <span class="phase-t">Optimization and RL</span>
+    <span class="phase-d">In progress · next papers</span>
+  </a>
+</nav>

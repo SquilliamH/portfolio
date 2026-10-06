@@ -38,7 +38,7 @@ layout: default
   <div class="about-grid">
     <div class="bio">
       <p>I'm <strong>William Harris</strong>, a mechanical engineer and master's student at UC San Diego. I like the part of robotics where an idea has to survive contact with a real machine: <strong>frames, mechanisms, motors, and the tests</strong> that show whether the model was right.</p>
-      <p>Most of my time goes to <strong>rescue robots</strong>. At the <a href="https://ucsdarclab.com/">Advanced Robotics and Controls Lab</a>, with my thesis advisor <a href="https://yip.eng.ucsd.edu/">Prof. Michael Yip</a>, I built the frame and center-of-mass stage for a <strong>mobile manipulator</strong> for human-extraction research, a <strong>leg that changes shape</strong> between fast travel and heavy dragging (<a href="https://arxiv.org/abs/2511.10816">ICRA 2026</a>), and the optimization and hexapod design that follow from it.</p>
+      <p>Most of my time goes to <strong>rescue robots</strong>. At the <a href="https://ucsdarclab.com/">Advanced Robotics and Controls Lab</a>, with my thesis advisor <a href="https://yip.eng.ucsd.edu/">Prof. Michael Yip</a>, I built the frame and center-of-mass stage for a <strong>mobile manipulator</strong> for human-extraction research, a <strong>leg that changes shape</strong> between fast travel and heavy dragging (<a href="https://arxiv.org/abs/2511.10816">ICRA 2026</a>), which started as my senior capstone, and the optimization and hexapod design that follow from it.</p>
       <p>Before that I spent three years at <a href="https://studentorg.ucsd.edu/Home/Details/19098"><strong>Triton Robotics</strong></a>, from machining chassis parts to leading the Hero robot's redesign to serving as president of the 80-member team. I'm looking for full-time roles and internships in <strong>medical robotics and medical devices</strong>, where careful mechanical design and testing decide whether something is safe to use around people.</p>
 
       <div class="news">
@@ -80,7 +80,7 @@ layout: default
         </li>
         <li>
           <details><summary><span class="tl-date">Sep 2021 – Jun 2025</span><span class="tl-role">B.S. Mechanical Engineering</span><span class="tl-org">Minor in Design · UC San Diego</span></summary>
-            <p class="tl-more">Senior capstone: a hexapod rescue-robot leg, sponsored by ARCLab.</p></details>
+            <p class="tl-more">Senior capstone (MAE 156A/B): a leg for a hexapod rescue robot, with a team of five, sponsored by ARCLab. <a href="{{ '/projects/senior-design-leg/' | relative_url }}">Read the project</a>.</p></details>
         </li>
       </ol>
     </div>
@@ -90,6 +90,9 @@ layout: default
 <section class="section wrap" id="projects">
   <p class="kicker">Projects</p>
   <h2 class="h-big">Things I've built</h2>
+
+  <p class="sub-label phases-label">The legged rescue robot, so far</p>
+  {% include phases.html current=0 %}
 
   {% assign all = site.projects | sort: "order" %}
   {% assign research = all | where: "group", "research" %}
@@ -110,10 +113,11 @@ layout: default
     </div>
   </article>
 
-  <div class="cards two">
+  <div class="cards">
     {% for p in research offset: 1 %}
       {% capture meta %}{{ p.context }} · {{ p.dates }}{% endcapture %}
-      {% include card.html title=p.title url=p.url image=p.thumbnail video=p.hero_video blurb=p.blurb role=p.card_role meta=meta tools=p.tools links=p.links %}
+      {% if p.phase %}{% capture phl %}P{{ p.phase }}{% endcapture %}{% else %}{% assign phl = nil %}{% endif %}
+      {% include card.html title=p.title url=p.url image=p.thumbnail video=p.hero_video ph=phl blurb=p.blurb role=p.card_role meta=meta tools=p.tools links=p.links %}
     {% endfor %}
   </div>
 

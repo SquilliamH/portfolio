@@ -5,7 +5,7 @@ group: research
 blurb: "A mobile base with two Franka arms and a moving counterweight for safe human extraction research."
 card_role: "Built the frame, the center-of-mass stage, and the soft gripper."
 kind: Research
-order: 3
+order: 4
 role: Structural frame, center-of-mass stage, and soft gripper design
 context: ARCLab, UC San Diego
 context_url: https://ucsdarclab.com/

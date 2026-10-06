@@ -4,8 +4,9 @@ summary: A formal optimization of the morphing leg's geometry and footpath for s
 group: research
 blurb: "Optimizing the leg geometry and footpath, and designing the 11 kg hexapod it runs on."
 card_role: "Wrote the kinematic model and optimizer, and designed the hexapod."
+phase: 3
 kind: Research
-order: 2
+order: 3
 role: Kinematic model, optimization framework, hexapod design and analysis
 context: ARCLab, UC San Diego
 context_url: https://ucsdarclab.com/
@@ -16,9 +17,12 @@ thumbnail: /assets/img/hexapod/search-mode.jpg
 hide_hero: true
 ---
 
-The [morphing leg]({{ '/projects/morphing-leg/' | relative_url }}) showed that changing a five-bar linkage's geometry changes both its workspace and its force. But the geometry I tested was symmetric and picked by hand.
+This is phase 3 of the legged robot, after the [senior capstone]({{ '/projects/senior-design-leg/' | relative_url }}) and the [first paper]({{ '/projects/morphing-leg/' | relative_url }}). The first paper showed that changing a five-bar linkage's geometry changes both its workspace and its force. But the geometry I tested was symmetric and picked by hand.
 
 This project asks what geometry is actually best for each mode, and designs the hexapod that will use it.
+
+{: .callout}
+**Status: in progress.** The first stage, optimizing the leg geometry and footpath in simulation, is done. The reinforcement learning stage is just getting started, and both are headed for papers.
 
 {: .callout}
 **A note on the numbers.** Force and step results below come from a quasi-static simulation, not hardware.
