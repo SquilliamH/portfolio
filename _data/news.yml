@@ -1,6 +1,6 @@
 # Recent updates shown under the bio. Newest first. Add a line here to add news.
-- date: Sep 2026
-  text: Finished the first stage of optimizing the leg geometry for the hexapod, and started planning the reinforcement learning stage.
+- date: Oct 2026
+  text: "Finished optimizing the hexapod's leg in simulation: one leg, one foot, working in both rescue and search modes."
 - date: Jun 2026
   text: Presented our morphing-leg paper at ICRA 2026.
 - date: Nov 2025

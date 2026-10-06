@@ -125,9 +125,9 @@ These are the gaps the next stage targets.
 
 ## Where it came from
 
-The leg started as my senior capstone (MAE 156A and 156B), sponsored by ARCLab. A team of five picked a 5-bar pantograph leg for a hexapod that has to carry a 90 kg person, and built a test bed to show that lengthening the ground link gives the biggest and steadiest change in pushing force.
+The leg started as my senior capstone (MAE 156A and 156B), sponsored by ARCLab. A team of five designed a 5-bar pantograph leg for a hexapod that has to carry a 90 kg person, and built a test bed to compare ways of changing its shape. In simulation, lengthening the ground link gave the biggest and steadiest gain in pushing force.
 
-This paper is the next step: taking that leg from the test bed to a working biped. The full story of the capstone is in [Phase 1: Hexapod Leg Senior Design Project]({{ '/projects/senior-design-leg/' | relative_url }}).
+This paper is the next step: taking that idea from the test bed to a working biped. The full story of the capstone is in [Phase 1: Hexapod Leg Senior Design Project]({{ '/projects/senior-design-leg/' | relative_url }}).
 
 ## ICRA 2026
 
@@ -137,7 +137,7 @@ The paper was accepted to ICRA 2026, and I presented the poster there.
 
 ### What's next
 
-The single-leg result doesn't say how the legs should work together with the body. I'm now optimizing the leg's geometry and footpath, with a reinforcement learning stage planned across all legs. Those are the next papers, covered in [Phase 3: Hexapod Rescue Robot and Leg Optimization]({{ '/projects/hexapod-optimization/' | relative_url }}).
+The single-leg result doesn't say how the legs should work together with the body. I've since optimized the leg's geometry in simulation, and the next step is the full hexapod. That is covered in [Phase 3: Hexapod Rescue Robot]({{ '/projects/hexapod-optimization/' | relative_url }}).
 </div>
 <figure>
   <img src="{{ '/assets/img/morphing-leg/icra-poster.jpg' | relative_url }}" alt="Presenting the morphing-leg poster at ICRA 2026" loading="lazy">
